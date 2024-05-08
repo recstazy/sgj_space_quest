@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -6,9 +7,10 @@ using UnityEngine;
 
 public class TestInteractable : MonoBehaviour, IInteractable
 {
-    public UniTask Interact(CancellationToken cancellation = default)
+    public async UniTask Interact(CancellationToken cancellation)
     {
-        Debug.Log($"{gameObject.name} was interacted");
-        return UniTask.CompletedTask;
+        Debug.Log($"{gameObject.name} interaction start");
+        await UniTask.Delay(TimeSpan.FromSeconds(5), cancellationToken: cancellation);
+        Debug.Log($"{gameObject.name} interaction end");
     }
 }

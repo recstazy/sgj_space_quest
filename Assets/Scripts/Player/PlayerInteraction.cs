@@ -14,6 +14,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public ReactiveProperty<IInteractable> CurrentInteractable { get; private set; } = new();
 
+    private int _interactionDisableCounter = 0;
+
     [Inject]
     private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
     {
@@ -23,12 +25,21 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         if (!Input.GetButtonDown("Interaction")) return;
+        if (_interactionDisableCounter > 0) return;
         InteractWith(CurrentInteractable.Value);
+    }
+
+    public IDisposable DisableInteractionsTemporary()
+    {
+        _interactionDisableCounter++;
+        var disposer = new CallbackDisposable(() => _interactionDisableCounter--);
+        return disposer;
     }
 
     private async void InteractWith(IInteractable interactable)
     {
         if (CurrentInteractable.Value == null) return;
+        using var disableInteractions = DisableInteractionsTemporary();
         await interactable.Interact(DefaultCancellation.Token);
     }
 
@@ -52,8 +63,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private void InteractableListChanged()
     {
-        Debug.Log($"List changed: {String.Join(", ", _interactables.Select(x => x.transform.gameObject.name))}");
-        
         var mostAlignedWithViewDirection = _interactables
             .OrderByDescending(x => GetViewAlignFactor(_camera, x.transform))
             .FirstOrDefault();
