@@ -14,25 +14,27 @@ public class PlayerInteraction : MonoBehaviour
 
     public ReactiveProperty<IInteractable> CurrentInteractable { get; private set; } = new();
 
-    private int _interactionDisableCounter = 0;
+    private readonly IntReactiveProperty _interactionDisableCounter = new();
+    public readonly BoolReactiveProperty CanInteract = new();
 
     [Inject]
     private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
     {
         _camera = mainCamera;
+        _interactionDisableCounter.Subscribe(x => CanInteract.Value = x == 0).AddTo(this);
     }
     
     private void Update()
     {
         if (!Input.GetButtonDown("Interaction")) return;
-        if (_interactionDisableCounter > 0) return;
+        if (!CanInteract.Value) return;
         InteractWith(CurrentInteractable.Value);
     }
 
     public IDisposable DisableInteractionsTemporary()
     {
-        _interactionDisableCounter++;
-        var disposer = new CallbackDisposable(() => _interactionDisableCounter--);
+        _interactionDisableCounter.Value++;
+        var disposer = new CallbackDisposable(() => _interactionDisableCounter.Value--);
         return disposer;
     }
 
