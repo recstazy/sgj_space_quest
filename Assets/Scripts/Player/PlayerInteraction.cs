@@ -29,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
     private async void InteractWith(IInteractable interactable)
     {
         if (CurrentInteractable.Value == null) return;
-        await interactable.Interact(CancellationToken.None);
+        await interactable.Interact(DefaultCancellation.Token);
     }
 
     private void OnTriggerEnter(Collider other)

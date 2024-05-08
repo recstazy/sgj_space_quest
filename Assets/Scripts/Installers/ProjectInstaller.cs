@@ -7,6 +7,9 @@ public class ProjectInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        
+        Container.BindInterfacesAndSelfTo<DefaultCancellation>()
+            .FromNew()
+            .AsSingle()
+            .NonLazy();
     }
 }
