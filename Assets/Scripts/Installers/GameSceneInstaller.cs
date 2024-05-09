@@ -12,6 +12,9 @@ public class GameSceneInstaller : MonoInstaller
 
     [SerializeField]
     private Player _player;
+
+    [SerializeField]
+    private QuestController _questController;
     
     [SerializeField]
     private WireGameController _wireGameController;
@@ -20,6 +23,10 @@ public class GameSceneInstaller : MonoInstaller
     {
         Container.BindInterfacesAndSelfTo<Player>()
             .FromInstance(_player)
+            .AsSingle();
+
+        Container.BindInterfacesAndSelfTo<QuestController>()
+            .FromInstance(_questController)
             .AsSingle();
         
         Container.Bind<Camera>()
