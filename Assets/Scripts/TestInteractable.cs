@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class TestInteractable : MonoBehaviour, IInteractable
 {
+    [field: SerializeField]
+    public string InteractionHint { get; private set; }
+
     public async UniTask Interact(CancellationToken cancellation)
     {
         Debug.Log($"{gameObject.name} interaction start");
