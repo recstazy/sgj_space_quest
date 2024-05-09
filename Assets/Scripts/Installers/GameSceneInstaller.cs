@@ -9,7 +9,10 @@ public class GameSceneInstaller : MonoInstaller
         
     [SerializeField]
     private Camera _mainCamera;
-        
+
+    [SerializeField]
+    private WireGameController _wireGameController;
+
     public override void InstallBindings()
     {
         Container.Bind<Camera>()
@@ -21,5 +24,10 @@ public class GameSceneInstaller : MonoInstaller
             .Bind<PlayerInputController>()
             .AsSingle()
             .NonLazy();
+
+        Container
+            .BindInterfacesTo<WireGameController>()
+            .FromInstance(_wireGameController)
+            .AsSingle();
     }
 }
