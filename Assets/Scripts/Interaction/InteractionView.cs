@@ -15,6 +15,12 @@ public class InteractionView : MonoBehaviour
     [SerializeField]
     private TMP_Text _hintText;
 
+    [SerializeField]
+    private CanvasGroup _hintCanvasGroup;
+
+    [SerializeField]
+    private float _notInteractiveAlpha = 0.5f;
+
     private PlayerInteraction _interaction;
     private CompositeDisposable _currentHintDisposable;
     private Camera _camera;
@@ -29,6 +35,10 @@ public class InteractionView : MonoBehaviour
     private void Awake()
     {
         _interaction.CurrentInteractable.Subscribe(InteractableChanged).AddTo(this);
+        _interaction.CanInteract.Subscribe(canInteract =>
+        {
+            _hintCanvasGroup.alpha = canInteract ? 1f : _notInteractiveAlpha;
+        }).AddTo(this);
     }
 
     private void OnDestroy()
