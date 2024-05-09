@@ -12,11 +12,18 @@ public class GameSceneInstaller : MonoInstaller
 
     [SerializeField]
     private Player _player;
+
+    [SerializeField]
+    private QuestController _questController;
     
     public override void InstallBindings()
     {
         Container.BindInterfacesAndSelfTo<Player>()
             .FromInstance(_player)
+            .AsSingle();
+
+        Container.BindInterfacesAndSelfTo<QuestController>()
+            .FromInstance(_questController)
             .AsSingle();
         
         Container.Bind<Camera>()
