@@ -16,6 +16,12 @@ public class InteractionView : MonoBehaviour
     private TMP_Text _hintText;
 
     [SerializeField]
+    private GameObject _activeTriggerImage;
+
+    [SerializeField]
+    private GameObject _inactiveTriggerImage;
+
+    [SerializeField]
     private CanvasGroup _hintCanvasGroup;
 
     [SerializeField]
@@ -52,7 +58,8 @@ public class InteractionView : MonoBehaviour
         _currentHintDisposable?.Dispose();
         _hintOrigin.gameObject.SetActive(interactable != null);
         if (interactable == null) return;
-        
+        _activeTriggerImage.SetActive(interactable.IsAvailableNow);
+        _inactiveTriggerImage.SetActive(!interactable.IsAvailableNow);
         _currentHintDisposable = new();
         _hintText.text = string.IsNullOrEmpty(interactable.InteractionHint) ? _defaultHintText : interactable.InteractionHint;
 
