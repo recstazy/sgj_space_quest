@@ -16,6 +16,9 @@ public class GameSceneInstaller : MonoInstaller
     [SerializeField]
     private QuestController _questController;
     
+    [SerializeField]
+    private WireGameController _wireGameController;
+
     public override void InstallBindings()
     {
         Container.BindInterfacesAndSelfTo<Player>()
@@ -35,5 +38,10 @@ public class GameSceneInstaller : MonoInstaller
             .Bind<PlayerInputController>()
             .AsSingle()
             .NonLazy();
+
+        Container
+            .BindInterfacesTo<WireGameController>()
+            .FromInstance(_wireGameController)
+            .AsSingle();
     }
 }
