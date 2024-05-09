@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Zenject;
 
 public class BaseScenario : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class BaseScenario : MonoBehaviour
 	[SerializeField]
 	protected Trigger _finishTrigger;
 
-	public Trigger StartTrigger => _startTrigger;
+    [Inject]
+    protected QuestController _questController;
+
+    public Trigger StartTrigger => _startTrigger;
 
 	public virtual void Run()
 	{
