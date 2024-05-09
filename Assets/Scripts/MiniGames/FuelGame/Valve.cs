@@ -54,11 +54,11 @@ public class Valve : MonoBehaviour, IInteractable
         }
         set
         {
-            Debug.Log(value);
             _a = value;
         }
     }
 
+    public bool IsAvailableNow { get; set; } = true;
 
     private Vector3 _startPosition;
     private Vector3 _endPosition;
@@ -89,20 +89,23 @@ public class Valve : MonoBehaviour, IInteractable
 
     public async UniTask Interact(CancellationToken cancellation)
     {
-        if (IsValvePlaced)
+        if (IsAvailableNow)
         {
-            _currentValveCondition = !_currentValveCondition;
-            var rotate = _currentValveCondition ? _endPosition : _startPosition;
-            Debug.Log($"{gameObject.name} interaction start");
-            await _valveVisual.transform.DOLocalRotate(rotate, _activationTime).WithCancellation(cancellation);
-            Debug.Log($"{gameObject.name} interaction end");
-            SetVisualValvePart();
-            OnFinishInterract?.Invoke();
-        }
-        else
-        {
-            _triggerZone.SetActive(true);
-            _valveFindStartTrigger.Invoke();
+            if (IsValvePlaced)
+            {
+                _currentValveCondition = !_currentValveCondition;
+                var rotate = _currentValveCondition ? _endPosition : _startPosition;
+                Debug.Log($"{gameObject.name} interaction start");
+                await _valveVisual.transform.DOLocalRotate(rotate, _activationTime).WithCancellation(cancellation);
+                Debug.Log($"{gameObject.name} interaction end");
+                SetVisualValvePart();
+                OnFinishInterract?.Invoke();
+            }
+            else
+            {
+                _triggerZone.SetActive(true);
+                _valveFindStartTrigger.Invoke();
+            }
         }
     }
 

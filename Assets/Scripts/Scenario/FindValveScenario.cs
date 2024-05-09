@@ -32,7 +32,7 @@ public class FindValveScenario : BaseScenario
     public override void Run()
 	{
 		base.Run();
-		StartCoroutine(Disinfection());
+		StartCoroutine(FindValve());
 	}
 
 	private void GetValveTrigger(Trigger trigger)
@@ -47,11 +47,12 @@ public class FindValveScenario : BaseScenario
         }
 	}
 
-	private IEnumerator Disinfection()
+	private IEnumerator FindValve()
 	{
+		_questController.AddQuest(QuestsDescriptionContainer.FIND_VALVE);
 		while (!PlayerInBox || !_isPlayerGetValve)
 			yield return null;
-
-		Finish();
+        _questController.CompleteQuest(QuestsDescriptionContainer.FIND_VALVE);
+        Finish();
 	}
 }

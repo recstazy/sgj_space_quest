@@ -23,16 +23,20 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 
 	public bool IsInteractionDisabled => _isInteractionDisabled;
 
+	public bool IsAvailableNow { get; set; } = false;
 	public async UniTask Interact(CancellationToken cancellation)
 	{
-		Debug.Log($"{gameObject.name} interaction start");
-		await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
-		_trigger.Invoke();
-		Debug.Log($"{gameObject.name} interaction end");
-		if (_interactOneTime)
-			_isInteractionDisabled = true;
-		if (_disableAfterInteract)
-			gameObject.SetActive(false);
+		if (IsAvailableNow)
+		{
+            Debug.Log($"{gameObject.name} interaction start");
+            await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
+            _trigger.Invoke();
+            Debug.Log($"{gameObject.name} interaction end");
+            if (_interactOneTime)
+                _isInteractionDisabled = true;
+            if (_disableAfterInteract)
+                gameObject.SetActive(false);
+        }
 	}
 }
 
