@@ -24,8 +24,9 @@ public class PickSuitScenario : BaseScenario
 		if (trigger == _suitTrigger)
 		{
 			Trigger.OnTriggerInvoke -= OnTriggered;
-			//TODO: suit UI enable
-			Finish();
+            //TODO: suit UI enable
+            _questController.CompleteQuest(QuestsDescriptionContainer.SUIT_UP);
+            Finish();
 		}
 	}
 
