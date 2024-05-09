@@ -1475,6 +1475,7 @@ MonoBehaviour:
   - Valve: {fileID: 1902524237}
     ValveWinCondition: 1
     IsValvePlaced: 0
+  _lostValveTrigger: {fileID: 1118105783}
 --- !u!4 &1913269679
 Transform:
   m_ObjectHideFlags: 0
@@ -1683,6 +1684,7 @@ MonoBehaviour:
   _player: {fileID: 1457618784}
   _questController: {fileID: 2071310864}
   _wireGameController: {fileID: 0}
+  _virtualCameras: {fileID: 0}
 --- !u!114 &2071637712
 MonoBehaviour:
   m_ObjectHideFlags: 0

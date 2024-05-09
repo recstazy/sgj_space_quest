@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using UniRx;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Zenject;
 
 public class PlayerInteraction : MonoBehaviour
@@ -26,6 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     
     private void Update()
     {
+        UpdateCurrent();
         if (!Input.GetButtonDown("Interaction")) return;
         if (!CanInteract.Value) return;
         InteractWith(CurrentInteractable.Value);
@@ -43,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
         if (CurrentInteractable.Value == null) return;
         using var disableInteractions = DisableInteractionsTemporary();
         await interactable.Interact(DefaultCancellation.Token);
-        UpdateCurrentInteractable();
+        UpdateCurrent();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +54,7 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable == null) return;
         
         _interactables.Add(interactable);
-        UpdateCurrentInteractable();
+        UpdateCurrent();
     }
 
     private void OnTriggerExit(Collider other)
@@ -61,24 +63,49 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable == null) return;
         
         _interactables.Remove(interactable);
-        UpdateCurrentInteractable();
+        UpdateCurrent();
     }
 
-    private void UpdateCurrentInteractable()
+    //private void UpdateCurrentInteractable()
+    //{
+    //    var mostAlignedWithViewDirection = _interactables
+    //        .Where(x => !x.IsInteractionDisabled)
+    //        .Select(x => (interactable: x, align: GetViewAlignFactor(_camera, x.transform)))
+    //        .Where(x => x.align >= 0f)
+    //        .OrderByDescending(x => x.align)
+    //        .FirstOrDefault().interactable;
+
+    //    if (mostAlignedWithViewDirection == CurrentInteractable.Value) return;
+    //    CurrentInteractable.Value = mostAlignedWithViewDirection;
+    //}
+
+    private void UpdateCurrent()
     {
-        var mostAlignedWithViewDirection = _interactables
-            .Where(x => !x.IsInteractionDisabled)
-            .OrderByDescending(x => GetViewAlignFactor(_camera, x.transform))
-            .FirstOrDefault();
+        IInteractable mostAlignedInteractable = null;
+        var bestAlign = -1f;
 
-        if (mostAlignedWithViewDirection == CurrentInteractable.Value) return;
-        CurrentInteractable.Value = mostAlignedWithViewDirection;
-
-        float GetViewAlignFactor(Camera viewCamera, Transform target)
+        foreach (var interactable in _interactables)
         {
-            var distanceVector = viewCamera.transform.position - target.position;
-            var cameraViewDirection = viewCamera.transform.forward;
-            return Vector3.Dot(distanceVector.normalized, cameraViewDirection.normalized);
+            if (interactable.IsInteractionDisabled) continue;
+
+            var alignment = GetViewAlignFactor(_camera, interactable.transform);
+            if (alignment <= 0.3f) continue;
+
+            if (alignment > bestAlign)
+            {
+                mostAlignedInteractable = interactable;
+                bestAlign = alignment;
+            }
         }
+
+        if (mostAlignedInteractable == CurrentInteractable.Value) return;
+        CurrentInteractable.Value = mostAlignedInteractable;
+    }
+
+    private float GetViewAlignFactor(Camera viewCamera, Transform target)
+    {
+        var distanceVector = target.position - viewCamera.transform.position;
+        var cameraViewDirection = viewCamera.transform.forward;
+        return Vector3.Dot(distanceVector.normalized, cameraViewDirection.normalized);
     }
 }

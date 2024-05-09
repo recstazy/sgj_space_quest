@@ -7,8 +7,12 @@ public class FuelGameController : GameController
     [SerializeField]
     private List<ValveItem> _valveItems;
 
+    [SerializeField]
+    private InteractableWithTrigger _lostValveTrigger;
+
     private void Start()
     {
+        _lostValveTrigger.IsAvailableNow = true;
         _valveItems.ForEach(item =>
         {
             item.Valve.QuestedValveCondition = item.ValveWinCondition;
