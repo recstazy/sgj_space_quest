@@ -6,6 +6,9 @@ using Zenject;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Inject]
+    private PlayerInputController _playerInputController;
+
     [SerializeField]
     private float _moveSpeed;
 
@@ -42,8 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
-        HandleCamera();
+        if (_playerInputController.IsPlayerActive)
+        {
+            HandleMovement();
+            HandleCamera();
+        }
     }
 
     private void LateUpdate()
