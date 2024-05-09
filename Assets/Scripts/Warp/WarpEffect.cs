@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
+using Cyan;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class WarpEffect : MonoBehaviour
 {
+    [SerializeField]
+    private UniversalRendererData _rendererData;
     [SerializeField]
     private ParticleSystem _stars;
 
@@ -39,6 +44,7 @@ public class WarpEffect : MonoBehaviour
         velocityModule.enabled = true;
         await UniTask.Delay(TimeSpan.FromSeconds(_prewarpTime), cancellationToken: cancellation);
         
+        EnableChromaticPost();
         velocityModule.z = _warpVelocity;
         var warpAcceleration = DOTween.To(
             () => velocityModule.z.constant, 
@@ -59,8 +65,25 @@ public class WarpEffect : MonoBehaviour
             _trailFadeOutTime);
 
         color.enabled = true;
+        DisableChromaticPost();
         await trailFadeOut.ToUniTask(cancellationToken: cancellation);
         
+    }
+
+    private void EnableChromaticPost()
+    {
+        var feature = _rendererData.rendererFeatures.FirstOrDefault(x => x is Blit) as Blit;
+        if (feature == null) return;
+        
+        feature.SetActive(true);
+    }
+    
+    private void DisableChromaticPost()
+    {
+        var feature = _rendererData.rendererFeatures.FirstOrDefault(x => x is Blit) as Blit;
+        if (feature == null) return;
+        
+        feature.SetActive(false);
     }
 
     private void Update()

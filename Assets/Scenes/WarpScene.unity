@@ -10176,6 +10176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905d7d66646b5f841acf0ca0ae738099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rendererData: {fileID: 11400000, guid: c40be3174f62c4acf8c1216858c64956, type: 2}
   _stars: {fileID: 1694101953}
   _prewarpVelocity: 20
   _prewarpTime: 2
