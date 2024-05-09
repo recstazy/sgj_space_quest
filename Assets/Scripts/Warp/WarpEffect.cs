@@ -30,6 +30,9 @@ public class WarpEffect : MonoBehaviour
     {
         var trailModule = _stars.trails;
         var velocityModule = _stars.velocityOverLifetime;
+        var main = _stars.main;
+        var color = _stars.colorOverLifetime;
+        var material = _stars.GetComponent<Renderer>().material;
         
         trailModule.enabled = true;
         velocityModule.z = _prewarpVelocity;
@@ -45,14 +48,17 @@ public class WarpEffect : MonoBehaviour
         
         await warpAcceleration.ToUniTask(cancellationToken: cancellation);
         
-        velocityModule.enabled = false;
-
         var trailFadeOut = DOTween.To(
             () => 1f, 
-            x => trailModule.widthOverTrailMultiplier = x, 
+            x =>
+            {
+                trailModule.widthOverTrailMultiplier = x;
+                material.color = Color.white * x;
+            }, 
             0f, 
             _trailFadeOutTime);
-        
+
+        color.enabled = true;
         await trailFadeOut.ToUniTask(cancellationToken: cancellation);
         
     }
