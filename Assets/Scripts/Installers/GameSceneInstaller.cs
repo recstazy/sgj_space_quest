@@ -23,5 +23,10 @@ public class GameSceneInstaller : MonoInstaller
             .WithId(MainCameraId)
             .FromInstance(_mainCamera)
             .AsSingle();
+
+        Container
+            .Bind<PlayerInputController>()
+            .AsSingle()
+            .NonLazy();
     }
 }
