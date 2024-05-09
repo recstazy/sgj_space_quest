@@ -15,12 +15,6 @@ public class GameSceneInstaller : MonoInstaller
 
     [SerializeField]
     private QuestController _questController;
-    
-    /*[SerializeField]
-    private WireGameController _wireGameController;*/
-
-    [SerializeField]
-    private VirtualCameraBehaviour _virtualCameras;
 
     public override void InstallBindings()
     {
@@ -41,10 +35,5 @@ public class GameSceneInstaller : MonoInstaller
             .Bind<PlayerInputController>()
             .AsSingle()
             .NonLazy();
-
-        Container
-           .BindInterfacesTo<VirtualCameraBehaviour>()
-           .FromInstance(_virtualCameras)
-           .AsSingle();
     }
 }
