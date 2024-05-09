@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 public abstract class GameController : MonoBehaviour
 {
-    /*[SerializeField]
-    private Trigger _trigger*/
+    public BoolReactiveProperty IsFinished { get; private set; } = new();
 
     protected abstract bool GetWinCondition();
     protected abstract void StartGame();
@@ -20,6 +20,7 @@ public abstract class GameController : MonoBehaviour
 
     protected virtual void FinishGame()
     {
+        IsFinished.Value = true;
         Debug.Log("Finished");
     }
 }
