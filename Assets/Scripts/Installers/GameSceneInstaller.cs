@@ -9,9 +9,16 @@ public class GameSceneInstaller : MonoInstaller
         
     [SerializeField]
     private Camera _mainCamera;
-        
+
+    [SerializeField]
+    private Player _player;
+    
     public override void InstallBindings()
     {
+        Container.BindInterfacesAndSelfTo<Player>()
+            .FromInstance(_player)
+            .AsSingle();
+        
         Container.Bind<Camera>()
             .WithId(MainCameraId)
             .FromInstance(_mainCamera)
