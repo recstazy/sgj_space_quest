@@ -1,0 +1,95 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TuneRadioGame : MonoBehaviour
+{
+	[SerializeField]
+	private Transform[] _points;
+	[SerializeField]
+	private float[] _targetValues;
+	[SerializeField]
+	private float _changeColorGap = 0.07f;
+	[SerializeField]
+	private float _targetAccuracy = 0.002f;
+
+	[SerializeField]
+	private AudioSource _noise;
+	[SerializeField]
+	private AudioSource _sound;
+
+	private Material[] _pointMaterials;
+
+	private float _minPos;
+	private float _maxPos;
+
+	public float[] _currentValues;
+	public float _summDiff;
+
+	private void Start()
+	{
+		_minPos = Mathf.Min(_points[0].transform.position.x, _points[1].transform.position.x);
+		_maxPos = Mathf.Max(_points[0].transform.position.x, _points[1].transform.position.x);
+
+		_pointMaterials = new Material[_points.Length];
+		for (int i = 0; i < _points.Length; i++)
+		{
+			_pointMaterials[i] = _points[i].GetComponent<MeshRenderer>().material;
+		}
+
+		_currentValues = new float[_points.Length];
+
+		_noise.Play();
+		_sound.Play();
+	}
+
+	public void SetPosition(int pointIndex, float value)
+	{
+		SetPositionForPoint(pointIndex, value);
+		_currentValues[pointIndex] = value;
+		UpdateValues();
+	}
+
+	private void UpdateValues()
+	{
+		_summDiff = 0f;
+		for (int i = 0; i < _targetValues.Length; i++)
+		{
+			_summDiff += Math.Abs(_currentValues[i] - _targetValues[i]);
+		}
+		_summDiff /= 2f;
+
+		_noise.volume = _summDiff;
+		_sound.volume = 1f - _summDiff;
+
+		if (_summDiff < _targetAccuracy)
+		{
+			Debug.LogError("Win!");
+			Debug.Break();
+		}
+	}
+
+	private void SetPositionForPoint(int index, float value)
+	{
+		var pos = _points[index].position;
+		pos.x = Mathf.Lerp(_minPos, _maxPos, value);
+
+		var diff = Mathf.Abs(_targetValues[index] - value);
+
+		if (diff < _changeColorGap)
+		{
+			var lerpColor = Color.Lerp(Color.green, Color.red, diff / _changeColorGap);
+			_pointMaterials[index].SetColor("_EmissionColor", lerpColor);
+			_pointMaterials[index].color = lerpColor;
+		}
+		else
+		{
+			_pointMaterials[index].SetColor("_EmissionColor", Color.red);
+			_pointMaterials[index].color = Color.red;
+		}
+
+
+		_points[index].position = pos;
+	}
+}
