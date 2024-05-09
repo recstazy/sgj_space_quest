@@ -12,7 +12,11 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 	[SerializeField]
 	private string _hint;
 
+	private bool _isInteractionDisabled;
+
 	public string InteractionHint => _hint;
+
+	public bool IsInteractionDisabled => _isInteractionDisabled;
 
 	public async UniTask Interact(CancellationToken cancellation)
 	{
@@ -20,6 +24,7 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 		await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
 		_trigger.Invoke();
 		Debug.Log($"{gameObject.name} interaction end");
+		_isInteractionDisabled = true;
 	}
 }
 
