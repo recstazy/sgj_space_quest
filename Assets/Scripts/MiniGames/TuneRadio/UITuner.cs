@@ -36,7 +36,7 @@ public class UITuner : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragH
 		float tuneValue = eventData.delta.x / 10f;
 		_tunerModel.Rotate(Vector3.up, tuneValue);
 
-		_value = Mathf.Abs(_tunerModel.rotation.eulerAngles.y) % 360f;
+		_value = Mathf.Abs(_tunerModel.rotation.eulerAngles.x) % 360f;
 		_normalizedValue = _value / 360f;
 
 		_tunerGame.SetPosition(_index, _normalizedValue);
@@ -48,7 +48,7 @@ public class UITuner : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragH
 	{
 		_tunerModel.Rotate(Vector3.up, tuneValue);
 
-		_value = Mathf.Abs(_tunerModel.rotation.eulerAngles.y) % 360f;
+		_value = Mathf.Abs(_tunerModel.rotation.eulerAngles.x) % 360f;
 		_normalizedValue = _value / 360f;
 		_tunerGame.SetPosition(_index, _normalizedValue);
 	}
