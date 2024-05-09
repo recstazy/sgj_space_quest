@@ -9,6 +9,10 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 	private float _delay;
 	[SerializeField]
 	private Trigger _trigger;
+	[SerializeField]
+	private string _hint;
+
+	public string InteractionHint => _hint;
 
 	public async UniTask Interact(CancellationToken cancellation)
 	{
