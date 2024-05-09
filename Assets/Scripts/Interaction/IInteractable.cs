@@ -7,5 +7,7 @@ using UnityEngine;
 public interface IInteractable
 {
     Transform transform { get; }
+    string InteractionHint { get; }
+    bool IsInteractionDisabled { get; }
     UniTask Interact(CancellationToken cancellation);
 }

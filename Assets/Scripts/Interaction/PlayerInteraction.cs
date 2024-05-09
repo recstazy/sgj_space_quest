@@ -43,6 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         if (CurrentInteractable.Value == null) return;
         using var disableInteractions = DisableInteractionsTemporary();
         await interactable.Interact(DefaultCancellation.Token);
+        UpdateCurrentInteractable();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,7 +52,7 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable == null) return;
         
         _interactables.Add(interactable);
-        InteractableListChanged();
+        UpdateCurrentInteractable();
     }
 
     private void OnTriggerExit(Collider other)
@@ -60,12 +61,13 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable == null) return;
         
         _interactables.Remove(interactable);
-        InteractableListChanged();
+        UpdateCurrentInteractable();
     }
 
-    private void InteractableListChanged()
+    private void UpdateCurrentInteractable()
     {
         var mostAlignedWithViewDirection = _interactables
+            .Where(x => !x.IsInteractionDisabled)
             .OrderByDescending(x => GetViewAlignFactor(_camera, x.transform))
             .FirstOrDefault();
 
