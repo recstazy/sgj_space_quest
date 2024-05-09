@@ -9,17 +9,17 @@ public class PlayerInputController
     public bool IsPlayerActive => _isPlayerActive;
 
     [Inject]
-    private void Inti()
+    private void Init()
     {
         _isPlayerActive = true;
     }
 
-    public void SetActivateIntraction()
+    public void SetActivateInteraction()
     {
         _isPlayerActive = true;
     }
 
-    public void SetDeactivaterInvterraction()
+    public void SetDeactivateInteraction()
     {
         _isPlayerActive = false;
     }

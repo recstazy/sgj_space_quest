@@ -1,18 +1,48 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class WireGameController : GameController
 {
     [SerializeField]
     private List<Wire> _wires;
 
+    [SerializeField]
+    private CinemachineVirtualCamera _camera;
+
+    [SerializeField]
+    private Trigger _startWireGameTrigger;
+
+    [SerializeField]
+    private InteractableWithTrigger _gameTrigger;
+
     private void Start()
     {
-        foreach (var wire in _wires)
+        _camera.gameObject.SetActive(false);
+        _gameTrigger.IsAvailableNow = true;
+        Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
+    }
+
+    private void OnDestroy()
+    {
+        Trigger.OnTriggerInvoke -= StartGameOnTriggerInvoke;
+    }
+
+    private void StartGameOnTriggerInvoke(Trigger trigger)
+    {
+        _playerInputController.SetDeactivateInteraction();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _camera.gameObject.SetActive(true);
+        if (_startWireGameTrigger == trigger)
         {
-            wire.OnPlaced += CheckWinCondition;
-        } 
+            foreach (var wire in _wires)
+            {
+                wire.OnPlaced += CheckWinCondition;
+            }
+        }
     }
 
     protected override bool GetWinCondition()
@@ -25,6 +55,16 @@ public class WireGameController : GameController
             }
         }
         return true;
+    }
+
+    protected override void FinishGame()
+    {
+        base.FinishGame();
+        _playerInputController.SetActivateInteraction();
+        _camera.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _gameTrigger.IsInteractionDisabled = true;
     }
 
     protected override void StartGame()
