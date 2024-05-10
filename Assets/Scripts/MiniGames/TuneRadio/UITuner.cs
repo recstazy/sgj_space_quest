@@ -18,6 +18,7 @@ public class UITuner : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragH
 	private UITuner _secondTuner;
 
 	public float _normalizedValue;
+	private float _angle;
 
 	private IEnumerator Start()
 	{
@@ -35,8 +36,14 @@ public class UITuner : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragH
 	{
 		float tuneValue = eventData.delta.x / 10f;
 		_tunerModel.Rotate(Vector3.up, tuneValue);
+		_angle += tuneValue;
+        
+		if (_angle < 0f)
+		{
+			_angle = 360f;
+		}
 
-		_value = Mathf.Abs(_tunerModel.rotation.eulerAngles.x) % 360f;
+        _value = _angle % 360f;
 		_normalizedValue = _value / 360f;
 
 		_tunerGame.SetPosition(_index, _normalizedValue);
@@ -48,8 +55,15 @@ public class UITuner : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragH
 	{
 		_tunerModel.Rotate(Vector3.up, tuneValue);
 
-		_value = Mathf.Abs(_tunerModel.rotation.eulerAngles.x) % 360f;
-		_normalizedValue = _value / 360f;
+        _angle += tuneValue;
+
+        if (_angle < 0f)
+        {
+            _angle = 360f;
+        }
+
+        _value = _angle % 360f;
+        _normalizedValue = _value / 360f;
 		_tunerGame.SetPosition(_index, _normalizedValue);
 	}
 
