@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
@@ -20,14 +21,31 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 	[SerializeField]
 	private bool _disableAfterInteract;
 
+	[SerializeField]
+	private List<GameObject> _disabledObjects;
+
 	public string InteractionHint => _hint;
 
 	public bool IsInteractionDisabled { get; set; }
 
-	public bool IsAvailableNow { get; set; } = false;
+	private bool _isAvailableNow = default(bool);
+
+
+    public bool IsAvailableNow 
+	{
+		get 
+		{
+			return _isAvailableNow;
+        }
+		set
+		{
+			_isAvailableNow = value;
+		}
+	} 
+
 	public async UniTask Interact(CancellationToken cancellation)
 	{
-		if (IsAvailableNow)
+		if (_isAvailableNow)
 		{
             Debug.Log($"{gameObject.name} interaction start");
             await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
@@ -36,7 +54,13 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
             if (_interactOneTime)
                 IsInteractionDisabled = true;
             if (_disableAfterInteract)
+			{
+				if (_disabledObjects.Count > 0)
+				{
+                    _disabledObjects.ForEach(obj => obj.SetActive(false));
+                }
                 gameObject.SetActive(false);
+            }
         }
 	}
 
