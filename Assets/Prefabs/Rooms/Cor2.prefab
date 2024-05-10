@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cor2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b5ecd965030c2e4e9f94ca09e82146c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5ecd965030c2e4e9f94ca09e82146c, type: 3}
 --- !u!4 &5794699876560245697 stripped
