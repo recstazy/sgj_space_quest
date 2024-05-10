@@ -116,9 +116,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 262622a27a71ba14c825c7401e350038,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4d4fdab241619d94b8eb8d392e8b647c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: db8880d1089f7ba4eb45862fe9f456af, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.376
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -269,3 +269,5 @@ MonoBehaviour:
   _getCardTrigger: {fileID: 11400000, guid: 64da0cba08b6e1e448032e8ecb736322, type: 2}
   _wireGameFinalTrigger: {fileID: 11400000, guid: 52a57973ee447794dad160875f91489b,
     type: 2}
+  _electricalPanel: {fileID: 0}
+  _cardTrigger: {fileID: 0}
