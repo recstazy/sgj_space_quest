@@ -10,6 +10,9 @@ using Zenject;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    [SerializeField]
+    private CapsuleCollider _playerCollider;
+
     private readonly List<IInteractable> _interactables = new();
     private Camera _camera;
 

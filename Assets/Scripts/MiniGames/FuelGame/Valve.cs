@@ -22,9 +22,6 @@ public class Valve : MonoBehaviour, IInteractable
     private GameObject _valveVisual;
 
     [SerializeField]
-    private GameObject _triggerZone;
-
-    [SerializeField]
     private Image _visualInfo;
 
     [SerializeField]
@@ -67,19 +64,10 @@ public class Valve : MonoBehaviour, IInteractable
 
     public void Init()
     {
-        _triggerZone.SetActive(false);
         _startPosition = transform.rotation.eulerAngles;
-        _endPosition = transform.rotation.eulerAngles + new Vector3(0f, 90f, 0f);
+        _endPosition = transform.rotation.eulerAngles + new Vector3(-270f, 0, 0f);
         SetVisualValvePart();
-        if (IsValvePlaced)
-        {
-            InteractionHint = "Крути";
-        }
-        else
-        {
-            InteractionHint = "Не хватает крутилки";
-        }
-
+        SetHitString();
         Trigger.OnTriggerInvoke += SetValveConditionByTrigger;
     }
 
@@ -104,7 +92,6 @@ public class Valve : MonoBehaviour, IInteractable
             }
             else
             {
-                _triggerZone.SetActive(true);
                 _valveFindStartTrigger.Invoke();
             }
         }
@@ -116,6 +103,19 @@ public class Valve : MonoBehaviour, IInteractable
         {
             IsValvePlaced = true;
             SetVisualValvePart();
+            SetHitString();
+        }
+    }
+
+    private void SetHitString()
+    {
+        if (IsValvePlaced)
+        {
+            InteractionHint = "Крути";
+        }
+        else
+        {
+            InteractionHint = "Не хватает крутилки";
         }
     }
 

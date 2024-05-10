@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,18 +28,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private CharacterController _characterController;
 
-    private Camera _camera;
+    [SerializeField]
+    private CinemachineVirtualCamera _characterCamera;
+
+    [SerializeField]
+    private CapsuleCollider _playerCollider;
+
     private float _lookUpAngle;
     private float _lookSidewaysAngle;
 
-    [Inject]
+    /*[Inject]
     private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
     {
         _camera = mainCamera;
-    }
+    }*/
 
     private void Awake()
     {
+        _characterCamera.Priority = 10;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -49,13 +56,21 @@ public class PlayerMovement : MonoBehaviour
         {
             HandleMovement();
             HandleCamera();
+            if (!_playerCollider.enabled)
+            {
+                _playerCollider.enabled = true;
+            }
+        }
+        else
+        {
+            _playerCollider.enabled = false;
         }
     }
 
     private void LateUpdate()
     {
-        _camera.transform.position = _lookUpRoot.position;
-        _camera.transform.rotation = _lookUpRoot.rotation;
+        _characterCamera.transform.position = _lookUpRoot.position;
+        _characterCamera.transform.rotation = _lookUpRoot.rotation;
     }
 
     private void HandleMovement()

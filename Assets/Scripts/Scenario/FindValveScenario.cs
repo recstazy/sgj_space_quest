@@ -20,25 +20,41 @@ public class FindValveScenario : BaseScenario
     [SerializeField]
     private Trigger _valvePlacedTrigger;
 
-	private bool _playerInBox;
+	[SerializeField]
+	private PlayerTrigger _playerTrigger;
+
+    private bool _playerInBox;
 	private bool _isPlayerGetValve;
 
 	private void Start()
 	{
 		Trigger.OnTriggerInvoke += GetValveTrigger;
-
+		_playerTrigger.OnPlayerTriggered += PlayerInBox;
     }
 
     private void OnDestroy()
     {
         Trigger.OnTriggerInvoke -= GetValveTrigger;
+        _playerTrigger.OnPlayerTriggered -= PlayerInBox;
+
     }
 
     public override void Run()
 	{
-		base.Run();
+        if (_isScenarioStarted) return;
+
+        base.Run();
 		StartCoroutine(FindValve());
 	}
+
+	private void PlayerInBox(bool isPlayerInBox)
+	{
+        if (_pickUpValveSound != null && isPlayerInBox && _isPlayerGetValve)
+        {
+            _placeValveSound.Play();
+        }
+        _playerInBox = isPlayerInBox;
+    }
 
 	private void GetValveTrigger(Trigger trigger)
 	{
@@ -49,15 +65,6 @@ public class FindValveScenario : BaseScenario
                 _pickUpValveSound.Play();
             }
 			_isPlayerGetValve = true;
-        }
-
-		if (_valvePlacedTrigger == trigger)
-		{
-            if (_pickUpValveSound != null)
-            {
-                _placeValveSound.Play();
-            }
-			_playerInBox = true;
         }
 	}
 

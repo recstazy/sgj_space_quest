@@ -1,9 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 public class WireGameController : GameController
 {
@@ -24,7 +22,6 @@ public class WireGameController : GameController
 
     private void Start()
     {
-        _camera.gameObject.SetActive(false);
         _gameTrigger.IsAvailableNow = true;
         Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
     }
@@ -34,12 +31,30 @@ public class WireGameController : GameController
         Trigger.OnTriggerInvoke -= StartGameOnTriggerInvoke;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GetOutOfGame();
+            _gameTrigger.IsInteractionDisabled = false;
+        }
+    }
+
+    private void GetOutOfGame()
+    {
+        _playerInputController.SetActivateInteraction();
+        _camera.Priority = 0;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void StartGameOnTriggerInvoke(Trigger trigger)
     {
         _playerInputController.SetDeactivateInteraction();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        _camera.gameObject.SetActive(true);
+        _camera.Priority = 100;
+        _gameTrigger.IsInteractionDisabled = true;
         _door.DORotate(new Vector3(0, 160f, 0), 0.3f);
         if (_startWireGameTrigger == trigger)
         {
@@ -65,10 +80,7 @@ public class WireGameController : GameController
     protected override void FinishGame()
     {
         base.FinishGame();
-        _playerInputController.SetActivateInteraction();
-        _camera.gameObject.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        GetOutOfGame();
         _door.DORotate(new Vector3(0, 0, 0), 0.3f);
         _gameTrigger.IsInteractionDisabled = true;
     }

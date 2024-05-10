@@ -24,7 +24,9 @@ public class DisinfectionScenario : BaseScenario
 
 	public override void Run()
 	{
-		base.Run();
+        if (_isScenarioStarted) return;
+
+        base.Run();
 		StartCoroutine(Disinfection());
 	}
 
