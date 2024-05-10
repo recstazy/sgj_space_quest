@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Net.NetworkInformation;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 public class BoardTheShipScenario : BaseScenario
@@ -66,11 +64,11 @@ public class BoardTheShipScenario : BaseScenario
 
     private IEnumerator FinishQuest()
     {
-        yield return _fader.DoFade(FadeType.EndScene);
+        yield return _fader.FadeOut(2);
         PutPlayerInShip();
-        yield return _fader.DoFade(FadeType.StartScene);
+        yield return _fader.FadeIn(2);
         _questController.CompleteQuest(QuestsDescriptionContainer.GO_TO_SHIP);
-        Debug.Log("TuneRadioScenario finished");
+        Debug.Log("BoardTheShipScenario finished");
         Finish();
     }
 
