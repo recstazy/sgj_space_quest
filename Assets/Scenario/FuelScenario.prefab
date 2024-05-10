@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5303768254984143269
+--- !u!1 &6024232501515184263
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,103 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 749047243494017702}
-  - component: {fileID: 5466849662882187770}
-  - component: {fileID: 7456581963971447033}
-  - component: {fileID: 2002107705220231555}
-  - component: {fileID: 7226886357922910216}
+  - component: {fileID: 151015659860022576}
+  - component: {fileID: 5196368484737189070}
+  - component: {fileID: 743893415004327790}
+  - component: {fileID: 4443209590070380368}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ElectricityTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &749047243494017702
+--- !u!4 &151015659860022576
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303768254984143269}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 31.312, y: 1, z: 40.42}
-  m_LocalScale: {x: 6.5778513, y: 3.7743, z: 1}
+  m_GameObject: {fileID: 6024232501515184263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.65, y: 1.284, z: 71.221}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7966396393808769022}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!33 &5466849662882187770
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5196368484737189070
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303768254984143269}
+  m_GameObject: {fileID: 6024232501515184263}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7456581963971447033
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303768254984143269}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2002107705220231555
+--- !u!65 &743893415004327790
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303768254984143269}
+  m_GameObject: {fileID: 6024232501515184263}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 1}
+  m_Size: {x: 4.25, y: 2.54, z: 0.39}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7226886357922910216
+--- !u!114 &4443209590070380368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303768254984143269}
+  m_GameObject: {fileID: 6024232501515184263}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e91642f6f65151446b5230e00ad95e4c, type: 3}
@@ -113,20 +70,8 @@ MonoBehaviour:
   _targetTag: Player
   _event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1475217966}
-        m_TargetAssemblyTypeName: InterHangarScenario, Assembly-CSharp
-        m_MethodName: EnterInHangar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _trigger: {fileID: 0}
+      m_Calls: []
+  _trigger: {fileID: 11400000, guid: 67122584fc9e7d547bedb0edc0f92e83, type: 2}
 --- !u!1 &7966396392566247065
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,9 +82,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7966396392566247066}
   - component: {fileID: 7966396392566247067}
-  - component: {fileID: 23601735}
+  - component: {fileID: 8236357382807288415}
   m_Layer: 0
-  m_Name: InstructionsAudio
+  m_Name: CollegueVoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,9 +114,10 @@ AudioSource:
   m_GameObject: {fileID: 7966396392566247065}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 262622a27a71ba14c825c7401e350038,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4d4fdab241619d94b8eb8d392e8b647c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -256,7 +202,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &23601735
+--- !u!114 &8236357382807288415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,9 +225,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7966396393808769022}
-  - component: {fileID: 1475217966}
+  - component: {fileID: 329157417939297838}
   m_Layer: 0
-  m_Name: InterHangarScenario
+  m_Name: FuelScenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,11 +246,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7966396392566247066}
-  - {fileID: 749047243494017702}
+  - {fileID: 151015659860022576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1475217966
+--- !u!114 &329157417939297838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,11 +259,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7966396393808769021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c16fc61a5e601489b9a157f0d36c9b, type: 3}
+  m_Script: {fileID: 11500000, guid: f25c3a04a2837a14193d8771cbd0fd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startTrigger: {fileID: 11400000, guid: 0aed41ddaedb6cd46b181d0c43b8048a, type: 2}
-  _finishTrigger: {fileID: 11400000, guid: d203e738463b88c48a51a49d780e68ec, type: 2}
+  _startTrigger: {fileID: 11400000, guid: 92425e24809fe8941b53f6db2d935db7, type: 2}
+  _finishTrigger: {fileID: 11400000, guid: dca353fddafcb3942add6ceab1cc4032, type: 2}
   _afterStartDelay: 1
-  _collegueHangarVoice: {fileID: 23601735}
-  _hangarDoor: {fileID: 0}
+  _getFuelCollegueVoice: {fileID: 8236357382807288415}
+  _finishFindValveTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874,
+    type: 2}
+  _fuelGameFinalTrigger: {fileID: 11400000, guid: b3e4ccd61ea778444a0360046704b0e6,
+    type: 2}
