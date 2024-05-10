@@ -54,7 +54,7 @@ public class Tumbler : MonoBehaviour, IInteractable
                 _useAudio.Play();
             }
             _unityEvent.Invoke();
-            _animator.Play("Switch");
+            _animator.Play("SwitchOn");
 
             Debug.Log($"{gameObject.name} interaction start");
             await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);

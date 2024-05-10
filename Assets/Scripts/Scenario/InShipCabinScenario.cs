@@ -18,7 +18,7 @@ public class InShipCabinScenario : BaseScenario
     protected Trigger _enableRadioTrigger;
 
     [SerializeField]
-    private List<InteractableWithTrigger> _interactables;
+    private List<Tumbler> _interactables;
 
     private List<Trigger> _triggersToWait;
 
@@ -65,14 +65,14 @@ public class InShipCabinScenario : BaseScenario
 
     private IEnumerator StartScenario()
     {
-        Debug.Log("InShipCabinScenario start");
-        _interactables.ForEach(x => { x.gameObject.SetActive(true); x.IsAvailableNow = true; });
+        Debug.Log("InShipCabinScenario start");        
         yield return new WaitForSeconds(_afterStartDelay);
         yield return _instructionVoice.Play();
         _questController.AddQuest(QuestsDescriptionContainer.SHIP_ENGINE_ON);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         _questController.AddQuest(QuestsDescriptionContainer.GET_FUEL);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         _questController.AddQuest(QuestsDescriptionContainer.SHIP_SPICE_ON);
+        _interactables.ForEach(x => { x.gameObject.SetActive(true); x.IsAvailableNow = true; });
     }
 }

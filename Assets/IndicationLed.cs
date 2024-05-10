@@ -10,24 +10,31 @@ public class IndicationLed : MonoBehaviour
     [SerializeField]
     private int _materialIndex;
     [SerializeField]
-    private Color _color;
+    private Color _enabledcolor;
+    [SerializeField]
+    private Color _enabledEmissioncolor;
 
     private Material _material;
-    private Color _regularColor;
+    private Color _disabledColor;
+    private Color _disabledEmissionColor;
 
     private void Start()
     {
         _material = _meshRenderer.materials[_materialIndex];
+        _disabledColor = _material.color;
+        _disabledEmissionColor = _material.GetColor("_EmissionColor");
     }
 
     public void ToggleOn()
     {
-        _material.color = _color;
+        _material.color = _enabledcolor;
+        _material.SetColor("_EmissionColor", _enabledEmissioncolor);
     }
 
     public void ToggleOff()
     {
-        _material.color = _regularColor;
+        _material.color = _disabledColor;
+        _material.SetColor("_EmissionColor", _disabledEmissionColor);
     }
 
 }
