@@ -20,6 +20,8 @@ public class BoardTheShipScenario : BaseScenario
     private GameObject _exteriorShip;
     [SerializeField]
     private Ship _ship;
+    [SerializeField]
+    private InteractableWithTrigger _shipInteractableTrigger;
 
     [Inject]
     private SceneController _sceneController;
@@ -50,15 +52,16 @@ public class BoardTheShipScenario : BaseScenario
     {
         if (_isScenarioStarted) return;
         base.Run();
-        StartCoroutine(StartGame());
+        StartCoroutine(StartScenario());
     }
 
-    private IEnumerator StartGame()
+    private IEnumerator StartScenario()
     {
         Debug.Log("TuneRadioScenario start");
         yield return new WaitForSeconds(_afterStartDelay);
         yield return _instructionVoice.Play();
         _questController.AddQuest(QuestsDescriptionContainer.GO_TO_SHIP);
+        _shipInteractableTrigger.IsAvailableNow = true;
     }
 
     private IEnumerator FinishQuest()
