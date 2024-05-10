@@ -1,21 +1,17 @@
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class WireGameController : GameController
+public class WireGameController : GameController, IInteractable
 {
     [SerializeField]
     private List<Wire> _wires;
 
     [SerializeField]
     private CinemachineVirtualCamera _camera;
-
-    [SerializeField]
-    private Trigger _startWireGameTrigger;
-
-    [SerializeField]
-    private InteractableWithTrigger _gameTrigger;
 
     [SerializeField]
     private Transform _door;
@@ -27,11 +23,19 @@ public class WireGameController : GameController
 
     private bool _gameFinished = default(bool);
 
+    public string InteractionHint => _hint;
+
+    public bool IsInteractionDisabled => _isInteractionDisabled;
+
+    public bool IsAvailableNow { get; set; }
+
+    private bool _isInteractionDisabled = false;
+    private string _hint;
+
     private void Start()
     {
         _doorStartPosition = _door.rotation.eulerAngles;
-        _gameTrigger.IsAvailableNow = true;
-        Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
+        //Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
         _playerTrigger.OnPlayerTriggered += OnPlayerTrigger;
     }
 
@@ -39,41 +43,24 @@ public class WireGameController : GameController
     {
         if (_gameFinished)
         {
-            _gameTrigger.IsInteractionDisabled = true;
+            _isInteractionDisabled = true;
             return;
         }
-        _gameTrigger.IsInteractionDisabled = !isPlayer;
+        _isInteractionDisabled = !isPlayer;
     }
 
     private void OnDestroy()
     {
-        Trigger.OnTriggerInvoke -= StartGameOnTriggerInvoke;
+        //Trigger.OnTriggerInvoke -= StartGameOnTriggerInvoke;
         foreach (var wire in _wires)
         {
             wire.OnPlaced -= CheckWinCondition;
         }
     }
 
-    private void Update()
+    public async UniTask Interact(CancellationToken cancellation)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GetOutOfGame();
-            
-        }
-    }
-
-    private void GetOutOfGame()
-    {
-        _playerInputController.SetActivateInteraction();
-        _camera.Priority = 0;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    private void StartGameOnTriggerInvoke(Trigger trigger)
-    {
-        if (_startWireGameTrigger == trigger)
+        if (IsAvailableNow)
         {
             foreach (var wire in _wires)
             {
@@ -84,9 +71,25 @@ public class WireGameController : GameController
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             _camera.Priority = 100;
-            _gameTrigger.IsInteractionDisabled = true;
-            _door.DORotate(new Vector3(0, 250f, 0), 0.3f);
+            _isInteractionDisabled = true;
+            await _door.DORotate(new Vector3(0, 250f, 0), 0.3f);
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GetOutOfGame();
+        }
+    }
+
+    private void GetOutOfGame()
+    {
+        _playerInputController.SetActivateInteraction();
+        _camera.Priority = 0;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     protected override bool GetWinCondition()
@@ -107,7 +110,7 @@ public class WireGameController : GameController
         _gameFinished = true;
         GetOutOfGame();
         _door.DORotate(_doorStartPosition, 0.3f);
-        _gameTrigger.IsInteractionDisabled = true;
+        _isInteractionDisabled = true;
     }
 
     protected override void StartGame()
