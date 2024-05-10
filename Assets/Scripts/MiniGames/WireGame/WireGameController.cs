@@ -1,4 +1,5 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class WireGameController : GameController
     [SerializeField]
     private InteractableWithTrigger _gameTrigger;
 
+    [SerializeField]
+    private Transform _door;
+
     private void Start()
     {
         _camera.gameObject.SetActive(false);
@@ -36,6 +40,7 @@ public class WireGameController : GameController
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         _camera.gameObject.SetActive(true);
+        _door.DORotate(new Vector3(0, 160f, 0), 0.3f);
         if (_startWireGameTrigger == trigger)
         {
             foreach (var wire in _wires)
@@ -64,6 +69,7 @@ public class WireGameController : GameController
         _camera.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _door.DORotate(new Vector3(0, 0, 0), 0.3f);
         _gameTrigger.IsInteractionDisabled = true;
     }
 
