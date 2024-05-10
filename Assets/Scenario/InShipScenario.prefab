@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2121578569202227380
+--- !u!1 &8921923544579332219
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,63 +8,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2121578569202227383}
-  - component: {fileID: 2121578569202227382}
+  - component: {fileID: 8921923544579332218}
+  - component: {fileID: 8921923544579332221}
   m_Layer: 0
-  m_Name: BoardTheShip
+  m_Name: InShipScenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2121578569202227383
+--- !u!4 &8921923544579332218
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121578569202227380}
+  m_GameObject: {fileID: 8921923544579332219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8905437800697732296}
+  - {fileID: 5483832673583407993}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121578569202227382
+--- !u!114 &8921923544579332221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121578569202227380}
+  m_GameObject: {fileID: 8921923544579332219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e14093b4d2ca7e49a8270270bc839ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 76eeb516e2849174a922b26e65aa5eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startTrigger: {fileID: 11400000, guid: 37aeffaf683d15549b881b67c4c976e9, type: 2}
-  _finishTrigger: {fileID: 11400000, guid: ba9454302fc0c7047b43354d348dc661, type: 2}
-  _afterStartDelay: 2
-  _instructionVoice: {fileID: 2880516085810923725}
-  _interactShipTrigger: {fileID: 11400000, guid: e5727d0db8b6e574e93152b3897a8bdd,
-    type: 2}
-  _exteriorShip: {fileID: 0}
-  _ship: {fileID: 0}
-  _shipInteractableTrigger: {fileID: 0}
---- !u!1001 &2121578567823225971
+  _startTrigger: {fileID: 11400000, guid: ba9454302fc0c7047b43354d348dc661, type: 2}
+  _finishTrigger: {fileID: 11400000, guid: a7600270f668988408c88ad598e3ff4b, type: 2}
+  _afterStartDelay: 1
+  _instructionVoice: {fileID: 1186032895227934588}
+  _enablePowerTrigger: {fileID: 0}
+  _enableFuelTrigger: {fileID: 0}
+  _enableRadioTrigger: {fileID: 0}
+  _interactables: []
+  _enablePowerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1001 &3097729750578056130
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2121578569202227383}
+    m_TransformParent: {fileID: 8921923544579332218}
     m_Modifications:
     - target: {fileID: 6795506969191352713, guid: ed81cc182df7da84fa1081da64775789,
         type: 3}
       propertyPath: m_Name
-      value: PlayVoice_TuneRadio
+      value: PlayVoice_TuneRadio (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7414934931048229051, guid: ed81cc182df7da84fa1081da64775789,
         type: 3}
@@ -123,11 +125,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed81cc182df7da84fa1081da64775789, type: 3}
---- !u!114 &2880516085810923725 stripped
+--- !u!114 &1186032895227934588 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5005475653410063170, guid: ed81cc182df7da84fa1081da64775789,
     type: 3}
-  m_PrefabInstance: {fileID: 2121578567823225971}
+  m_PrefabInstance: {fileID: 3097729750578056130}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -135,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbc65fb956a97841b61f1d48eabd8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8905437800697732296 stripped
+--- !u!4 &5483832673583407993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7414934931048229051, guid: ed81cc182df7da84fa1081da64775789,
     type: 3}
-  m_PrefabInstance: {fileID: 2121578567823225971}
+  m_PrefabInstance: {fileID: 3097729750578056130}
   m_PrefabAsset: {fileID: 0}

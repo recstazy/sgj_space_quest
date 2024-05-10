@@ -25,6 +25,9 @@ public class Valve : MonoBehaviour, IInteractable
     private Image _visualInfo;
 
     [SerializeField]
+    private Image _visualSolution;
+
+    [SerializeField]
     private Color _activateColor;
 
     [SerializeField]
@@ -64,8 +67,9 @@ public class Valve : MonoBehaviour, IInteractable
 
     public void Init()
     {
-        _startPosition = transform.rotation.eulerAngles;
-        _endPosition = transform.rotation.eulerAngles + new Vector3(-270f, 0, 0f);
+        _visualSolution.color = QuestedValveCondition ? _activateColor : _deactivateColor;
+        _startPosition = _valveVisual.transform.localRotation.eulerAngles;
+        _endPosition = _valveVisual.transform.localRotation.eulerAngles +  new Vector3(170f, 0f, 0f);
         SetVisualValvePart();
         SetHitString();
         Trigger.OnTriggerInvoke += SetValveConditionByTrigger;

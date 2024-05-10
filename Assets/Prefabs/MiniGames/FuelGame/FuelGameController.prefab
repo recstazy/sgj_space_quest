@@ -115,6 +115,7 @@ MonoBehaviour:
   _hint: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043A\u0440\u0443\u0442\u0438\u043B\u043A\u0443"
   _interactOneTime: 1
   _disableAfterInteract: 1
+  _disabledObjects: []
 --- !u!1 &4069115448264445556
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cce45947b6a82a43bb6142240018818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _completeTrigger: {fileID: 11400000, guid: 3319ece6c85db4c44a19163e30dd8cf1, type: 2}
   _valveItems:
   - Valve: {fileID: 1797616807034199084}
     ValveWinCondition: 1
