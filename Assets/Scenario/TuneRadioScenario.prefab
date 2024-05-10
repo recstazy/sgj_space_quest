@@ -48,6 +48,8 @@ MonoBehaviour:
   _startTrigger: {fileID: 11400000, guid: b3e4ccd61ea778444a0360046704b0e6, type: 2}
   _finishTrigger: {fileID: 0}
   _afterStartDelay: 1
+  _completeMiniGameTrigger: {fileID: 11400000, guid: 37aeffaf683d15549b881b67c4c976e9,
+    type: 2}
   _instructionVoice: {fileID: 2064711065135527984}
   _tuneRadioGame: {fileID: 0}
   _radioInteractableTrigger: {fileID: 0}
