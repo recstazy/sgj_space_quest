@@ -3,6 +3,7 @@ using DG.Tweening;
 using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Valve : MonoBehaviour, IInteractable
@@ -38,6 +39,9 @@ public class Valve : MonoBehaviour, IInteractable
 
     [SerializeField]
     private bool _isWinPosition;
+
+    [SerializeField]
+    private UnityEvent _onRotated;
 
     public bool IsInteractionDisabled { get; private set; }
 
@@ -89,6 +93,7 @@ public class Valve : MonoBehaviour, IInteractable
                 _currentValveCondition = !_currentValveCondition;
                 var rotate = _currentValveCondition ? _endPosition : _startPosition;
                 Debug.Log($"{gameObject.name} interaction start");
+                _onRotated.Invoke();
                 await _valveVisual.transform.DOLocalRotate(rotate, _activationTime).WithCancellation(cancellation);
                 Debug.Log($"{gameObject.name} interaction end");
                 SetVisualValvePart();
@@ -115,11 +120,11 @@ public class Valve : MonoBehaviour, IInteractable
     {
         if (IsValvePlaced)
         {
-            InteractionHint = "Крути";
+            InteractionHint = "пїЅпїЅпїЅпїЅпїЅ";
         }
         else
         {
-            InteractionHint = "Не хватает крутилки";
+            InteractionHint = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
         }
     }
 
