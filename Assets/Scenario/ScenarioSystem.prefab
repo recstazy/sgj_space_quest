@@ -559,16 +559,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4400444785830386425}
     m_Modifications:
-    - target: {fileID: 2751604469632583565, guid: df86933d3429bff49bd8201e078872df,
-        type: 3}
-      propertyPath: _tuneRadioGame
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2751604469632583565, guid: df86933d3429bff49bd8201e078872df,
-        type: 3}
-      propertyPath: _radioInteractableTrigger
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
         type: 3}
       propertyPath: m_RootOrder

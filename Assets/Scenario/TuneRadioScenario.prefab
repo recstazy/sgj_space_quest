@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973678d50fe24d1449d986aae83970db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startTrigger: {fileID: 11400000, guid: b3e4ccd61ea778444a0360046704b0e6, type: 2}
+  _startTrigger: {fileID: 11400000, guid: dca353fddafcb3942add6ceab1cc4032, type: 2}
   _finishTrigger: {fileID: 0}
   _afterStartDelay: 1
   _completeMiniGameTrigger: {fileID: 11400000, guid: 37aeffaf683d15549b881b67c4c976e9,
