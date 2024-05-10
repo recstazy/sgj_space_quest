@@ -912,6 +912,11 @@ PrefabInstance:
       propertyPath: _scanerTrigger
       value: 
       objectReference: {fileID: 4400444785342458749}
+    - target: {fileID: 2593858201253495111, guid: 8735828f07e64154d9905e8f4aac719c,
+        type: 3}
+      propertyPath: _startSystemVoice
+      value: 
+      objectReference: {fileID: 198982617635845250}
     - target: {fileID: 7966396393808769021, guid: 8735828f07e64154d9905e8f4aac719c,
         type: 3}
       propertyPath: m_Name
@@ -974,6 +979,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8735828f07e64154d9905e8f4aac719c, type: 3}
+--- !u!114 &198982617635845250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8236357382807288415, guid: 8735828f07e64154d9905e8f4aac719c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8110849631326146269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbc65fb956a97841b61f1d48eabd8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2162244092399001891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7966396393808769022, guid: 8735828f07e64154d9905e8f4aac719c,
