@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654070348044595240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.69, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -492,8 +492,9 @@ AudioSource:
   m_GameObject: {fileID: 1654070348044595240}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d0ad56c08ed92dd4ca916d8ac283e636, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2dd6893f19ed5a64f8f9782721b6fcad,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: aa537a15f40f55a4c87106fa12475dbd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -504,7 +505,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 31.7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -539,7 +540,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -900,43 +901,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9339247
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2596865
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.23667842
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0658107
-      objectReference: {fileID: 0}
-    - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 31.078
+      value: 47.61
       objectReference: {fileID: 0}
     - target: {fileID: 8144481186278633211, guid: 14e2a44c315a81247802b56c2269885f,
         type: 3}
