@@ -3,6 +3,7 @@ using DG.Tweening;
 using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Valve : MonoBehaviour, IInteractable
 {
@@ -24,7 +25,7 @@ public class Valve : MonoBehaviour, IInteractable
     private GameObject _triggerZone;
 
     [SerializeField]
-    private MeshRenderer _mesh;
+    private Image _visualInfo;
 
     [SerializeField]
     private Color _activateColor;
@@ -134,7 +135,7 @@ public class Valve : MonoBehaviour, IInteractable
         _valveVisual.SetActive(IsValvePlaced);
         if (IsValvePlaced)
         {
-            _mesh.material.color = _currentValveCondition ? _activateColor : _deactivateColor;
+            _visualInfo.color = _currentValveCondition ? _activateColor : _deactivateColor;
         }
     }
 }

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8565905472718213447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8565905472718213445}
+  - component: {fileID: 8565905472718213444}
+  m_Layer: 0
+  m_Name: FindValveScenario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8565905472718213445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565905472718213447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8565905472718213444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565905472718213447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff207c8c6b177b84681b8545f2969a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startTrigger: {fileID: 11400000, guid: 67122584fc9e7d547bedb0edc0f92e83, type: 2}
+  _finishTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874, type: 2}
+  _pickUpValveSound: {fileID: 0}
+  _placeValveSound: {fileID: 0}
+  _pickUpTime: 0.2
+  _getValveTrigger: {fileID: 11400000, guid: 8c6616f0f7bece147a2dd58a3bea0167, type: 2}
+  _valvePlacedTrigger: {fileID: 11400000, guid: ff2dd365437a3b741983a239ba1f1c4c,
+    type: 2}
