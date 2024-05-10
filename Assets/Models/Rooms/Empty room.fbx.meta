@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46b28a5d545df664ab8500dbba869cb3
+guid: ff2aa60e744a4ec48bbe8e5dbafb5237
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,18 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: black
-    second: {fileID: 2100000, guid: f72a4669d73254e408b0cafcf59d7d34, type: 2}
+      name: table11
+    second: {fileID: 2100000, guid: d068aae8ebef40c4e8339c8c2a68eb26, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: red em
-    second: {fileID: 2100000, guid: 1ad8618ecd443c74ea798a09c441544f, type: 2}
+      name: wall
+    second: {fileID: 2100000, guid: 71a5679ad6683564fb6bdb79ae62a36c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tv screen
-    second: {fileID: 2100000, guid: b2c54d546cbc2644faaa5581d92d9750, type: 2}
+      name: white em
+    second: {fileID: 2100000, guid: 2d63db664fd607442ac0351d46e6fa74, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
