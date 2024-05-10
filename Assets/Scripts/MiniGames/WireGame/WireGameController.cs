@@ -23,10 +23,13 @@ public class WireGameController : GameController
     [SerializeField]
     private PlayerTrigger _playerTrigger;
 
+    private Vector3 _doorStartPosition;
+
     private bool _gameFinished = default(bool);
 
     private void Start()
     {
+        _doorStartPosition = _door.rotation.eulerAngles;
         _gameTrigger.IsAvailableNow = true;
         Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
         _playerTrigger.OnPlayerTriggered += OnPlayerTrigger;
@@ -82,7 +85,7 @@ public class WireGameController : GameController
             Cursor.visible = true;
             _camera.Priority = 100;
             _gameTrigger.IsInteractionDisabled = true;
-            _door.DORotate(new Vector3(0, 160f, 0), 0.3f);
+            _door.DORotate(new Vector3(0, 250f, 0), 0.3f);
         }
     }
 
@@ -103,7 +106,7 @@ public class WireGameController : GameController
         base.FinishGame();
         _gameFinished = true;
         GetOutOfGame();
-        _door.DORotate(new Vector3(0, 0, 0), 0.3f);
+        _door.DORotate(_doorStartPosition, 0.3f);
         _gameTrigger.IsInteractionDisabled = true;
     }
 
