@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     private float _lookUpAngle;
     private float _lookSidewaysAngle;
 
+    private bool _isLockLookAngle;
+
     /*[Inject]
     private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
     {
@@ -79,6 +81,11 @@ public class PlayerMovement : MonoBehaviour
         _characterCamera.transform.rotation = _lookUpRoot.rotation;
     }
 
+    public void LockLookingAngle()
+    {
+        _isLockLookAngle = true;
+    }
+
     private void HandleMovement()
     {
         var forward = Input.GetAxisRaw("Vertical");
@@ -90,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _footstepSound.IsRunning = true;
         }
-        
+
         if (!isMoving) return;
         var direction = transform.TransformDirection(new Vector3(strafe, 0f, forward).normalized);
         var velocity = direction * _moveSpeed;
@@ -103,9 +110,18 @@ public class PlayerMovement : MonoBehaviour
         lookUp = _invertLookUp ? lookUp : -lookUp;
         var lookSideways = Input.GetAxisRaw("Mouse X");
 
-        _lookUpAngle = Mathf.Clamp(_lookUpAngle + lookUp * _lookSensitivity, -90f, 90f);
+        if (_isLockLookAngle)
+            _lookUpAngle = Mathf.Clamp(_lookUpAngle + lookUp * _lookSensitivity, -45f, 30f);
+        else
+            _lookUpAngle = Mathf.Clamp(_lookUpAngle + lookUp * _lookSensitivity, -90f, 90f);
+
         _lookSidewaysAngle += lookSideways * _lookSensitivity;
         _lookSidewaysAngle %= 360;
+
+        if (_isLockLookAngle)
+        {
+            _lookSidewaysAngle = Mathf.Clamp(_lookSidewaysAngle, -45f, 45f);
+        }
 
         _lookUpRoot.localEulerAngles = new Vector3(_lookUpAngle, 0f, 0f);
         _lookSidewaysRoot.localEulerAngles = new Vector3(0f, _lookSidewaysAngle, 0f);
