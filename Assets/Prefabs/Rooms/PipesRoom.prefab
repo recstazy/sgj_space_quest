@@ -214,7 +214,6 @@ MonoBehaviour:
   _valveFindEndTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874,
     type: 2}
   _valveVisual: {fileID: 7015784981270313285}
-  _triggerZone: {fileID: 0}
   _visualInfo: {fileID: 7188214201478946413}
   _activateColor: {r: 0.023432508, g: 0.7169812, b: 0, a: 1}
   _deactivateColor: {r: 0.7924528, g: 0, b: 0, a: 1}
@@ -399,7 +398,6 @@ MonoBehaviour:
   _valveFindEndTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874,
     type: 2}
   _valveVisual: {fileID: 959326070805494562}
-  _triggerZone: {fileID: 0}
   _visualInfo: {fileID: 6891410696934426211}
   _activateColor: {r: 0.023432508, g: 0.7169812, b: 0, a: 1}
   _deactivateColor: {r: 0.7924528, g: 0, b: 0, a: 1}
@@ -580,7 +578,6 @@ MonoBehaviour:
   _valveFindEndTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874,
     type: 2}
   _valveVisual: {fileID: 7784228942372182657}
-  _triggerZone: {fileID: 0}
   _visualInfo: {fileID: 6694727355747690151}
   _activateColor: {r: 0.023432508, g: 0.7169812, b: 0, a: 1}
   _deactivateColor: {r: 0.7924528, g: 0, b: 0, a: 1}
@@ -736,7 +733,6 @@ MonoBehaviour:
   _valveFindEndTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874,
     type: 2}
   _valveVisual: {fileID: 248599554975262769}
-  _triggerZone: {fileID: 0}
   _visualInfo: {fileID: 2685506317961716612}
   _activateColor: {r: 0.023432508, g: 0.7169812, b: 0, a: 1}
   _deactivateColor: {r: 0.7924528, g: 0, b: 0, a: 1}
@@ -777,6 +773,7 @@ Transform:
   - {fileID: 7959172014355731758}
   - {fileID: 936184999394867207}
   - {fileID: 347227149670587100}
+  - {fileID: 8179502431338271134}
   m_Father: {fileID: 8117939543019110786}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -841,6 +838,73 @@ Transform:
   m_Father: {fileID: 3387821417655711188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4397100177330570569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8179502431338271134}
+  - component: {fileID: 5463911463613284472}
+  - component: {fileID: 8331075370461834211}
+  - component: {fileID: 7111314583746384136}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8179502431338271134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397100177330570569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.311, y: 1.2738, z: 5.5691}
+  m_LocalScale: {x: 1, y: 3.5477514, z: 4.6669965}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4371306046480917521}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5463911463613284472
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397100177330570569}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &8331075370461834211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397100177330570569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0772061, y: 0.6485846, z: 0.80729204}
+  m_Center: {x: -0.31913924, y: 0.032154825, z: 0.007370011}
+--- !u!114 &7111314583746384136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397100177330570569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d30d13d5a4a3e499d36e183e94420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4835571640465050798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1347,6 @@ MonoBehaviour:
   _valveFindEndTrigger: {fileID: 11400000, guid: bc9623d9601d9e044aed8e9b83b74874,
     type: 2}
   _valveVisual: {fileID: 4396393310193493687}
-  _triggerZone: {fileID: 0}
   _visualInfo: {fileID: 7334560797987988714}
   _activateColor: {r: 0.023432508, g: 0.7169812, b: 0, a: 1}
   _deactivateColor: {r: 0.7924528, g: 0, b: 0, a: 1}

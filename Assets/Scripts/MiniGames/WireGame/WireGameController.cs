@@ -20,15 +20,35 @@ public class WireGameController : GameController
     [SerializeField]
     private Transform _door;
 
+    [SerializeField]
+    private PlayerTrigger _playerTrigger;
+
+    private bool _gameFinished = default(bool);
+
     private void Start()
     {
         _gameTrigger.IsAvailableNow = true;
         Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
+        _playerTrigger.OnPlayerTriggered += OnPlayerTrigger;
+    }
+
+    private void OnPlayerTrigger(bool isPlayer)
+    {
+        if (_gameFinished)
+        {
+            _gameTrigger.IsInteractionDisabled = true;
+            return;
+        }
+        _gameTrigger.IsInteractionDisabled = !isPlayer;
     }
 
     private void OnDestroy()
     {
         Trigger.OnTriggerInvoke -= StartGameOnTriggerInvoke;
+        foreach (var wire in _wires)
+        {
+            wire.OnPlaced -= CheckWinCondition;
+        }
     }
 
     private void Update()
@@ -36,7 +56,7 @@ public class WireGameController : GameController
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GetOutOfGame();
-            _gameTrigger.IsInteractionDisabled = false;
+            
         }
     }
 
@@ -50,18 +70,19 @@ public class WireGameController : GameController
 
     private void StartGameOnTriggerInvoke(Trigger trigger)
     {
-        _playerInputController.SetDeactivateInteraction();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        _camera.Priority = 100;
-        _gameTrigger.IsInteractionDisabled = true;
-        _door.DORotate(new Vector3(0, 160f, 0), 0.3f);
         if (_startWireGameTrigger == trigger)
         {
             foreach (var wire in _wires)
             {
                 wire.OnPlaced += CheckWinCondition;
             }
+
+            _playerInputController.SetDeactivateInteraction();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            _camera.Priority = 100;
+            _gameTrigger.IsInteractionDisabled = true;
+            _door.DORotate(new Vector3(0, 160f, 0), 0.3f);
         }
     }
 
@@ -80,6 +101,7 @@ public class WireGameController : GameController
     protected override void FinishGame()
     {
         base.FinishGame();
+        _gameFinished = true;
         GetOutOfGame();
         _door.DORotate(new Vector3(0, 0, 0), 0.3f);
         _gameTrigger.IsInteractionDisabled = true;
