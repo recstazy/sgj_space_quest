@@ -8,6 +8,9 @@ public class FuelScenario : BaseScenario
 
     [SerializeField]
     private PlayVoice _getFuelCollegueVoice;
+    
+    [SerializeField]
+    private PlayVoice _getFuelCollegueEndVoice;
 
     [SerializeField]
     private Trigger _finishFindValveTrigger;
@@ -58,6 +61,7 @@ public class FuelScenario : BaseScenario
         yield return new WaitUntil(() => _isGetValve);
         yield return new WaitUntil(() => _isFuelGameComplete);
         _questController.CompleteQuest(QuestsDescriptionContainer.GET_FUEL);
+        yield return _getFuelCollegueEndVoice.Play();
         Debug.Log("GetFuelStart finished");
         Finish();
 	}
