@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _playerCollider.enabled = false;
+            _footstepSound.IsMoving = false;
         }
     }
 
