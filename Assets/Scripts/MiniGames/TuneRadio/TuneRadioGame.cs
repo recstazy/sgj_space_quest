@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class TuneRadioGame : MonoBehaviour
@@ -20,6 +21,10 @@ public class TuneRadioGame : MonoBehaviour
     private AudioSource _noise;
     [SerializeField]
     private AudioSource _sound;
+    [SerializeField]
+    private AudioSource _reverseSound;
+    [SerializeField]
+    private float _maxRadioVolume = 0.5f;
 
     [SerializeField]
     private Canvas _canvas;
@@ -33,6 +38,7 @@ public class TuneRadioGame : MonoBehaviour
     public float _summDiff;
 
     private bool _isTuned;
+    private bool _playedReverseVoice;
 
     private void Start()
     {
@@ -53,6 +59,7 @@ public class TuneRadioGame : MonoBehaviour
         _canvas.gameObject.SetActive(true);
         _noise.Play();
         _sound.Play();
+        PlayReversedVoice();
     }
 
     public void StopGame()
@@ -81,8 +88,8 @@ public class TuneRadioGame : MonoBehaviour
         }
         _summDiff /= 2f;
 
-        _noise.volume = _summDiff;
-        _sound.volume = 1f - _summDiff;
+        _noise.volume = _summDiff * _maxRadioVolume;
+        _sound.volume = (1f - _summDiff) * _maxRadioVolume;
 
         if (_summDiff < _targetAccuracy)
         {
@@ -115,5 +122,14 @@ public class TuneRadioGame : MonoBehaviour
         //    Debug.Log($"pos= {pos}  value {value}");
 
         _points[index].localPosition = pos;
+    }
+
+    private async void PlayReversedVoice()
+    {
+        if (_playedReverseVoice) return;
+
+        _playedReverseVoice = true;
+        await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: this.GetCancellationTokenOnDestroy());
+        _reverseSound.Play();
     }
 }
