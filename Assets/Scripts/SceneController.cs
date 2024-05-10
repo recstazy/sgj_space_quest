@@ -15,6 +15,8 @@ public class SceneController : MonoBehaviour
 
     private CancellationToken cancellationToken;
 
+    public Fader Fader => _fader;
+
     private void Start()
     {
         _dieScreen.SetActive(false);
