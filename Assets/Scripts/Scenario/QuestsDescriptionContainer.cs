@@ -10,7 +10,7 @@ public static class QuestsDescriptionContainer
     public const string FIND_VALVE = "Найдите недостающий вентиль";
     public const string GET_FUEL = "Подать топливо";
     public const string CALL_BACK = "Перезвонить...";
-    public const string RADIO_CHECK = "Проверьте радио";
+    public const string RADIO_CHECK = "Настройте радиоприемник";
     public const string GO_TO_SHIP = "Поднемитесь на корабль";
     public const string SHIP_ENGINE_ON = "Включите питание двигателя";
     public const string SHIP_FUEL_ON = "Включите подачу топлива";

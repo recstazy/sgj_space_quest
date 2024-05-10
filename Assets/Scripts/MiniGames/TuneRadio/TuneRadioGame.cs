@@ -116,4 +116,9 @@ public class TuneRadioGame : MonoBehaviour
 
         _points[index].localPosition = pos;
     }
+
+    internal void EnableNoise()
+    {
+        _noise.Play();
+    }
 }

@@ -148,6 +148,7 @@ Transform:
   - {fileID: 4400444785237049095}
   - {fileID: 1260342754}
   - {fileID: 8386351412666539778}
+  - {fileID: 4400444786065858908}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,6 +256,91 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff207c8c6b177b84681b8545f2969a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1963055520436659922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4400444785830386425}
+    m_Modifications:
+    - target: {fileID: 2751604469632583565, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: _tuneRadioGame
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583565, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: _radioInteractableTrigger
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751604469632583567, guid: df86933d3429bff49bd8201e078872df,
+        type: 3}
+      propertyPath: m_Name
+      value: TuneRadioScenario
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df86933d3429bff49bd8201e078872df, type: 3}
+--- !u!4 &4400444786065858908 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2751604469632583566, guid: df86933d3429bff49bd8201e078872df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1963055520436659922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3163203694209145159
 PrefabInstance:
   m_ObjectHideFlags: 0
