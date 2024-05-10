@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e18415503f29ef41b78b6d156c43180
+guid: 19a0b1808280ae841bd66440a22a5938
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,28 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: black.001
-    second: {fileID: 2100000, guid: f72a4669d73254e408b0cafcf59d7d34, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: burgundy
-    second: {fileID: 2100000, guid: 90b7c0c3257969e43ae8e1f0ef64c993, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: chair2
-    second: {fileID: 2100000, guid: af31fba745db9d642821ae74d8e94fe2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: metal
-    second: {fileID: 2100000, guid: 0759ed6b62022a7478b75b8cad299340, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: red
-    second: {fileID: 2100000, guid: cb5e85a71d0f4ad4ba19e3c6bc7f4e8d, type: 2}
+      name: wall
+    second: {fileID: 2100000, guid: 71a5679ad6683564fb6bdb79ae62a36c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
