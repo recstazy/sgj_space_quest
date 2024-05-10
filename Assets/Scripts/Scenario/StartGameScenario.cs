@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class StartGameScenario : BaseScenario
@@ -14,7 +15,8 @@ public class StartGameScenario : BaseScenario
 
     public override void Run()
 	{
-		base.Run();
+		if (_isScenarioStarted) return;
+        base.Run();
 		StartCoroutine(StartGame());
 	}
 

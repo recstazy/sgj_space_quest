@@ -67,6 +67,7 @@ public class InteractionView : MonoBehaviour
         {
             var uiPosition = _camera.WorldToScreenPoint(interactable.transform.position);
             _hintOrigin.transform.position = uiPosition;
+            _hintText.text = string.IsNullOrEmpty(interactable.InteractionHint) ? _defaultHintText : interactable.InteractionHint;
         }).AddTo(_currentHintDisposable);
     }
 }

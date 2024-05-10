@@ -10,7 +10,10 @@ public class TriggerWithUnityEvent : MonoBehaviour
 	[SerializeField]
 	private UnityEvent _event;
 
-	private bool _isTriggered;
+	[SerializeField]
+	private Trigger _trigger;
+
+    private bool _isTriggered;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -20,6 +23,7 @@ public class TriggerWithUnityEvent : MonoBehaviour
 		if (other.CompareTag(_targetTag))
 		{
 			_event?.Invoke();
+			_trigger?.Invoke();
 			_isTriggered = true;
 		}
 	}

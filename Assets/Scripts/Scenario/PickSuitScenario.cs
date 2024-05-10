@@ -14,7 +14,9 @@ public class PickSuitScenario : BaseScenario
 
 	public override void Run()
 	{
-		base.Run();
+        if (_isScenarioStarted) return;
+
+        base.Run();
 		StartCoroutine(Scenario());
 		Trigger.OnTriggerInvoke += OnTriggered;
 	}
