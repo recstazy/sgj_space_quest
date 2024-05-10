@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041ad9c19445ffe49a82cd08aad0a963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _completeTrigger: {fileID: 11400000, guid: f21c52dcd381e3d4b92b43b8a337885f, type: 2}
   _wires:
   - {fileID: 2237439480293451803}
   - {fileID: 2237439480083326435}

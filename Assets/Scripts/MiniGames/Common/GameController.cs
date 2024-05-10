@@ -6,6 +6,9 @@ using Zenject;
 
 public abstract class GameController : MonoBehaviour
 {
+    [SerializeField]
+    protected Trigger _completeTrigger;
+
     [Inject]
     protected PlayerInputController _playerInputController;
 
@@ -26,5 +29,6 @@ public abstract class GameController : MonoBehaviour
     {
         IsFinished.Value = true;
         Debug.Log("Finished");
+        _completeTrigger?.Invoke();
     }
 }

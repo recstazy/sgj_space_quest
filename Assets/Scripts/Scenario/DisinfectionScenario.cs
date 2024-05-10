@@ -1,6 +1,4 @@
-using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DisinfectionScenario : BaseScenario
@@ -9,10 +7,16 @@ public class DisinfectionScenario : BaseScenario
 	private AudioSource _scannerSound;
 	[SerializeField]
 	private AudioSource _disinfectionSound;
-	[SerializeField]
-	private Animator _doorAnimator;
+    [SerializeField]
+    private PlayVoice _systemInformationVoiceBeforeDesinfection;
+    [SerializeField]
+    private PlayVoice _colleagueVoiceAfterDesinfection;
+
 	[SerializeField]
 	private ParticleSystem _particleSystem;
+
+	[SerializeField]
+	private Door _door;
 
 	[SerializeField]
 	private InteractableWithTrigger _suitTrigger;
@@ -32,20 +36,22 @@ public class DisinfectionScenario : BaseScenario
 
 	private IEnumerator Disinfection()
 	{
-		Debug.Log("Disinfection");
+        _scannerSound.Play();
         _questController.CompleteQuest(QuestsDescriptionContainer.SCAN_FACE);
+        Debug.Log("Disinfection");
+		yield return _systemInformationVoiceBeforeDesinfection.Play();
+        
         _questController.AddQuest(QuestsDescriptionContainer.DESINFECTION);
-		_scannerSound.Play();
 		yield return new WaitForSeconds(1f);
-
-		_doorAnimator.Play("OpenDoor");
+		_door.Open();
 		yield return new WaitForSeconds(1f);
 
 		while (!PlayerInBox)
 			yield return null;
 
 		yield return new WaitForSeconds(0.5f);
-		_doorAnimator.Play("CloseDoor");
+		
+		_door.Close();
 		yield return new WaitForSeconds(1f);
 
 		_particleSystem.Play();
@@ -53,8 +59,10 @@ public class DisinfectionScenario : BaseScenario
 
 		yield return new WaitForSeconds(_disinfectionTime);
 		_particleSystem.Stop();
-		_doorAnimator.Play("OpenDoor");
+		_door.Open();
         _questController.CompleteQuest(QuestsDescriptionContainer.DESINFECTION);
+
+		yield return _colleagueVoiceAfterDesinfection.Play();
         _questController.AddQuest(QuestsDescriptionContainer.SUIT_UP);
 		_suitTrigger.IsAvailableNow = true;
         Finish();

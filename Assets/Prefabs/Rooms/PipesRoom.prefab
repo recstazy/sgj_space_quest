@@ -460,6 +460,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -789,6 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cce45947b6a82a43bb6142240018818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _completeTrigger: {fileID: 11400000, guid: b3e4ccd61ea778444a0360046704b0e6, type: 2}
   _valveItems:
   - Valve: {fileID: 2027732223399294539}
     ValveWinCondition: 1

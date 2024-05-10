@@ -8,7 +8,7 @@ public class StartGameScenario : BaseScenario
 	private float _afterStartDelay;
 
 	[SerializeField]
-	private AudioSource _systemVoice;
+	private PlayVoice _startSystemVoice;
 
     [SerializeField]
     private InteractableWithTrigger _scanerTrigger;
@@ -23,9 +23,8 @@ public class StartGameScenario : BaseScenario
 	private IEnumerator StartGame()
 	{
 		yield return new WaitForSeconds(_afterStartDelay);
-        _systemVoice.Play();
-        yield return new WaitForSeconds(1f);
-		_questController.AddQuest(QuestsDescriptionContainer.SCAN_FACE);
+		yield return _startSystemVoice.Play();
+        _questController.AddQuest(QuestsDescriptionContainer.SCAN_FACE);
         _scanerTrigger.IsAvailableNow = true;
         Finish();
 	}

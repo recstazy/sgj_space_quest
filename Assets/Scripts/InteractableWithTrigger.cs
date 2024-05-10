@@ -7,13 +7,16 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 {
 	[SerializeField]
 	private float _delay;
+
 	[SerializeField]
 	private Trigger _trigger;
+
 	[SerializeField]
 	private string _hint;
 
 	[SerializeField]
 	private bool _interactOneTime;
+
 	[SerializeField]
 	private bool _disableAfterInteract;
 
