@@ -128,6 +128,11 @@ public class TuneRadioGame : MonoBehaviour
         _points[index].localPosition = pos;
     }
 
+    internal void EnableNoise()
+    {
+        _noise.Play();
+    }
+    
     private async void PlayReversedVoice()
     {
         if (_playedReverseVoice) return;

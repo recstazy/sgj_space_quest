@@ -9,14 +9,16 @@ public class InterHangarScenario : BaseScenario
 	[SerializeField]
 	private PlayVoice _collegueHangarVoice;
 
-    [SerializeField]
-    private InteractableWithTrigger _scanerTrigger;
-
 	[SerializeField]
-	private Door _door;
+	private DoorTrigger _hangarDoor;
 
+	private void Start()
+	{
+		_hangarDoor.IsAvailableNow = false;
 
-    public override void Run()
+    }
+
+	public override void Run()
 	{
 		if (_isScenarioStarted) return;
         base.Run();
@@ -25,12 +27,17 @@ public class InterHangarScenario : BaseScenario
 
 	private IEnumerator StartScenario()
 	{
-		yield return _collegueHangarVoice.Play();
+        Debug.Log("Hangar start");
+
+        yield return _collegueHangarVoice.Play();
 		_questController.AddQuest(QuestsDescriptionContainer.HANGAR_INTER);
-        _scanerTrigger.IsAvailableNow = true;
-		yield return new WaitUntil(() => _scanerTrigger.IsInteractionDisabled);
-        _questController.CompleteQuest(QuestsDescriptionContainer.HANGAR_INTER);
-        _door.Open();
-        Finish();
+        _hangarDoor.IsAvailableNow = true;
 	}
+
+    public void EnterInHangar()
+    {
+        _questController.CompleteQuest(QuestsDescriptionContainer.HANGAR_INTER);
+        Finish();
+        Debug.Log("Hangar finished");
+    }
 }

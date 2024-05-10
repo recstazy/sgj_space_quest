@@ -47,7 +47,7 @@ public class Wire : MonoBehaviour
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 1f))
             {
-                transform.position = new Vector3(hit.point.x, hit.point.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, hit.point.y, hit.point.z);
             }
         }
     }
