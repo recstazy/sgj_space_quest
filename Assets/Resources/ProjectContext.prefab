@@ -74,3 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166a88b60757a684faeb7d99adee9f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneController: {fileID: 1775457591745542043, guid: 474cbc1996f31f343a96c833f1d9af38,
+    type: 3}
+  _mixerSettings: {fileID: 518611071240148021, guid: 16f23439f84e74245a5dfbedbe844382,
+    type: 3}
