@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Snow_01_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: a0366564d90c2694387185758ea8a7c2, type: 3}
+  - {fileID: 8300000, guid: 6b017aeab6b9244438831bd9b8dc252e, type: 3}
+  - {fileID: 8300000, guid: 2e4f6c75ca4cb294193e694be6b4a3f6, type: 3}
+  - {fileID: 8300000, guid: 77a2f7826dc94a949baa26f52fb1c566, type: 3}
+  - {fileID: 8300000, guid: ba0958fe0d805dd449f52decb2402b71, type: 3}
+  - {fileID: 8300000, guid: ad2abc66872b71c47b87eadadedeeae4, type: 3}
+  - {fileID: 8300000, guid: ab885061ad804d24e9e334a43236f022, type: 3}
+  - {fileID: 8300000, guid: 60335d8d132a3ac4fb5b35f565102adc, type: 3}

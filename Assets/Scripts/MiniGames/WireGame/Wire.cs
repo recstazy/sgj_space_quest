@@ -17,6 +17,7 @@ public class Wire : MonoBehaviour
     private bool _isCorectColor = default(bool);
     private Vector3 _targetPosition;
 
+    [SerializeField]
     private bool _isPlaced = default(bool);
     public bool IsPlaced => _isPlaced;
 
@@ -44,9 +45,9 @@ public class Wire : MonoBehaviour
         if (_isMovable)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 1f))
             {
-                transform.position = new Vector3(hit.point.x, hit.point.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, hit.point.y, hit.point.z);
             }
         }
     }
@@ -80,10 +81,16 @@ public class Wire : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        _isCorectColor = false;
-        _targetPosition = _startPosition;
-        _isPlaced = false;
-        _isCorectColor = false;
+        if (other.gameObject.TryGetComponent<WireEnd>(out WireEnd wireEnd))
+        {
+            if (wireEnd.WireColor == _wireColor)
+            {
+                _isCorectColor = false;
+                _targetPosition = _startPosition;
+                _isPlaced = false;
+                _isCorectColor = false;
+            }
+        }
     }
 }
 

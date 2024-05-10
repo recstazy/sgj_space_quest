@@ -1,6 +1,8 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Recstazy.SiberianFootsteps.Demo;
 using UnityEngine;
 using Zenject;
 
@@ -27,18 +29,29 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private CharacterController _characterController;
 
-    private Camera _camera;
+    [SerializeField]
+    private CinemachineVirtualCamera _characterCamera;
+
+    [SerializeField]
+    private CapsuleCollider _playerCollider;
+
+    [SerializeField]
+    private PlayFootstepsByTiming _footstepSound;
+    [SerializeField]
+    private bool _useRunFootstepSounds;
+
     private float _lookUpAngle;
     private float _lookSidewaysAngle;
 
-    [Inject]
+    /*[Inject]
     private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
     {
         _camera = mainCamera;
-    }
+    }*/
 
     private void Awake()
     {
+        _characterCamera.Priority = 10;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -49,13 +62,21 @@ public class PlayerMovement : MonoBehaviour
         {
             HandleMovement();
             HandleCamera();
+            if (!_playerCollider.enabled)
+            {
+                _playerCollider.enabled = true;
+            }
+        }
+        else
+        {
+            _playerCollider.enabled = false;
         }
     }
 
     private void LateUpdate()
     {
-        _camera.transform.position = _lookUpRoot.position;
-        _camera.transform.rotation = _lookUpRoot.rotation;
+        _characterCamera.transform.position = _lookUpRoot.position;
+        _characterCamera.transform.rotation = _lookUpRoot.rotation;
     }
 
     private void HandleMovement()
@@ -63,7 +84,14 @@ public class PlayerMovement : MonoBehaviour
         var forward = Input.GetAxisRaw("Vertical");
         var strafe = Input.GetAxisRaw("Horizontal");
 
-        if (forward == 0 && strafe == 0) return;
+        var isMoving = forward != 0 || strafe != 0;
+        _footstepSound.IsMoving = isMoving;
+        if (isMoving && _useRunFootstepSounds && !_footstepSound.IsRunning)
+        {
+            _footstepSound.IsRunning = true;
+        }
+        
+        if (!isMoving) return;
         var direction = transform.TransformDirection(new Vector3(strafe, 0f, forward).normalized);
         var velocity = direction * _moveSpeed;
         _characterController.SimpleMove(velocity);

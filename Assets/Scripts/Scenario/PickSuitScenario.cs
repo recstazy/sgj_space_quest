@@ -6,15 +6,25 @@ using UnityEngine;
 public class PickSuitScenario : BaseScenario
 {
 	[SerializeField]
-	private AudioSource _instructionSound;
+	private PlayVoice _suitInstructionVoice;
 	[SerializeField]
 	private float _delayBeforeInstruction;
 	[SerializeField]
 	private Trigger _suitTrigger;
 
+	[SerializeField]
+	private InteractableWithTrigger _suitPickUpTrigger;
+
+	private void Start()
+	{
+        _suitPickUpTrigger.IsInteractionDisabled = true;
+    }
+
 	public override void Run()
 	{
-		base.Run();
+        if (_isScenarioStarted) return;
+
+        base.Run();
 		StartCoroutine(Scenario());
 		Trigger.OnTriggerInvoke += OnTriggered;
 	}
@@ -25,6 +35,7 @@ public class PickSuitScenario : BaseScenario
 		{
 			Trigger.OnTriggerInvoke -= OnTriggered;
             //TODO: suit UI enable
+            _suitPickUpTrigger.IsInteractionDisabled = true;
             _questController.CompleteQuest(QuestsDescriptionContainer.SUIT_UP);
             Finish();
 		}
@@ -33,7 +44,8 @@ public class PickSuitScenario : BaseScenario
 	private IEnumerator Scenario()
 	{
 		yield return new WaitForSeconds(_delayBeforeInstruction);
-		if (_instructionSound)
-			_instructionSound.Play();
-	}
+		yield return _suitInstructionVoice.Play();
+		_suitPickUpTrigger.IsInteractionDisabled = false;
+        _suitPickUpTrigger.IsAvailableNow = true;
+    }
 }

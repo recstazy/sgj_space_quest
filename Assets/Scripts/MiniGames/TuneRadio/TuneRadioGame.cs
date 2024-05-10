@@ -5,91 +5,120 @@ using UnityEngine;
 
 public class TuneRadioGame : MonoBehaviour
 {
-	[SerializeField]
-	private Transform[] _points;
-	[SerializeField]
-	private float[] _targetValues;
-	[SerializeField]
-	private float _changeColorGap = 0.07f;
-	[SerializeField]
-	private float _targetAccuracy = 0.002f;
+    public event Action OnWin;
 
-	[SerializeField]
-	private AudioSource _noise;
-	[SerializeField]
-	private AudioSource _sound;
+    [SerializeField]
+    private Transform[] _points;
+    [SerializeField]
+    private float[] _targetValues;
+    [SerializeField]
+    private float _changeColorGap = 0.07f;
+    [SerializeField]
+    private float _targetAccuracy = 0.002f;
 
-	private Material[] _pointMaterials;
+    [SerializeField]
+    private AudioSource _noise;
+    [SerializeField]
+    private AudioSource _sound;
 
-	private float _minPos;
-	private float _maxPos;
+    [SerializeField]
+    private Canvas _canvas;
 
-	public float[] _currentValues;
-	public float _summDiff;
+    private Material[] _pointMaterials;
 
-	private void Start()
-	{
-		_minPos = Mathf.Min(_points[0].transform.position.x, _points[1].transform.position.x);
-		_maxPos = Mathf.Max(_points[0].transform.position.x, _points[1].transform.position.x);
+    private float _minPos;
+    private float _maxPos;
 
-		_pointMaterials = new Material[_points.Length];
-		for (int i = 0; i < _points.Length; i++)
-		{
-			_pointMaterials[i] = _points[i].GetComponent<MeshRenderer>().material;
-		}
+    public float[] _currentValues;
+    public float _summDiff;
 
-		_currentValues = new float[_points.Length];
+    private bool _isTuned;
 
-		_noise.Play();
-		_sound.Play();
-	}
+    private void Start()
+    {
+        _minPos = Mathf.Min(_points[0].transform.localPosition.x, _points[1].transform.localPosition.x);
+        _maxPos = Mathf.Max(_points[0].transform.localPosition.x, _points[1].transform.localPosition.x);
 
-	public void SetPosition(int pointIndex, float value)
-	{
-		SetPositionForPoint(pointIndex, value);
-		_currentValues[pointIndex] = value;
-		UpdateValues();
-	}
+        _pointMaterials = new Material[_points.Length];
+        for (int i = 0; i < _points.Length; i++)
+        {
+            _pointMaterials[i] = _points[i].GetComponent<MeshRenderer>().material;
+        }
 
-	private void UpdateValues()
-	{
-		_summDiff = 0f;
-		for (int i = 0; i < _targetValues.Length; i++)
-		{
-			_summDiff += Math.Abs(_currentValues[i] - _targetValues[i]);
-		}
-		_summDiff /= 2f;
+        _currentValues = new float[_points.Length];
+    }
 
-		_noise.volume = _summDiff;
-		_sound.volume = 1f - _summDiff;
+    public void StartGame()
+    {
+        _canvas.gameObject.SetActive(true);
+        _noise.Play();
+        _sound.Play();
+    }
 
-		if (_summDiff < _targetAccuracy)
-		{
-			Debug.LogError("Win!");
-			Debug.Break();
-		}
-	}
+    public void StopGame()
+    {
+        _canvas.gameObject.SetActive(false);
+        _noise.Stop();
+        _sound.Stop();
+    }
 
-	private void SetPositionForPoint(int index, float value)
-	{
-		var pos = _points[index].position;
-		pos.x = Mathf.Lerp(_minPos, _maxPos, value);
+    public void SetPosition(int pointIndex, float value)
+    {
+        if (_isTuned)
+            return;
 
-		var diff = Mathf.Abs(_targetValues[index] - value);
+        SetPositionForPoint(pointIndex, value);
+        _currentValues[pointIndex] = value;
+        UpdateValues();
+    }
 
-		if (diff < _changeColorGap)
-		{
-			var lerpColor = Color.Lerp(Color.green, Color.red, diff / _changeColorGap);
-			_pointMaterials[index].SetColor("_EmissionColor", lerpColor);
-			_pointMaterials[index].color = lerpColor;
-		}
-		else
-		{
-			_pointMaterials[index].SetColor("_EmissionColor", Color.red);
-			_pointMaterials[index].color = Color.red;
-		}
+    private void UpdateValues()
+    {
+        _summDiff = 0f;
+        for (int i = 0; i < _targetValues.Length; i++)
+        {
+            _summDiff += Math.Abs(_currentValues[i] - _targetValues[i]);
+        }
+        _summDiff /= 2f;
 
+        _noise.volume = _summDiff;
+        _sound.volume = 1f - _summDiff;
 
-		_points[index].position = pos;
-	}
+        if (_summDiff < _targetAccuracy)
+        {
+            _isTuned = true;
+            Debug.LogError("Win!");
+            OnWin?.Invoke();
+        }
+    }
+
+    private void SetPositionForPoint(int index, float value)
+    {
+        var pos = _points[index].localPosition;
+        pos.x = Mathf.Lerp(_minPos, _maxPos, value);
+
+        var diff = Mathf.Abs(_targetValues[index] - value);
+
+        if (diff < _changeColorGap)
+        {
+            var lerpColor = Color.Lerp(Color.green, Color.red, diff / _changeColorGap);
+            _pointMaterials[index].SetColor("_EmissionColor", lerpColor);
+            _pointMaterials[index].color = lerpColor;
+        }
+        else
+        {
+            _pointMaterials[index].SetColor("_EmissionColor", Color.red);
+            _pointMaterials[index].color = Color.red;
+        }
+
+        //if (index == 0)
+        //    Debug.Log($"pos= {pos}  value {value}");
+
+        _points[index].localPosition = pos;
+    }
+
+    internal void EnableNoise()
+    {
+        _noise.Play();
+    }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Concrete_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 05e5d7e562bfe984ebb3db837556e795, type: 3}
+  - {fileID: 8300000, guid: b3b4bd817375c64488a180ceb024ba79, type: 3}
+  - {fileID: 8300000, guid: 95014a1bf2f44204bb5e5a15e99390a3, type: 3}
+  - {fileID: 8300000, guid: a55fec987a6d70e4b94f4daff04ff0f8, type: 3}
+  - {fileID: 8300000, guid: e404ff8663fab7047bcd5096bc8b3138, type: 3}
+  - {fileID: 8300000, guid: 2b9bb7d12da5c0c4e8ee5e394c6c43bb, type: 3}
+  - {fileID: 8300000, guid: 67b5bf53a78653e42bc5660c2fbd0adf, type: 3}
+  - {fileID: 8300000, guid: 80188f5b7a19ea14db496c00af5821e4, type: 3}

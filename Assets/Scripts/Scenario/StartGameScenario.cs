@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class StartGameScenario : BaseScenario
@@ -7,24 +8,26 @@ public class StartGameScenario : BaseScenario
 	private float _afterStartDelay;
 
 	[SerializeField]
-	private AudioSource _systemVoice;
+	private PlayVoice _startSystemVoice;
 
     [SerializeField]
     private InteractableWithTrigger _scanerTrigger;
 
     public override void Run()
 	{
-		base.Run();
+		if (_isScenarioStarted) return;
+        base.Run();
 		StartCoroutine(StartGame());
 	}
 
 	private IEnumerator StartGame()
 	{
+		Debug.Log("StartGameScenario start");
 		yield return new WaitForSeconds(_afterStartDelay);
-        _systemVoice.Play();
-        yield return new WaitForSeconds(1f);
-		_questController.AddQuest(QuestsDescriptionContainer.SCAN_FACE);
+		yield return _startSystemVoice.Play();
+        _questController.AddQuest(QuestsDescriptionContainer.SCAN_FACE);
         _scanerTrigger.IsAvailableNow = true;
+        Debug.Log("StartGameScenario finished");
         Finish();
 	}
 }

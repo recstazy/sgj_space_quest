@@ -1,8 +1,7 @@
 using Cinemachine;
-using System.Collections;
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 public class WireGameController : GameController
 {
@@ -18,30 +17,75 @@ public class WireGameController : GameController
     [SerializeField]
     private InteractableWithTrigger _gameTrigger;
 
+    [SerializeField]
+    private Transform _door;
+
+    [SerializeField]
+    private PlayerTrigger _playerTrigger;
+
+    private Vector3 _doorStartPosition;
+
+    private bool _gameFinished = default(bool);
+
     private void Start()
     {
-        _camera.gameObject.SetActive(false);
+        _doorStartPosition = _door.rotation.eulerAngles;
         _gameTrigger.IsAvailableNow = true;
         Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
+        _playerTrigger.OnPlayerTriggered += OnPlayerTrigger;
+    }
+
+    private void OnPlayerTrigger(bool isPlayer)
+    {
+        if (_gameFinished)
+        {
+            _gameTrigger.IsInteractionDisabled = true;
+            return;
+        }
+        _gameTrigger.IsInteractionDisabled = !isPlayer;
     }
 
     private void OnDestroy()
     {
         Trigger.OnTriggerInvoke -= StartGameOnTriggerInvoke;
+        foreach (var wire in _wires)
+        {
+            wire.OnPlaced -= CheckWinCondition;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GetOutOfGame();
+            
+        }
+    }
+
+    private void GetOutOfGame()
+    {
+        _playerInputController.SetActivateInteraction();
+        _camera.Priority = 0;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void StartGameOnTriggerInvoke(Trigger trigger)
     {
-        _playerInputController.SetDeactivateInteraction();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        _camera.gameObject.SetActive(true);
         if (_startWireGameTrigger == trigger)
         {
             foreach (var wire in _wires)
             {
                 wire.OnPlaced += CheckWinCondition;
             }
+
+            _playerInputController.SetDeactivateInteraction();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            _camera.Priority = 100;
+            _gameTrigger.IsInteractionDisabled = true;
+            _door.DORotate(new Vector3(0, 250f, 0), 0.3f);
         }
     }
 
@@ -60,10 +104,9 @@ public class WireGameController : GameController
     protected override void FinishGame()
     {
         base.FinishGame();
-        _playerInputController.SetActivateInteraction();
-        _camera.gameObject.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        _gameFinished = true;
+        GetOutOfGame();
+        _door.DORotate(_doorStartPosition, 0.3f);
         _gameTrigger.IsInteractionDisabled = true;
     }
 

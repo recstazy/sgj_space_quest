@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: SnowWet_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 2c2707abb5c445d4dac304aec6eee218, type: 3}
+  - {fileID: 8300000, guid: b732b9e069ded34418e52e58993d08b2, type: 3}
+  - {fileID: 8300000, guid: 90bfc03828c8d0942a3bd9687f5d3c69, type: 3}
+  - {fileID: 8300000, guid: ecf46129688839545a7cb680cce5aed6, type: 3}
+  - {fileID: 8300000, guid: 255c0750629fdbb488ac1baa86b2e704, type: 3}
+  - {fileID: 8300000, guid: 173007a46bddae24fbddc5934e017422, type: 3}
+  - {fileID: 8300000, guid: 51d0c7ad1e8af8f4688662af35cb3d15, type: 3}
+  - {fileID: 8300000, guid: 80e9ac0574212e14e93443686ecd70a0, type: 3}

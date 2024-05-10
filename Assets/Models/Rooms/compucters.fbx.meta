@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: burgundy
+    second: {fileID: 2100000, guid: 90b7c0c3257969e43ae8e1f0ef64c993, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: chair1
     second: {fileID: 2100000, guid: 64fbed0b3b7a26c49ba560bc96488993, type: 2}
   - first:
@@ -49,6 +54,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: table11
     second: {fileID: 2100000, guid: d068aae8ebef40c4e8339c8c2a68eb26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tv screen
+    second: {fileID: 2100000, guid: b2c54d546cbc2644faaa5581d92d9750, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

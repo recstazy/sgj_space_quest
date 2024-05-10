@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Wood_02_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 2a026aebd94b9654cb8c7228907799f9, type: 3}
+  - {fileID: 8300000, guid: fe8e982e6f93a384ea170a66a020846a, type: 3}
+  - {fileID: 8300000, guid: 8b728b7c5d2987746894212c587f6336, type: 3}
+  - {fileID: 8300000, guid: d163643d028124c4ba6a10b1e1cd2deb, type: 3}
+  - {fileID: 8300000, guid: 7a227683085783d428eed8ab6105495e, type: 3}
+  - {fileID: 8300000, guid: 74a8b586125b4634f86b97da9ed411a2, type: 3}
+  - {fileID: 8300000, guid: efd0fe3e2e2179e49967e0a7c5785e17, type: 3}
+  - {fileID: 8300000, guid: abca532d624ffa3459e838b572196b7b, type: 3}

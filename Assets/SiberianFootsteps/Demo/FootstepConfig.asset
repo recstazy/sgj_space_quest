@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173957e78f95cdb4ead3b80f373623b8, type: 3}
+  m_Name: FootstepConfig
+  m_EditorClassIdentifier: 
+  _defaultWalkSound: {fileID: 11400000, guid: dbfd9b70409cd734495a608ea8e4fc80, type: 2}
+  _defaultRunSound: {fileID: 11400000, guid: 9d33a78ca3ceddd44ae3660a89708d57, type: 2}
+  _mappings:
+  - Material: {fileID: 13400000, guid: 25960820aac4ec14cb8edf5d0e10a51f, type: 2}
+    WalkSound: {fileID: 11400000, guid: dbfd9b70409cd734495a608ea8e4fc80, type: 2}
+    RunSound: {fileID: 11400000, guid: 9d33a78ca3ceddd44ae3660a89708d57, type: 2}
+  - Material: {fileID: 13400000, guid: cb4b32ae04692234ba236f863057c34a, type: 2}
+    WalkSound: {fileID: 11400000, guid: e2b151273d0072946bb76e9e2a1cc010, type: 2}
+    RunSound: {fileID: 11400000, guid: fbf945fbb5323df43b19778d97b2607c, type: 2}
+  - Material: {fileID: 13400000, guid: 5e77afdef43918945a6b3ccffb4f1f6a, type: 2}
+    WalkSound: {fileID: 11400000, guid: 353a8867551e22844a81ba581b739dcd, type: 2}
+    RunSound: {fileID: 11400000, guid: 0110309fce411404081359d97ed95198, type: 2}
+  - Material: {fileID: 13400000, guid: d7b3ef8355f83c4478e6c4c605660de9, type: 2}
+    WalkSound: {fileID: 11400000, guid: 2e61b9904272333498d1cb8fb7dc2814, type: 2}
+    RunSound: {fileID: 11400000, guid: 024f94fc70aa52043b6c92d1ef86ed64, type: 2}
+  - Material: {fileID: 13400000, guid: 3d9f8931e3a7f06479487e3f88891b71, type: 2}
+    WalkSound: {fileID: 11400000, guid: 3cad731a5f5c4a14c9c1e8da56862cdf, type: 2}
+    RunSound: {fileID: 11400000, guid: 870b770e66d8b18479f32ca6c1566b48, type: 2}
+  - Material: {fileID: 13400000, guid: 23161f2c400b1b14ba1dece4582f6f5a, type: 2}
+    WalkSound: {fileID: 11400000, guid: 6192adc36ac38b5459fd5a3b7a8e0e2a, type: 2}
+    RunSound: {fileID: 11400000, guid: 6eb23b8f6e8390e4493d49c3a381b6f9, type: 2}
+  - Material: {fileID: 13400000, guid: 0de6b05f34c46d646ac85809da37c8a1, type: 2}
+    WalkSound: {fileID: 11400000, guid: 03a02dbdf8f9dc54ebb9bd7b89b360ce, type: 2}
+    RunSound: {fileID: 11400000, guid: 5360a72cacf58cf4f8decaf130688752, type: 2}
+  - Material: {fileID: 13400000, guid: b794bed0fa43af549917db8cd23b08a0, type: 2}
+    WalkSound: {fileID: 11400000, guid: 66e030db90fe0d546b69fb4782215c9c, type: 2}
+    RunSound: {fileID: 11400000, guid: 7bf32ee1424c4124c93cbd32fbe734f8, type: 2}
+  - Material: {fileID: 13400000, guid: 97b295c3936914548b15705f1af11ca8, type: 2}
+    WalkSound: {fileID: 11400000, guid: a0436cb556e306544ac37ebdd0948ec6, type: 2}
+    RunSound: {fileID: 11400000, guid: 7c9d9339571299d46b07a2e303b24cc4, type: 2}
+  - Material: {fileID: 13400000, guid: 3dca04908698773478fe7c43d072b203, type: 2}
+    WalkSound: {fileID: 11400000, guid: fefb7b23575e2e34cad05e18b2be87f1, type: 2}
+    RunSound: {fileID: 11400000, guid: 5ae269f034d0dac4cb760ff951050e38, type: 2}
+  - Material: {fileID: 13400000, guid: ec9f47be49a2e2541a790104d82bdff6, type: 2}
+    WalkSound: {fileID: 11400000, guid: 3a006b697c15d674ba64f0fe674914d3, type: 2}
+    RunSound: {fileID: 11400000, guid: 54275c16d4ee7154994882540a9441d5, type: 2}
+  - Material: {fileID: 13400000, guid: 7c9762e584acb4b4d826ccd2000ea46d, type: 2}
+    WalkSound: {fileID: 11400000, guid: 55d8bc723b48a1b49a61893f582a30ee, type: 2}
+    RunSound: {fileID: 11400000, guid: 0b521e72ef4122a4aaab6db8d85ad7ea, type: 2}
+  - Material: {fileID: 13400000, guid: 6e05da83226978745a127193a004c53c, type: 2}
+    WalkSound: {fileID: 11400000, guid: 523ae5a5f7a684e42bab929a945c7cd1, type: 2}
+    RunSound: {fileID: 11400000, guid: d689c503a6537e24997e0695c8f6d589, type: 2}
+  - Material: {fileID: 13400000, guid: 5ac6ca8ef38272e4e851ff8952461cfb, type: 2}
+    WalkSound: {fileID: 11400000, guid: fcc0c3fb729585e43b25e0463e08b3e4, type: 2}
+    RunSound: {fileID: 11400000, guid: 83e140bb6dfb7624294e1c4376d964ef, type: 2}
+  - Material: {fileID: 13400000, guid: 02ee32d7cb07ee54f82ea07191f04fb2, type: 2}
+    WalkSound: {fileID: 11400000, guid: 91a3bb5b0d8adb740ae611fe2fb3c416, type: 2}
+    RunSound: {fileID: 11400000, guid: 19d5ea5485a10a342ad3b157df192477, type: 2}
+  - Material: {fileID: 13400000, guid: 79b054202cadabc40aea17433d35de60, type: 2}
+    WalkSound: {fileID: 11400000, guid: 7f61e7f4d9cd2b742b0d9317174957d7, type: 2}
+    RunSound: {fileID: 11400000, guid: adf27e56101dc27469580b7097b4ff8b, type: 2}
+  - Material: {fileID: 13400000, guid: 1e1b5cf9ccbae854c8e1f76be5b7b411, type: 2}
+    WalkSound: {fileID: 11400000, guid: 4d50adcd1db214048873931ec92ad6e1, type: 2}
+    RunSound: {fileID: 11400000, guid: e1254133e0e27124e864ec566790ad21, type: 2}
+  - Material: {fileID: 13400000, guid: 4dffafaf8cc3a1d48bbc4ce27d027349, type: 2}
+    WalkSound: {fileID: 11400000, guid: e21b70ffe7292424ab14daafd64a99dd, type: 2}
+    RunSound: {fileID: 11400000, guid: c5ad8dd00d20d614487c1d3f7e64918f, type: 2}
+  - Material: {fileID: 13400000, guid: 7fe8f124fb75f3a48a0d3efedcd26b20, type: 2}
+    WalkSound: {fileID: 11400000, guid: a90da2c0edc4c0743996c0b61e09fb01, type: 2}
+    RunSound: {fileID: 11400000, guid: c9a27829d9b0beb4e9445548d84c0619, type: 2}
+  - Material: {fileID: 13400000, guid: 816719f7d28b373438351311a82713ec, type: 2}
+    WalkSound: {fileID: 11400000, guid: 71fa95fa29147b942b89f5a55fda7d0c, type: 2}
+    RunSound: {fileID: 11400000, guid: b75a227e1d00849478b70efdf1741d4c, type: 2}
+  - Material: {fileID: 13400000, guid: de70fb39c9db8734ca4f7ad20bab2ab8, type: 2}
+    WalkSound: {fileID: 11400000, guid: a6accdbcd68c04b4aaf465c0b94ec9f2, type: 2}
+    RunSound: {fileID: 11400000, guid: 539f607597c92044b9ac29038325bcfa, type: 2}
+  - Material: {fileID: 13400000, guid: 7617618ef0d10634a93d6cdf0ccc8cbe, type: 2}
+    WalkSound: {fileID: 11400000, guid: 14f0dae0c2f36d246a2cfd0dd9a40c3f, type: 2}
+    RunSound: {fileID: 11400000, guid: 3b78180c3951a934b80d8910d15bbf2e, type: 2}
+  - Material: {fileID: 13400000, guid: 473f68ac28ad4c243b6f3cff0ff1d472, type: 2}
+    WalkSound: {fileID: 11400000, guid: bf4d7bdf7f490d74ca2afd96d3efec9c, type: 2}
+    RunSound: {fileID: 11400000, guid: 4fcbab3d7ef2ca048a3b1157ad650847, type: 2}
+  - Material: {fileID: 13400000, guid: 328eb41ce533fb84ea72398ef25ddfb4, type: 2}
+    WalkSound: {fileID: 11400000, guid: 90d92dce144f0a04e9e563db52b80db2, type: 2}
+    RunSound: {fileID: 11400000, guid: a785abbe3e3e92b48aa4d8f4d5b13800, type: 2}
+  - Material: {fileID: 13400000, guid: e83e97a5c29ef984f820eb06a07daa99, type: 2}
+    WalkSound: {fileID: 11400000, guid: 4177798976c8a0447aa190bb45ac6a56, type: 2}
+    RunSound: {fileID: 11400000, guid: 5b4ce1bb9f26b9d47a18d646335eed4d, type: 2}
+  - Material: {fileID: 13400000, guid: d89fddf4b87089c409a0e4e3fc4354f7, type: 2}
+    WalkSound: {fileID: 11400000, guid: f730adbad3cb1684183bcc19f4ac1d0e, type: 2}
+    RunSound: {fileID: 11400000, guid: 00d2a1a6928d3ff4d98d8ebc7b500e34, type: 2}
+  - Material: {fileID: 13400000, guid: 176be6a61938b864cb051783bf8d8be6, type: 2}
+    WalkSound: {fileID: 11400000, guid: 615f5c78a565dfd40b980b800a5cd76d, type: 2}
+    RunSound: {fileID: 11400000, guid: 5891e4e758f5fe74ba88f4eea350db3d, type: 2}
+  - Material: {fileID: 13400000, guid: 30b41b8f63c5cfd43838873906cdbaa3, type: 2}
+    WalkSound: {fileID: 11400000, guid: 68362ad6ae8d90d45a551424de0d45d6, type: 2}
+    RunSound: {fileID: 11400000, guid: 1cf550ca8ff71574091d8833af5e4999, type: 2}
+  - Material: {fileID: 13400000, guid: 7d4204b091dbfd14fae4c5d5f42a49fa, type: 2}
+    WalkSound: {fileID: 11400000, guid: b3741a94ee8938f41b3cd0934cf76b10, type: 2}
+    RunSound: {fileID: 11400000, guid: 8e1deda3b2d4895498b22eb03b1119d7, type: 2}
+  - Material: {fileID: 13400000, guid: 3dea9f56e84fc6d418aee3527f34d9d9, type: 2}
+    WalkSound: {fileID: 11400000, guid: b3741a94ee8938f41b3cd0934cf76b10, type: 2}
+    RunSound: {fileID: 11400000, guid: 05d4827736a211d4a97d6d12f8681aad, type: 2}

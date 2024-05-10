@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Gravel_01_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: bf97b2b690c59334fba635e7dcce997c, type: 3}
+  - {fileID: 8300000, guid: 72045f0e882db6347856f9dd9bbdafbc, type: 3}
+  - {fileID: 8300000, guid: 15fe3c9dd63ca5f4eabc32993ae7fcd7, type: 3}
+  - {fileID: 8300000, guid: 8ac308822b9727a4aaf09ae1d99d6517, type: 3}
+  - {fileID: 8300000, guid: dd33b2a1701f7e947b2daa8fded6b091, type: 3}
+  - {fileID: 8300000, guid: 6d8c865160af38940858f2b1e1c25954, type: 3}
+  - {fileID: 8300000, guid: 68a685d89367ed949bf0bde434ae28a0, type: 3}
+  - {fileID: 8300000, guid: b6af87493b3223d43a6e8fbd8eb53201, type: 3}

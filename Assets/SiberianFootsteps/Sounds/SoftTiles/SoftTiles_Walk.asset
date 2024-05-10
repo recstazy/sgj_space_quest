@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: SoftTiles_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: c61b13c20d5e3834d81af1607c2c7da2, type: 3}
+  - {fileID: 8300000, guid: 44a7aa2741191914cb360c6c61796714, type: 3}
+  - {fileID: 8300000, guid: cc2fe5f8ad782454b91963037cfd91f9, type: 3}
+  - {fileID: 8300000, guid: ada0259708d2e764db61cd7098469574, type: 3}
+  - {fileID: 8300000, guid: 4643d34fd92766b4795e647da24b67f5, type: 3}
+  - {fileID: 8300000, guid: 71e8c71f91e31a84c88b7b4e51d9f44c, type: 3}
+  - {fileID: 8300000, guid: 0bab9b6c891ecf54faafd32296f42f8c, type: 3}
+  - {fileID: 8300000, guid: 2258177b5f499fe4887d4b225867550f, type: 3}

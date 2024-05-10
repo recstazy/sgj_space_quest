@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Mud_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: d7f32fb6a4f99f24c8f4ae82458fb450, type: 3}
+  - {fileID: 8300000, guid: ca13f5f60d1241c48b88d37f6ee740d7, type: 3}
+  - {fileID: 8300000, guid: 9f1b65bad97cebb47b9b4b0d8f04f901, type: 3}
+  - {fileID: 8300000, guid: 431a04790e8117b41a4750ef040c8a02, type: 3}
+  - {fileID: 8300000, guid: 6a6c67652585a864baa635016c5ef1f0, type: 3}
+  - {fileID: 8300000, guid: c43d6a100c9a31e4387eb1b26ee5cc99, type: 3}
+  - {fileID: 8300000, guid: 3bdfed8e98cbd604985837caf067d417, type: 3}
+  - {fileID: 8300000, guid: e44a00d4d5772e745bcf890d779ef130, type: 3}

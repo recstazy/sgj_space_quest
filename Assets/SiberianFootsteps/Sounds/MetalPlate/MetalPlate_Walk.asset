@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: MetalPlate_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 88e64b1c0e8d92b4ea5f9643d021a190, type: 3}
+  - {fileID: 8300000, guid: 792d8b8bf8daa6741a25abfeddb258c7, type: 3}
+  - {fileID: 8300000, guid: 9323a0f0e1d644546a369327afeca22a, type: 3}
+  - {fileID: 8300000, guid: 248741fa84a60544790cd562084832d4, type: 3}
+  - {fileID: 8300000, guid: 78080ed746be66d4dbe247fd43f1d329, type: 3}
+  - {fileID: 8300000, guid: 54b7c7bca1197df479a83cb0dd094772, type: 3}
+  - {fileID: 8300000, guid: 39f74bd3b96959c41857a4f8174f31a3, type: 3}
+  - {fileID: 8300000, guid: facaeef8f4c71014caad2e2ec2fd2886, type: 3}
