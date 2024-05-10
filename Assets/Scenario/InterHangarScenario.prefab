@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startTrigger: {fileID: 11400000, guid: 0aed41ddaedb6cd46b181d0c43b8048a, type: 2}
-  _finishTrigger: {fileID: 0}
+  _finishTrigger: {fileID: 11400000, guid: d203e738463b88c48a51a49d780e68ec, type: 2}
   _afterStartDelay: 5
   _startSystemVoice: {fileID: 0}
   _scanerTrigger: {fileID: 0}
