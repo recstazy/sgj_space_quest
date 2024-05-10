@@ -64,9 +64,9 @@ public class BoardTheShipScenario : BaseScenario
 
     private IEnumerator FinishQuest()
     {
-        yield return _fader.FadeOut(2);
+        yield return _fader.FadeOut(1.5f);
         PutPlayerInShip();
-        yield return _fader.FadeIn(2);
+        yield return _fader.FadeIn(1f);
         _questController.CompleteQuest(QuestsDescriptionContainer.GO_TO_SHIP);
         Debug.Log("BoardTheShipScenario finished");
         Finish();
@@ -80,5 +80,6 @@ public class BoardTheShipScenario : BaseScenario
         _player.GetComponent<CharacterController>().enabled = false;
         _player.transform.parent = _ship.PlayerPoint;
         _player.transform.localPosition = Vector3.zero;
+        _player.GetComponent<PlayerMovement>().LockLookingAngle();
     }
 }
