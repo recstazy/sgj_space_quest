@@ -18,6 +18,7 @@
     }
   ],
   "dependencies": {
+    "com.cyanilux.urp-blitrenderfeature": "https://github.com/Cyanilux/URP_BlitRenderFeature.git",
     "com.cysharp.unitask": "2.5.4",
     "com.neuecc.unirx": "7.1.0",
     "com.svermeulen.extenject": "9.2.0-stcf3",
