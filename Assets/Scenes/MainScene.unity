@@ -463,6 +463,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3539295ad73f20c42bec7dd857b07f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &597273147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 553790086685681811, guid: 2eaf96db86a02b1408b8f9c81a5f02c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 830164229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ebce9a282668a42a251a62069ade75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649871048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1414,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2426,10 +2437,6 @@ PrefabInstance:
       propertyPath: _suitPickUpTrigger
       value: 
       objectReference: {fileID: 732486621}
-    - target: {fileID: 1475217966, guid: 4df965c7574ef014dbe03cc3c6ac5736, type: 3}
-      propertyPath: _hangarDoor
-      value: 
-      objectReference: {fileID: 1064066933}
     - target: {fileID: 1744665331493214057, guid: 4df965c7574ef014dbe03cc3c6ac5736,
         type: 3}
       propertyPath: _hangarDoor
@@ -2534,7 +2541,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _ship
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 597273147}
     - target: {fileID: 7491767328954187871, guid: 4df965c7574ef014dbe03cc3c6ac5736,
         type: 3}
       propertyPath: _exteriorShip
