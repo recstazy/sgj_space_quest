@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: StreetTiles_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 771a7671e26187e4c909ed856c3a45e5, type: 3}
+  - {fileID: 8300000, guid: 46ad6e05dceb4a34b806d0403ada52ce, type: 3}
+  - {fileID: 8300000, guid: 61dfd9d3c9cb45244a22535f8891ac3c, type: 3}
+  - {fileID: 8300000, guid: 01128e007ee887b43a505c3d9f7e8912, type: 3}
+  - {fileID: 8300000, guid: ae6cdcdb7e1253846ba075bf0442516c, type: 3}
+  - {fileID: 8300000, guid: 49656e60f57a26d449ebfc24e009d537, type: 3}
+  - {fileID: 8300000, guid: 3444292e77bf9844abc8242aaa298a43, type: 3}
+  - {fileID: 8300000, guid: 33e1e40b8ae140545a6d7c75f3ab479a, type: 3}

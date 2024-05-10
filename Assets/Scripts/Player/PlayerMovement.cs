@@ -2,6 +2,7 @@ using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Recstazy.SiberianFootsteps.Demo;
 using UnityEngine;
 using Zenject;
 
@@ -33,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private CapsuleCollider _playerCollider;
+
+    [SerializeField]
+    private PlayFootstepsByTiming _footstepSound;
+    [SerializeField]
+    private bool _useRunFootstepSounds;
 
     private float _lookUpAngle;
     private float _lookSidewaysAngle;
@@ -78,7 +84,14 @@ public class PlayerMovement : MonoBehaviour
         var forward = Input.GetAxisRaw("Vertical");
         var strafe = Input.GetAxisRaw("Horizontal");
 
-        if (forward == 0 && strafe == 0) return;
+        var isMoving = forward != 0 || strafe != 0;
+        _footstepSound.IsMoving = isMoving;
+        if (isMoving && _useRunFootstepSounds && !_footstepSound.IsRunning)
+        {
+            _footstepSound.IsRunning = true;
+        }
+        
+        if (!isMoving) return;
         var direction = transform.TransformDirection(new Vector3(strafe, 0f, forward).normalized);
         var velocity = direction * _moveSpeed;
         _characterController.SimpleMove(velocity);

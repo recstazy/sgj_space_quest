@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Asphalt_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 0cc0172c5a68002458fa2280bf18e7dc, type: 3}
+  - {fileID: 8300000, guid: fceaf58b4f18d2d4e884839cad22df99, type: 3}
+  - {fileID: 8300000, guid: 36ae53393c2455a4783c2c4d0c613b5a, type: 3}
+  - {fileID: 8300000, guid: 55beceef5e71d5f48bd6ea29189fc847, type: 3}
+  - {fileID: 8300000, guid: f9474e25d8d05a9489edae68f1e08418, type: 3}
+  - {fileID: 8300000, guid: cebbaf78501fad44890dd5431f3cf6b4, type: 3}
+  - {fileID: 8300000, guid: 45ba56f1f078c5e42a92b58e21261522, type: 3}
+  - {fileID: 8300000, guid: c1b93b128d96b3149968b549080f3a46, type: 3}

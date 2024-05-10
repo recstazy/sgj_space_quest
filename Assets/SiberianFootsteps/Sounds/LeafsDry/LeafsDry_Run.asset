@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: LeafsDry_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 980c52e68a93a6944927cda0358a034e, type: 3}
+  - {fileID: 8300000, guid: 6e28f5d7629da264a82057eff60eaf6c, type: 3}
+  - {fileID: 8300000, guid: 37d0479af23f50f46aebfa96be9ce2b1, type: 3}
+  - {fileID: 8300000, guid: e4489fbbd1a919343a122ad34636a399, type: 3}
+  - {fileID: 8300000, guid: f4a4295680be3c549a625b034d3cc484, type: 3}
+  - {fileID: 8300000, guid: 16166c7f0dd69154a927fae20b2bed77, type: 3}
+  - {fileID: 8300000, guid: 8b11183a7acac364f951c2a8ab73dfa3, type: 3}
+  - {fileID: 8300000, guid: a6728941d9b32f143b58f0ce3742dac0, type: 3}

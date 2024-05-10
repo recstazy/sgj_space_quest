@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: MetalMesh_01_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 6e21a336d0f16c94da3f200d8ccf14ba, type: 3}
+  - {fileID: 8300000, guid: 41a24d6ba3c338a4ea21ac91437784de, type: 3}
+  - {fileID: 8300000, guid: d412fd8348cc94b4bb8902065af997e9, type: 3}
+  - {fileID: 8300000, guid: b3b7cd56939bef7448be295e532195dc, type: 3}
+  - {fileID: 8300000, guid: 69ebb4efd49a40a4a97007c18517b823, type: 3}
+  - {fileID: 8300000, guid: ff48656a409cfaa46adbd7967e81a952, type: 3}
+  - {fileID: 8300000, guid: 1f54372fda2e3ee4ca87c95fbfc4f583, type: 3}
+  - {fileID: 8300000, guid: 65f66d1d2a152ec4faa5e620703fddcf, type: 3}
