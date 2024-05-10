@@ -7,12 +7,18 @@ public class ScenarioSystem : MonoBehaviour
 {
 	[SerializeField]
 	private List<BaseScenario> _scenarios;
+	[SerializeField]
+	private bool _startFirstOnStart; 
 
 	private BaseScenario _currentScenario;
 
 	private void Start()
 	{
 		Trigger.OnTriggerInvoke += OnTriggered;
+		if (_startFirstOnStart)
+		{
+			_scenarios[0].Run();
+		}
 	}
 
 	private void OnTriggered(Trigger trigger)

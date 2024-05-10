@@ -2582,6 +2582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: raketa_cabin
       objectReference: {fileID: 0}
+    - target: {fileID: 3323739895116823750, guid: d3c6357a1b1fab745b51df95f968c5d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c6357a1b1fab745b51df95f968c5d7, type: 3}
 --- !u!4 &4979368040717047636 stripped
