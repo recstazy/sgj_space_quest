@@ -29,14 +29,13 @@ public class FindValveScenario : BaseScenario
 	private void Start()
 	{
 		Trigger.OnTriggerInvoke += GetValveTrigger;
-		_playerTrigger.OnPlayerTriggered += PlayerInBox;
+		//_playerTrigger.OnPlayerTriggered += PlayerInBox;
     }
 
     private void OnDestroy()
     {
         Trigger.OnTriggerInvoke -= GetValveTrigger;
-        _playerTrigger.OnPlayerTriggered -= PlayerInBox;
-
+       //_playerTrigger.OnPlayerTriggered -= PlayerInBox;
     }
 
     public override void Run()

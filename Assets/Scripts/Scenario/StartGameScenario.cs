@@ -22,10 +22,12 @@ public class StartGameScenario : BaseScenario
 
 	private IEnumerator StartGame()
 	{
+		Debug.Log("StartGameScenario start");
 		yield return new WaitForSeconds(_afterStartDelay);
 		yield return _startSystemVoice.Play();
         _questController.AddQuest(QuestsDescriptionContainer.SCAN_FACE);
         _scanerTrigger.IsAvailableNow = true;
+        Debug.Log("StartGameScenario finished");
         Finish();
 	}
 }

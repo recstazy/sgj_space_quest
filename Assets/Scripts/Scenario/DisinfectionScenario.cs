@@ -16,10 +16,10 @@ public class DisinfectionScenario : BaseScenario
 	private ParticleSystem _particleSystem;
 
 	[SerializeField]
-	private Door _door;
+	private Door _door1;
 
-	[SerializeField]
-	private InteractableWithTrigger _suitTrigger;
+    [SerializeField]
+    private Door _door2;
 
     [SerializeField]
 	private float _disinfectionTime;
@@ -43,15 +43,15 @@ public class DisinfectionScenario : BaseScenario
         
         _questController.AddQuest(QuestsDescriptionContainer.DESINFECTION);
 		yield return new WaitForSeconds(1f);
-		_door.Open();
+        _door1.Open();
 		yield return new WaitForSeconds(1f);
 
 		while (!PlayerInBox)
 			yield return null;
 
 		yield return new WaitForSeconds(0.5f);
-		
-		_door.Close();
+
+        _door1.Close();
 		yield return new WaitForSeconds(1f);
 
 		_particleSystem.Play();
@@ -59,12 +59,12 @@ public class DisinfectionScenario : BaseScenario
 
 		yield return new WaitForSeconds(_disinfectionTime);
 		_particleSystem.Stop();
-		_door.Open();
+        _door1.Open();
+        _door2.Open();
         _questController.CompleteQuest(QuestsDescriptionContainer.DESINFECTION);
 
 		yield return _colleagueVoiceAfterDesinfection.Play();
         _questController.AddQuest(QuestsDescriptionContainer.SUIT_UP);
-		_suitTrigger.IsAvailableNow = true;
         Finish();
 	}
 

@@ -46,5 +46,6 @@ public class PickSuitScenario : BaseScenario
 		yield return new WaitForSeconds(_delayBeforeInstruction);
 		yield return _suitInstructionVoice.Play();
 		_suitPickUpTrigger.IsInteractionDisabled = false;
+        _suitPickUpTrigger.IsAvailableNow = true;
     }
 }
