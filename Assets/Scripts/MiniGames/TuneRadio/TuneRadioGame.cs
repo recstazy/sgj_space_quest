@@ -25,6 +25,8 @@ public class TuneRadioGame : MonoBehaviour
     private AudioSource _reverseSound;
     [SerializeField]
     private float _maxRadioVolume = 0.5f;
+    [SerializeField]
+    private float _signalMinDiffToPlay = 0.5f;
 
     [SerializeField]
     private Canvas _canvas;
@@ -89,7 +91,9 @@ public class TuneRadioGame : MonoBehaviour
         _summDiff /= 2f;
 
         _noise.volume = _summDiff * _maxRadioVolume;
-        _sound.volume = (1f - _summDiff) * _maxRadioVolume;
+        var signalRawVolume = 1f - _summDiff;
+        var signalRemappedVolume = Math.Clamp((signalRawVolume - _signalMinDiffToPlay) / (1f - _signalMinDiffToPlay), 0f, 1f);
+        _sound.volume = signalRemappedVolume * _maxRadioVolume;
 
         if (_summDiff < _targetAccuracy)
         {
