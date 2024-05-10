@@ -17,19 +17,26 @@ public class Fader : MonoBehaviour
         cancellationToken = this.GetCancellationTokenOnDestroy();
     }
 
-    public IEnumerator DoFade(FadeType fadeType)
+    public IEnumerator FadeIn(float time = -1)
     {
-        switch (fadeType)
-        {
-            case FadeType.StartScene:
-                fader.alpha = 1;
-                yield return fader.DOFade(0, fadeTime).WithCancellation(cancellationToken);
-                break;
-            case FadeType.EndScene:
-                fader.alpha = 0;
-                yield return fader.DOFade(1, fadeTime).WithCancellation(cancellationToken);
-                break;
-        }
+        if (time == -1)
+            time = fadeTime;
+
+        UnityEngine.Debug.LogError($"FadeIn");
+        fader.alpha = 1f;
+        fader.DOFade(0f, time).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(time);
+    }
+
+    public IEnumerator FadeOut(float time = -1)
+    {
+        if (time == -1)
+            time = fadeTime;
+
+        UnityEngine.Debug.LogError($"FadeOut");
+        fader.alpha = 0f;
+        fader.DOFade(1f, time).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(time);
     }
 }
 

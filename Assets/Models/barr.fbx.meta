@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24e33eebfe36d454b8edee82c96a7c83
+guid: 6e37c0a5ed2185044bde407e547d1db9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,58 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Display
-    second: {fileID: 2100000, guid: b2c54d546cbc2644faaa5581d92d9750, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: black.001
-    second: {fileID: 2100000, guid: f72a4669d73254e408b0cafcf59d7d34, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blue.001
-    second: {fileID: 2100000, guid: 8de57484efcac294493a834d81704c3f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: burgundy.001
-    second: {fileID: 2100000, guid: 90b7c0c3257969e43ae8e1f0ef64c993, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: chair2.002
-    second: {fileID: 2100000, guid: af31fba745db9d642821ae74d8e94fe2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: green.001
+      name: green
     second: {fileID: 2100000, guid: a22dfb7c5b02c294aaf00e4ba7a3c0dd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: metal.001
+      name: metal
     second: {fileID: 2100000, guid: 0759ed6b62022a7478b75b8cad299340, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pink.001
-    second: {fileID: 2100000, guid: e87d1f1968dfc2c4aae3b39d6c94da52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: red em.001
-    second: {fileID: 2100000, guid: 1ad8618ecd443c74ea798a09c441544f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tv screen.001
-    second: {fileID: 2100000, guid: ee7773c5a6be07845ac4dff258c9391f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: yellow.001
-    second: {fileID: 2100000, guid: 07ed5297b79217d4686f8383a15507eb, type: 2}
+      name: metal dark
+    second: {fileID: 2100000, guid: f1b7cffe91e603e4f84fe2e606db6d7e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

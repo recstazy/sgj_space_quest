@@ -21,7 +21,7 @@ public class SceneController : MonoBehaviour
     {
         _dieScreen.SetActive(false);
         cancellationToken = this.GetCancellationTokenOnDestroy();
-        StartCoroutine(_fader.DoFade(FadeType.StartScene));
+        StartCoroutine(_fader.FadeIn());
         _restartButton.onClick.AddListener(RestartLevel);
     }
 
@@ -33,13 +33,13 @@ public class SceneController : MonoBehaviour
     public void StartNewScene()
     {
         _dieScreen.SetActive(false);
-        StartCoroutine(_fader.DoFade(FadeType.StartScene));
+        StartCoroutine(_fader.FadeIn());
     }
 
     private void OnHeroDie()
     {
         _dieScreen.SetActive(true);
-        StartCoroutine(_faderDieScreen.DoFade(FadeType.EndScene));
+        StartCoroutine(_faderDieScreen.FadeOut());
     }
 
     public void LoarStartScene()
@@ -63,7 +63,7 @@ public class SceneController : MonoBehaviour
 
     private async UniTaskVoid LoadSceneAsync(int buildIndex)
     {
-        StartCoroutine(_fader.DoFade(FadeType.EndScene));
+        StartCoroutine(_fader.FadeOut());
         await UniTask.WaitForSeconds(_fader.FadeTime, cancellationToken: cancellationToken);
         float loadingProgress;
         var _asyncOperation = SceneManager.LoadSceneAsync(buildIndex);
