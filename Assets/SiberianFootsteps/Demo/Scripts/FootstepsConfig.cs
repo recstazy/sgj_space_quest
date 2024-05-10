@@ -25,16 +25,26 @@ namespace Recstazy.SiberianFootsteps.Demo
         private FootstepMapping[] _mappings;
 
         private Dictionary<PhysicMaterial, FootstepMapping> _sounds;
-        public FootstepMapping DefaultMapping { get; private set; }
+        private FootstepMapping DefaultMapping { get; set; }
         public FootstepMapping[] Mappings => _mappings;
 
+        public FootstepMapping GetDefaultMapping()
+        {
+            EnsureMappings();
+            return DefaultMapping;
+        }
+        
         public FootstepMapping GetMapping(PhysicMaterial material)
+        {
+            EnsureMappings();
+            if (_sounds.TryGetValue(material, out var mapping)) return mapping;
+            else return DefaultMapping;
+        }
+
+        private void EnsureMappings()
         {
             if (_sounds == null) _sounds = new Dictionary<PhysicMaterial, FootstepMapping>();
             if (_sounds.Count != _mappings.Length) CreateMappings();
-
-            if (_sounds.TryGetValue(material, out var mapping)) return mapping;
-            else return DefaultMapping;
         }
 
         private void CreateMappings()

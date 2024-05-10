@@ -41,7 +41,7 @@ namespace Recstazy.SiberianFootsteps.Demo
 
         private void UpdateSound()
         {
-            if (_currentMapping == null) _currentMapping = _config.DefaultMapping;
+            if (_currentMapping == null) _currentMapping = _config.GetDefaultMapping();
             _soundPlayer.Sound = IsRunning ? _currentMapping.RunSound : _currentMapping.WalkSound;
         }
     }
