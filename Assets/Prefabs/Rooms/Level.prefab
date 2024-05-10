@@ -6678,6 +6678,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FaceScan with wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e67e08a2bee80ae429127caa51a6084a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e67e08a2bee80ae429127caa51a6084a, type: 3}
 --- !u!4 &7271829198290255257 stripped
@@ -7586,12 +7591,17 @@ PrefabInstance:
     - target: {fileID: 6333947307714390253, guid: 0365fdfc1c2ec8542beb013c06412358,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.54
+      value: -9.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333947307714390253, guid: 0365fdfc1c2ec8542beb013c06412358,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.388
       objectReference: {fileID: 0}
     - target: {fileID: 6333947307714390253, guid: 0365fdfc1c2ec8542beb013c06412358,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.177
+      value: -13.156
       objectReference: {fileID: 0}
     - target: {fileID: 6717967873693866503, guid: 0365fdfc1c2ec8542beb013c06412358,
         type: 3}
