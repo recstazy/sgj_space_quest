@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Puddle_02_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 63525c84c07cd43448fd039cbcc2b195, type: 3}
+  - {fileID: 8300000, guid: 15212591a38e3714da119ee18681d7b7, type: 3}
+  - {fileID: 8300000, guid: 5c0e28e4d0a0bab4bb41dae7a42261e3, type: 3}
+  - {fileID: 8300000, guid: de860a43bf9aa3442a308b79506176b1, type: 3}
+  - {fileID: 8300000, guid: 2c1c4caae527b2f4995e0379d085d827, type: 3}
+  - {fileID: 8300000, guid: f586edba141747747b54d5be83d4fde9, type: 3}
+  - {fileID: 8300000, guid: bca354756bedb5443bc421e0a96ed48f, type: 3}
+  - {fileID: 8300000, guid: 201d442777958c543ba42c4ffa7f8190, type: 3}

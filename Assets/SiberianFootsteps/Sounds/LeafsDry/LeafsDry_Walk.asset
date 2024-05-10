@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: LeafsDry_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 400c27e8559fa20459e3242734f9667d, type: 3}
+  - {fileID: 8300000, guid: 111c55e29556bbc4da25ad36b6cc10d7, type: 3}
+  - {fileID: 8300000, guid: 36519c1c414ed7b42b4c816dbc445384, type: 3}
+  - {fileID: 8300000, guid: 377ce9a58bd785c489ada5475e76e0c1, type: 3}
+  - {fileID: 8300000, guid: 9a2d14c58713943409e9cb49af2f61fa, type: 3}
+  - {fileID: 8300000, guid: ac9042b63670ea04490d1071793f37ab, type: 3}
+  - {fileID: 8300000, guid: 61b90a51e9bd080498e99236fbefd408, type: 3}
+  - {fileID: 8300000, guid: 82f5ca8d2e698dc4b96f7599cf6c65ea, type: 3}

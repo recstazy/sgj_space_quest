@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Wood_01_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 41e8b5082910529409beef3907e775f7, type: 3}
+  - {fileID: 8300000, guid: d0d151e3c00f2a94baafcc1c8a583abc, type: 3}
+  - {fileID: 8300000, guid: 43dad5badbe4b1540b2b9ccbc8999980, type: 3}
+  - {fileID: 8300000, guid: 104f7a1eba98da5429c068f01e4f6d8f, type: 3}
+  - {fileID: 8300000, guid: 35e6fc4fd2657b54890516294c546ac8, type: 3}
+  - {fileID: 8300000, guid: 52eb1a57a02874b47a6abfd70bf3ae3e, type: 3}
+  - {fileID: 8300000, guid: 511171dc9d51cf645b6609d1cdbbbb91, type: 3}
+  - {fileID: 8300000, guid: d2c7d773ce338ee48b50290d586f8733, type: 3}

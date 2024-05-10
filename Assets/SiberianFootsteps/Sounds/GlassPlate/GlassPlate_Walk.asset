@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: GlassPlate_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 04cc7cfbf63ea32458240b7f7982bf02, type: 3}
+  - {fileID: 8300000, guid: 2573b4edd2bd4304299c06c80b6e0d5b, type: 3}
+  - {fileID: 8300000, guid: cee2958ad86089e4d8821a707e189fbb, type: 3}
+  - {fileID: 8300000, guid: b80eafe6f2172ee4cb2ca8bc707f0b6e, type: 3}
+  - {fileID: 8300000, guid: c1344be7fa6a88641b927e10a3c6f7de, type: 3}
+  - {fileID: 8300000, guid: e48365eaba171344bb59fdf623714cd4, type: 3}
+  - {fileID: 8300000, guid: bc1fd81d12e7f3748a271ded5b7e884e, type: 3}
+  - {fileID: 8300000, guid: ce8ae1b36bdc26b44a75369b95d65bd6, type: 3}

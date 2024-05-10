@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Asphalt_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: fc413b79fe269b446b897a038b476eb8, type: 3}
+  - {fileID: 8300000, guid: 1658f152a219c8c41a389aba1932a993, type: 3}
+  - {fileID: 8300000, guid: 7750cf8d59ab56c4eabdb89db04a1702, type: 3}
+  - {fileID: 8300000, guid: 2b780b51778f1cd47844ff7f023ef6ac, type: 3}
+  - {fileID: 8300000, guid: 4abb79b842011ac41b0d0916391b8f36, type: 3}
+  - {fileID: 8300000, guid: a5ad8b483d29ce1499b2ddbeec9934df, type: 3}
+  - {fileID: 8300000, guid: 7ab15aeaca4e8d04c98d9b41004cc40e, type: 3}
+  - {fileID: 8300000, guid: 004d297043453f843a885a2a4d1b337b, type: 3}

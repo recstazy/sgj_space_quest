@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: MetalMesh_02_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: f5c21e37c8a3f4140925e65a619b6402, type: 3}
+  - {fileID: 8300000, guid: 2626c0c30cb342f47bf44ef692bb703e, type: 3}
+  - {fileID: 8300000, guid: b34c86b084f68b34a937a20991be9870, type: 3}
+  - {fileID: 8300000, guid: d6e7d971856b71048ae7afbcae303331, type: 3}
+  - {fileID: 8300000, guid: f81fa3ce1078b6b40a0aebc24de3377e, type: 3}
+  - {fileID: 8300000, guid: 89e9866460bb9fd458df054de279721b, type: 3}
+  - {fileID: 8300000, guid: 9d29fe95bfa4f094c9e392bc70d786a2, type: 3}
+  - {fileID: 8300000, guid: b4e1e7791207d78488e39ae8de7c80a4, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Sand_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 754fbe83f7945d140a751a6408b4fcf5, type: 3}
+  - {fileID: 8300000, guid: 632ac046d1c96db479ecfbd66c6e3577, type: 3}
+  - {fileID: 8300000, guid: 0333730189945674a9f9774142323085, type: 3}
+  - {fileID: 8300000, guid: 6fa082d06fcfacf428898bbb3478d83e, type: 3}
+  - {fileID: 8300000, guid: eaf8b9d563d12fe47aad49b65767aa1f, type: 3}
+  - {fileID: 8300000, guid: 9275898c27b9f9a4d836d72587037e27, type: 3}
+  - {fileID: 8300000, guid: 1062bca45692c6e468bee7a58e720f27, type: 3}
+  - {fileID: 8300000, guid: d076d4f46589e394798f9e2a4e46c5b0, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Grass_01_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: a0f80ea4ef3627e4890318c70b01a3dc, type: 3}
+  - {fileID: 8300000, guid: 2159dec900d8d4c4e9441588072bc880, type: 3}
+  - {fileID: 8300000, guid: c33115be9b0ef964c9386151f0fe19ba, type: 3}
+  - {fileID: 8300000, guid: 36caddf0f660fbd47ad71b53bb45ccc3, type: 3}
+  - {fileID: 8300000, guid: f6cd35520aa707d46a91d6ca50fff000, type: 3}
+  - {fileID: 8300000, guid: 1a470b2b5e10eae41af809598dbd9db4, type: 3}
+  - {fileID: 8300000, guid: 1f064e3f893ed204c91f67e063125d24, type: 3}
+  - {fileID: 8300000, guid: 054f6fc399b14c748b9f730dce668517, type: 3}

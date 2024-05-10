@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Mud_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 9eb6367ad7c15c54884538fa00119882, type: 3}
+  - {fileID: 8300000, guid: 74ac0dd8d5d109c4eb3e8e4e8c161d38, type: 3}
+  - {fileID: 8300000, guid: e72be63a9bf07914bab08839fd30333d, type: 3}
+  - {fileID: 8300000, guid: 8cb700e32d795f548afbf98d49781e19, type: 3}
+  - {fileID: 8300000, guid: 7b8d63d8f82e4324789b338e7b10ad81, type: 3}
+  - {fileID: 8300000, guid: 7c3ef3c8b1b812144b17f52f603df990, type: 3}
+  - {fileID: 8300000, guid: 50facf1750f39cd4c8ca89ba4d53c97e, type: 3}
+  - {fileID: 8300000, guid: 94d9175784477e94a80ab258116da0ad, type: 3}

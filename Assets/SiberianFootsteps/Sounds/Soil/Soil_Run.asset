@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Soil_Run
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 7ac6cd1c3081bd14683cd3744288b07b, type: 3}
+  - {fileID: 8300000, guid: e46df83af74957b4f829d89d55cfe134, type: 3}
+  - {fileID: 8300000, guid: 52896b958e39c344c9aac3831af62a0b, type: 3}
+  - {fileID: 8300000, guid: 106bb5e38f043eb46af03e79c56402ed, type: 3}
+  - {fileID: 8300000, guid: 0a9a1fa668d93a1468d8f4943ed03742, type: 3}
+  - {fileID: 8300000, guid: a5b01bec6f145e84691c3541aad9d5c3, type: 3}
+  - {fileID: 8300000, guid: 35c00128f0123da47bee8ebe24fb8e79, type: 3}
+  - {fileID: 8300000, guid: 3e41a5ca252891b48b35b19f6391948e, type: 3}

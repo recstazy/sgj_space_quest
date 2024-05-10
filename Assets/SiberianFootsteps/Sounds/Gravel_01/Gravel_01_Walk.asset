@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad58dd9fe2e9d9446a6087fdce7e52e3, type: 3}
+  m_Name: Gravel_01_Walk
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: ef88f0100d9349a47864b4d11cfd0bbc, type: 3}
+  - {fileID: 8300000, guid: ccba461f54068014ab3ce9b6412b1298, type: 3}
+  - {fileID: 8300000, guid: 1b926318de7adf5499f00a922f664123, type: 3}
+  - {fileID: 8300000, guid: 24a8cbe357270e141a3901b28f112645, type: 3}
+  - {fileID: 8300000, guid: d1aa042f7a2b51746b641d87f286b594, type: 3}
+  - {fileID: 8300000, guid: 664807e66e262744fbfe06765e8b6aac, type: 3}
+  - {fileID: 8300000, guid: fed8af74995a790499bf1da71023a8c3, type: 3}
+  - {fileID: 8300000, guid: 442a535058a285b47b375d0379319f2a, type: 3}

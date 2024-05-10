@@ -1,0 +1,15 @@
+{
+    "name": "Recstazy.SiberianFootsteps.Demo",
+    "references": [
+        "GUID:12d64981b097914449c7a573c80c6754"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
