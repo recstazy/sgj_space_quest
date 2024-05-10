@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 public abstract class GameController : MonoBehaviour
 {
+    [Inject]
+    protected PlayerInputController _playerInputController;
+
     public BoolReactiveProperty IsFinished { get; private set; } = new();
 
     protected abstract bool GetWinCondition();
