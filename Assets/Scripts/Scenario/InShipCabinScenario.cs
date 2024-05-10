@@ -50,6 +50,7 @@ public class InShipCabinScenario : BaseScenario
         _triggersToWait.Remove(trigger);
         if (_triggersToWait.Count == 0)
         {
+            Trigger.OnTriggerInvoke -= OnTriggered;
             Debug.Log("InShipCabinScenario finished");
             Finish();
         }

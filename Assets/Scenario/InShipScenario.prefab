@@ -53,9 +53,6 @@ MonoBehaviour:
   _enableFuelTrigger: {fileID: 0}
   _enableRadioTrigger: {fileID: 0}
   _interactables: []
-  _enablePowerEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &3097729750578056130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,6 +60,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8921923544579332218}
     m_Modifications:
+    - target: {fileID: 4430592073172851749, guid: ed81cc182df7da84fa1081da64775789,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 286b5cb5e3289304abe1742749e58be1, type: 3}
     - target: {fileID: 6795506969191352713, guid: ed81cc182df7da84fa1081da64775789,
         type: 3}
       propertyPath: m_Name
