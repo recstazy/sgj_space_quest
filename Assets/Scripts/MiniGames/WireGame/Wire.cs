@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 public class Wire : MonoBehaviour
@@ -20,6 +21,9 @@ public class Wire : MonoBehaviour
     [SerializeField]
     private bool _isPlaced = default(bool);
     public bool IsPlaced => _isPlaced;
+
+    [SerializeField]
+    private UnityEvent _onPlacedEvent;
 
     [Inject]
     private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
@@ -62,6 +66,7 @@ public class Wire : MonoBehaviour
         else
         {
             OnPlaced?.Invoke();
+            _onPlacedEvent.Invoke();
             transform.position = _targetPosition;
         }
     }
