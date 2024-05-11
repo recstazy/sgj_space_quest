@@ -47,6 +47,17 @@ public class InteractionView : MonoBehaviour
         }).AddTo(this);
     }
 
+    private void Update()
+    {
+        if (_interaction != null && _interaction.CurrentInteractable.Value != null)
+        {
+            var interactable = _interaction.CurrentInteractable.Value;
+            _activeTriggerImage.SetActive(interactable.IsAvailableNow);
+            _inactiveTriggerImage.SetActive(!interactable.IsAvailableNow);
+            _hintCanvasGroup.alpha = interactable.IsAvailableNow ? 1f : _notInteractiveAlpha;
+        }
+    }
+
     private void OnDestroy()
     {
         _currentHintDisposable?.Dispose();
@@ -58,16 +69,18 @@ public class InteractionView : MonoBehaviour
         _currentHintDisposable?.Dispose();
         _hintOrigin.gameObject.SetActive(interactable != null);
         if (interactable == null) return;
-        _activeTriggerImage.SetActive(interactable.IsAvailableNow);
-        _inactiveTriggerImage.SetActive(!interactable.IsAvailableNow);
+        
         _currentHintDisposable = new();
         _hintText.text = string.IsNullOrEmpty(interactable.InteractionHint) ? _defaultHintText : interactable.InteractionHint;
 
-        Observable.EveryUpdate().Subscribe(_ =>
+        UpdateScreenPosition();
+        Observable.EveryUpdate().Subscribe(_ => UpdateScreenPosition()).AddTo(_currentHintDisposable);
+
+        void UpdateScreenPosition()
         {
             var uiPosition = _camera.WorldToScreenPoint(interactable.transform.position);
             _hintOrigin.transform.position = uiPosition;
             _hintText.text = string.IsNullOrEmpty(interactable.InteractionHint) ? _defaultHintText : interactable.InteractionHint;
-        }).AddTo(_currentHintDisposable);
+        }
     }
 }
