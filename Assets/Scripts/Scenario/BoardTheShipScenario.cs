@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using Zenject;
 
 public class BoardTheShipScenario : BaseScenario
@@ -79,6 +80,7 @@ public class BoardTheShipScenario : BaseScenario
 
         _ship.gameObject.SetActive(true);
         _player.GetComponent<CharacterController>().enabled = false;
+        _player.GetComponent<NavMeshAgent>().enabled = false;
         _player.transform.parent = _ship.PlayerPoint;
         _player.transform.localPosition = Vector3.zero;
         _player.GetComponent<PlayerMovement>().LockLookingAngle();
