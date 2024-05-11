@@ -25,6 +25,7 @@ public class FindValveScenario : BaseScenario
 
     private bool _playerInBox;
 	private bool _isPlayerGetValve;
+	private bool _isValvePlacedPlayed;
 
 	private void Start()
 	{
@@ -48,8 +49,9 @@ public class FindValveScenario : BaseScenario
 
 	private void PlayerInBox(bool isPlayerInBox)
 	{
-        if (_pickUpValveSound != null && isPlayerInBox && _isPlayerGetValve)
+        if (_pickUpValveSound != null && isPlayerInBox && _isPlayerGetValve && !_isValvePlacedPlayed)
         {
+	        _isValvePlacedPlayed = true;
             _placeValveSound.Play();
         }
         _playerInBox = isPlayerInBox;

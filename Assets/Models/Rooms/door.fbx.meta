@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blue em
-    second: {fileID: 2100000, guid: 37897593525346548b384273459721d8, type: 2}
+    second: {fileID: 2100000, guid: d068aae8ebef40c4e8339c8c2a68eb26, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13137d1a72161249bf6f3d0bed8d998, type: 3}
+  m_Name: ForceField2_End
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 23083e6262668bc41b46a04e379cf2b0, type: 3}
+  - {fileID: 8300000, guid: 914c41e2383a4c54c91ef5cb7deba898, type: 3}
+  - {fileID: 8300000, guid: b149249ba020df7419b6faf5facb6f02, type: 3}
+  - {fileID: 8300000, guid: 20264cfee1a65d3479134af08bfc9e99, type: 3}

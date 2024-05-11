@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13137d1a72161249bf6f3d0bed8d998, type: 3}
+  m_Name: ShepardBeam_Start
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 711db8ed29f92ca49879aa8bd1eebe79, type: 3}
+  - {fileID: 8300000, guid: be64669c1abcee34db1b944839ae8ba9, type: 3}
+  - {fileID: 8300000, guid: 67fcbef014bda74488dc38a5b6e59f75, type: 3}
+  - {fileID: 8300000, guid: f760b2ab8ec948a4c9315fa8c82b328c, type: 3}

@@ -31,6 +31,7 @@ public class InShipCabinScenario : BaseScenario
             _enableFuelTrigger,
             _enablePowerTrigger
         };
+        _interactables.ForEach(x => { x.IsInteractionDisabled = true; });
     }
 
     private void OnDestroy()
@@ -52,6 +53,7 @@ public class InShipCabinScenario : BaseScenario
         {
             Trigger.OnTriggerInvoke -= OnTriggered;
             Debug.Log("InShipCabinScenario finished");
+            _interactables.ForEach(x => { x.IsInteractionDisabled = true; });
             Finish();
         }
     }
@@ -65,7 +67,7 @@ public class InShipCabinScenario : BaseScenario
 
     private IEnumerator StartScenario()
     {
-        Debug.Log("InShipCabinScenario start");        
+        Debug.Log("InShipCabinScenario start");
         yield return new WaitForSeconds(_afterStartDelay);
         yield return _instructionVoice.Play();
         _questController.AddQuest(QuestsDescriptionContainer.SHIP_ENGINE_ON);
@@ -73,6 +75,6 @@ public class InShipCabinScenario : BaseScenario
         _questController.AddQuest(QuestsDescriptionContainer.GET_FUEL);
         yield return new WaitForSeconds(0.25f);
         _questController.AddQuest(QuestsDescriptionContainer.SHIP_SPICE_ON);
-        _interactables.ForEach(x => { x.gameObject.SetActive(true); x.IsAvailableNow = true; });
+        _interactables.ForEach(x => { x.IsInteractionDisabled = false; x.IsAvailableNow = true; });
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13137d1a72161249bf6f3d0bed8d998, type: 3}
+  m_Name: RocketLauncher_Launch
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 80171b778efab3841b327db9b1f6b7b2, type: 3}
+  - {fileID: 8300000, guid: 8464ce3e56e3b7e40842eb25ac579157, type: 3}
+  - {fileID: 8300000, guid: ec4096e5d582b8748b4a8ac666a5c3e4, type: 3}
+  - {fileID: 8300000, guid: b9c1d5d35cafc8c40af31d3a9e78e01a, type: 3}

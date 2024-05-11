@@ -23,7 +23,7 @@ public class TuneGameStarter : GameController
 
     private void Start()
     {
-        _gameTrigger.IsAvailableNow = true;
+        //_gameTrigger.IsAvailableNow = true;
         Trigger.OnTriggerInvoke += StartGameOnTriggerInvoke;
         _playerTrigger.OnPlayerTriggered += OnPlayerTrigger;
         _tuneGame.OnWin += OnWin;
