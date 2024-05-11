@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277, y: 254}
+  m_AnchoredPosition: {x: 277, y: 221}
   m_SizeDelta: {x: 1300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3142695691176591558
@@ -611,9 +611,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dev \u0421\u0442\u0430\u043D\u0438\u0441\u043B\u0430\u0432 \u0411\u0443\u043A\u043E\u0442\u043A\u0438\u043D\nDev
-    Yuriy Klochikhin\nDev \u0415\u0432\u0433\u0435\u043D\u0438\u0439 \u0411\u0443\u0448\u0443\u0435\u0432\n3D
-    artist \u041C\u0430\u0440\u044C\u044F\u043D\u0430 \u0411\u0443\u0448\u0443\u0435\u0432\u0430"
+  m_text: "\u0421\u0442\u0430\u043D\u0438\u0441\u043B\u0430\u0432 \u0411\u0443\u043A\u043E\u0442\u043A\u0438\u043D\n\u042E\u0440\u0438\u0439
+    \u041A\u043B\u043E\u0447\u0438\u0445\u0438\u043D\n\u0415\u0432\u0433\u0435\u043D\u0438\u0439
+    \u0411\u0443\u0448\u0443\u0435\u0432\n\u041C\u0430\u0440\u044C\u044F\u043D\u0430
+    \u0411\u0443\u0448\u0443\u0435\u0432\u0430\n\u0415\u043A\u0430\u0442\u0435\u0440\u0438\u043D\u0430
+    \u0412\u0430\u0441\u0438\u043B\u044C\u0435\u0432\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7458bc24d34e8744fa1b8c2f180cefb2, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 463c58aeb23d4804982c68ec8b15c62d, type: 2}
@@ -853,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 715, y: 6}
+  m_AnchoredPosition: {x: 715, y: -58}
   m_SizeDelta: {x: 410, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2606767823144299015
