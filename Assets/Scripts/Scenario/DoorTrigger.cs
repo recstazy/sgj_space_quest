@@ -16,11 +16,19 @@ public class DoorTrigger : MonoBehaviour
         {
             _theDoors.ForEach(door => door.Open());
         }
+        else if(other.TryGetComponent(out Robot robot))
+        {
+            _theDoors.ForEach(door => door.Open());
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out Player player))
+        {
+            _theDoors.ForEach(door => door.Close());
+        }
+        else if (other.TryGetComponent(out Robot robot))
         {
             _theDoors.ForEach(door => door.Close());
         }
