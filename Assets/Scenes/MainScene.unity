@@ -1137,7 +1137,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1417,6 +1416,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1457618789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2464096038130909994, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457618782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457618783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3364d3fe88464c9d4928d86a4f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1495486238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1893,6 +1904,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4796380742796787487, guid: 4df965c7574ef014dbe03cc3c6ac5736,
+        type: 3}
+      propertyPath: _playerMovement
+      value: 
+      objectReference: {fileID: 1457618789}
     - target: {fileID: 4796380742796787487, guid: 4df965c7574ef014dbe03cc3c6ac5736,
         type: 3}
       propertyPath: _interactables.Array.data[0]

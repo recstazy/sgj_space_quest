@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isLockLookAngle;
 
+    public void DisableMovement() => _disableMovement = false;
 
     private void Awake()
     {

@@ -11,6 +11,9 @@ public class InShipCabinScenario : BaseScenario
     private PlayVoice _instructionVoice;
 
     [SerializeField]
+    private PlayerMovement _playerMovement;
+
+    [SerializeField]
     protected Trigger _enablePowerTrigger;
     [SerializeField]
     protected Trigger _enableFuelTrigger;
@@ -62,6 +65,7 @@ public class InShipCabinScenario : BaseScenario
     {
         if (_isScenarioStarted) return;
         base.Run();
+        _playerMovement.DisableMovement();
         StartCoroutine(StartScenario());
     }
 
