@@ -30,7 +30,7 @@ public class Door : MonoBehaviour
     {
         if (_startOpened)
         {
-            Open();
+            OpenSilent();
         }
     }
 
