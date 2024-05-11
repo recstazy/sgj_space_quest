@@ -52,7 +52,7 @@ public class MenuScene : MonoBehaviour
     private void OnButtonClick()
     {
         sceneController.LoadNewScene();
-        _progressImageHolder.gameObject.SetActive(true);
+        //_progressImageHolder.gameObject.SetActive(true);
         _progressText.gameObject.SetActive(true);
         _startButton.interactable = false;
     }
