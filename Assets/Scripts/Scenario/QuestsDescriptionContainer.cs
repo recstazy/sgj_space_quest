@@ -11,7 +11,7 @@ public static class QuestsDescriptionContainer
     public const string GET_FUEL =              "Подать топливо";
     public const string CALL_BACK =             "Перезвонить...";
     public const string RADIO_CHECK =           "Настройте радиоприемник";
-    public const string GO_TO_SHIP =            "Поднемитесь на корабль";
+    public const string GO_TO_SHIP =            "Поднимайтесь на корабль";
     public const string SHIP_ENGINE_ON =        "Включите питание двигателя";
     public const string SHIP_FUEL_ON =          "Включите подачу топлива";
     public const string SHIP_SPICE_ON =         "Включите подпространственную связь";
