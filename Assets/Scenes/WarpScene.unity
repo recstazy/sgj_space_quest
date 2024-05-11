@@ -7895,7 +7895,7 @@ MonoBehaviour:
   _finishTrigger: {fileID: 0}
   _afterStartDelay: 4
   _collegueStartVoice: {fileID: 1986164433}
-  _aftepStartVoiceDelay: 8
+  _aftepStartVoiceDelay: 4
   _collegueAfterDelayVoice: {fileID: 841406415}
   _colleguePreWarpVoice: {fileID: 683860804}
   _colleguePizdecWarpVoice: {fileID: 965195731}
