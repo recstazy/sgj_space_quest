@@ -9,6 +9,8 @@ public class EndGame : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         controller.StartNewScene();
         _startAgain.onClick.AddListener(OnButtonClick);
     }
