@@ -37,6 +37,7 @@ public class DisinfectionScenario : BaseScenario
 	private IEnumerator Disinfection()
 	{
         _scannerSound.Play();
+        yield return new WaitForSeconds(_scannerSound.clip.length);
         _questController.CompleteQuest(QuestsDescriptionContainer.SCAN_FACE);
         Debug.Log("Disinfection");
 		yield return _systemInformationVoiceBeforeDesinfection.Play();
