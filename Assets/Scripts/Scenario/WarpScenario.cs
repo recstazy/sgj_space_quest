@@ -73,6 +73,15 @@ public class WarpScenario : BaseScenario
     [SerializeField]
     private SustainedSound _warpSound;
 
+    [SerializeField]
+    private EarthExplostion _earthExplostion;
+
+    [SerializeField]
+    private AudioSource _musicLoop;
+
+    [SerializeField]
+    private AudioSource _chorusSource;
+
     private bool _isWarpOn = default(bool);
 
     private void Start()
