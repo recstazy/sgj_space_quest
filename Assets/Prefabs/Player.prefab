@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _lookSensitivity: 4
+  _lookSensitivity: 2.5
   _invertLookUp: 0
   _lookSidewaysRoot: {fileID: 4671144288310074659}
   _lookUpRoot: {fileID: 6644237789507629720}
@@ -306,6 +306,7 @@ MonoBehaviour:
   _playerCollider: {fileID: 147329163}
   _footstepSound: {fileID: 860388603536101381}
   _useRunFootstepSounds: 0
+  _disableMovement: 0
 --- !u!114 &2523701688649844980
 MonoBehaviour:
   m_ObjectHideFlags: 0
