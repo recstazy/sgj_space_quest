@@ -108,15 +108,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.4
+    agentHeight: 1.2
     agentSlope: 45
     agentClimb: 0.4
-    ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    ledgeDropHeight: 0.25
+    maxJumpAcrossDistance: 0.5
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.13333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -124,7 +124,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 4e97de9f96b332f42a46632c03b303ac, type: 2}
 --- !u!1 &70708338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,12 +2438,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!136 &909770718 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 147329163, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1457618782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &920069140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1666488207, guid: 2eaf96db86a02b1408b8f9c81a5f02c0,
@@ -2600,39 +2594,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 147329161, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 308434296, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 26862259743080411, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 860388603536101378, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2464096038130909994, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
-      propertyPath: _playerCollider
-      value: 
-      objectReference: {fileID: 909770718}
+      propertyPath: _moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2464096038130909994, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
       propertyPath: _characterCamera
       value: 
       objectReference: {fileID: 998183190}
-    - target: {fileID: 3803360857798466039, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4671144288310074659, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
       propertyPath: m_RootOrder
@@ -2641,12 +2612,12 @@ PrefabInstance:
     - target: {fileID: 4671144288310074659, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 17.947
       objectReference: {fileID: 0}
     - target: {fileID: 4671144288310074659, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.99
+      value: 0.878
       objectReference: {fileID: 0}
     - target: {fileID: 4671144288310074659, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
@@ -2693,8 +2664,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1188040771, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00, type: 3}
 --- !u!114 &1457618784 stripped
 MonoBehaviour:

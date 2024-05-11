@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Recstazy.SiberianFootsteps.Demo;
 using UnityEngine;
 using Zenject;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private CharacterController _characterController;
+    [SerializeField]
+    private NavMeshAgent _meshAgent;
 
     [SerializeField]
     private CinemachineVirtualCamera _characterCamera;
@@ -106,8 +109,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isMoving) return;
         var direction = transform.TransformDirection(new Vector3(strafe, 0f, forward).normalized);
-        var velocity = direction * _moveSpeed;
-        _characterController.SimpleMove(velocity);
+        var velocity = direction * _moveSpeed*Time.deltaTime;
+        //_characterController.SimpleMove(velocity);
+        _meshAgent.Move(velocity);
     }
 
     private void HandleCamera()
