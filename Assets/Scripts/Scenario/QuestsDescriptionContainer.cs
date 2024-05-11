@@ -16,5 +16,5 @@ public static class QuestsDescriptionContainer
     public const string SHIP_FUEL_ON = "Включите подачу топлива";
     public const string SHIP_SPICE_ON = "Включите подпространственную связь";
     public const string SHIP_FLY_ON = "Начать взлет";
-    public const string SHIP_VARP_ON = "Запуститe варп";
+    public const string SHIP_WARP_ON = "Запуститe варп";
 }

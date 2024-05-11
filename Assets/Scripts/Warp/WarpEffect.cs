@@ -31,6 +31,12 @@ public class WarpEffect : MonoBehaviour
     [SerializeField]
     private float _trailFadeOutTime = 1f;
 
+    [SerializeField]
+    private PlayVoice _systemWarpVoice;
+
+    public bool IsPrewarpStateComplete = default(bool);
+    public bool IsPizdecStateComplete = default(bool);
+
     public async UniTask Play(CancellationToken cancellation)
     {
         var trailModule = _stars.trails;
@@ -44,6 +50,9 @@ public class WarpEffect : MonoBehaviour
         velocityModule.enabled = true;
         await UniTask.Delay(TimeSpan.FromSeconds(_prewarpTime), cancellationToken: cancellation);
         
+        IsPrewarpStateComplete = true;
+        await _systemWarpVoice.Play();
+
         EnableChromaticPost();
         velocityModule.z = _warpVelocity;
         var warpAcceleration = DOTween.To(
@@ -53,7 +62,7 @@ public class WarpEffect : MonoBehaviour
             _warpTime);
         
         await warpAcceleration.ToUniTask(cancellationToken: cancellation);
-        
+        IsPizdecStateComplete = true;
         var trailFadeOut = DOTween.To(
             () => 1f, 
             x =>
@@ -86,6 +95,12 @@ public class WarpEffect : MonoBehaviour
         feature.SetActive(false);
     }
 
+    public void PlayAnimation()
+    {
+        Play(this.GetCancellationTokenOnDestroy()).Forget();
+
+    }
+    /*
     private void Update()
     {
         if (!Application.isEditor) return;
@@ -93,5 +108,5 @@ public class WarpEffect : MonoBehaviour
         {
             Play(this.GetCancellationTokenOnDestroy()).Forget();
         }
-    }
+    }*/
 }
