@@ -4,6 +4,9 @@ using UnityEngine;
 public class FinalPreparationsScenario : BaseScenario
 {
 	[SerializeField]
+	private QuestView _finalPreparationsQuestViewPrefab;
+	
+	[SerializeField]
 	private float _afterStartDelay;
 
 	[SerializeField]
@@ -25,7 +28,7 @@ public class FinalPreparationsScenario : BaseScenario
 		yield return new WaitForSeconds(_afterStartDelay);
 		yield return _finalPreparationSystemVoice.Play();
         
-		_questController.AddQuest(QuestsDescriptionContainer.FINAL_PREPORATIONS);
+		_questController.AddQuest(QuestsDescriptionContainer.FINAL_PREPORATIONS, prefabOverride: _finalPreparationsQuestViewPrefab);
         
 		yield return new WaitForSeconds(1f);
 		yield return _finalPreparationCollegueVoice.Play();

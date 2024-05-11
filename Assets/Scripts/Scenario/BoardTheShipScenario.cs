@@ -57,6 +57,7 @@ public class BoardTheShipScenario : BaseScenario
     {
         Debug.Log("TuneRadioScenario start");
         yield return new WaitForSeconds(_afterStartDelay);
+        _questController.CompleteQuest(QuestsDescriptionContainer.FINAL_PREPORATIONS);
         yield return _instructionVoice.Play();
         _questController.AddQuest(QuestsDescriptionContainer.GO_TO_SHIP);
         _shipInteractableTrigger.IsAvailableNow = true;
