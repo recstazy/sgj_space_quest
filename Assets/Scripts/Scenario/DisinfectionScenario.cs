@@ -1,4 +1,7 @@
+using System;
 using System.Collections;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 public class DisinfectionScenario : BaseScenario
@@ -11,6 +14,9 @@ public class DisinfectionScenario : BaseScenario
     private PlayVoice _systemInformationVoiceBeforeDesinfection;
     [SerializeField]
     private PlayVoice _colleagueVoiceAfterDesinfection;
+
+    [SerializeField]
+    private Transform _scannerBeam;
 
 	[SerializeField]
 	private ParticleSystem _particleSystem;
@@ -26,6 +32,11 @@ public class DisinfectionScenario : BaseScenario
 
 	public bool PlayerInBox { get; set; }
 
+	private void Awake()
+	{
+		_scannerBeam.gameObject.SetActive(false);
+	}
+
 	public override void Run()
 	{
         if (_isScenarioStarted) return;
@@ -37,6 +48,7 @@ public class DisinfectionScenario : BaseScenario
 	private IEnumerator Disinfection()
 	{
         _scannerSound.Play();
+        AnimateScannerBeam();
         yield return new WaitForSeconds(_scannerSound.clip.length);
         _questController.CompleteQuest(QuestsDescriptionContainer.SCAN_FACE);
         Debug.Log("Disinfection");
@@ -69,5 +81,11 @@ public class DisinfectionScenario : BaseScenario
         Finish();
 	}
 
-
+	private async void AnimateScannerBeam()
+	{
+		_scannerBeam.gameObject.SetActive(true);
+		await _scannerBeam.DOLocalMoveY(_scannerBeam.position.y - 2f, 1f).SetEase(Ease.Linear)
+			.ToUniTask(cancellationToken: this.GetCancellationTokenOnDestroy());
+		_scannerBeam.gameObject.SetActive(false);
+	}
 }
