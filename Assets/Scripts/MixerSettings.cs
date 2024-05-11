@@ -20,6 +20,7 @@ public class MixerSettings : MonoBehaviour
     public void SetMainMixerLevel(float level)
     {
         SetMixerLevel(_mainAudioMixer, level, MainAudioMixerPref);
+
     }
 
     public void SetSoundMixerLevel(float level)

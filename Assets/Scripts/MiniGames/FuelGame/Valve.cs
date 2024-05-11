@@ -120,11 +120,11 @@ public class Valve : MonoBehaviour, IInteractable
     {
         if (IsValvePlaced)
         {
-            InteractionHint = "�����";
+            InteractionHint = "Крутить";
         }
         else
         {
-            InteractionHint = "�� ������� ��������";
+            InteractionHint = "Нет крутилки";
         }
     }
 
