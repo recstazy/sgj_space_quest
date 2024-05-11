@@ -70,7 +70,7 @@ public class Door : MonoBehaviour
         {
             OnOpened.Invoke();
         }
-        LockInProgress(_doorOpenCloseTime);
+        LockInProgress(_doorOpenCloseTime, sound);
     }
 
     private void CloseInternal(bool sound)
@@ -89,10 +89,10 @@ public class Door : MonoBehaviour
         {
             OnClosed.Invoke();
         }
-        LockInProgress(_doorOpenCloseTime);
+        LockInProgress(_doorOpenCloseTime, sound);
     }
 
-    private async void LockInProgress(float time)
+    private async void LockInProgress(float time, bool sound)
     {
         IsInProgress.Value = true;
         await UniTask.Delay(TimeSpan.FromSeconds(time), cancellationToken: this.GetCancellationTokenOnDestroy());
@@ -100,8 +100,8 @@ public class Door : MonoBehaviour
 
         if (_nextStateAfterAnimation.HasValue)
         {
-            if (_nextStateAfterAnimation.Value is true) Open();
-            else Close();
+            if (_nextStateAfterAnimation.Value is true) OpenInternal(sound);
+            else CloseInternal(sound);
         }
 
         _nextStateAfterAnimation = default;
