@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Overload;
 using UnityEngine;
+using Zenject;
 
 public class FlightScenario : BaseScenario
 {
@@ -32,6 +33,14 @@ public class FlightScenario : BaseScenario
     [SerializeField]
     private GameObject _blackScreen;
 
+    private SceneController _sceneController;
+
+    [Inject]
+    private void Construct(SceneController sceneController)
+    {
+        _sceneController = sceneController;
+    }
+    
     private void Start()
     {
         _tumbler.IsInteractionDisabled = true;
@@ -88,7 +97,10 @@ public class FlightScenario : BaseScenario
         yield return new WaitForSeconds(0.5f);
         _engineStartSound.Stop();
         _blackScreen.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
         
         Finish();
+        
+        _sceneController.LoadNewScene();
     }
 }

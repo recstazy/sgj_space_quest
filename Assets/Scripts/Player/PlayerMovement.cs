@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private bool _useRunFootstepSounds;
 
+    [SerializeField]
+    private bool _disableMovement;
+
     private float _lookUpAngle;
     private float _lookSidewaysAngle;
 
@@ -60,7 +63,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerInputController.IsPlayerActive)
         {
-            HandleMovement();
+            if (!_disableMovement)
+            {
+                HandleMovement();
+            }
             HandleCamera();
             if (!_playerCollider.enabled)
             {
@@ -100,8 +106,8 @@ public class PlayerMovement : MonoBehaviour
         if (!isMoving) return;
         var direction = transform.TransformDirection(new Vector3(strafe, 0f, forward).normalized);
         var velocity = direction * _moveSpeed*Time.deltaTime;
-        //_characterController.SimpleMove(velocity);
-        _meshAgent.Move(velocity);
+        _characterController.SimpleMove(velocity);
+        // _meshAgent.Move(velocity);
     }
 
     private void HandleCamera()

@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: a24bc7a0d2849be4d98b13df1c50c1de
+  - enabled: 1
+    path: Assets/Scenes/WarpScene.unity
+    guid: cc4cb03fc322356408deb55531b32689
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene.unity
+    guid: aa8bd067a553b344f8770d933c275436
   m_configObjects: {}

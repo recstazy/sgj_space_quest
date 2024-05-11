@@ -1,6 +1,8 @@
 using Cinemachine;
 using System;
 using System.Collections;
+using Cysharp.Threading.Tasks;
+using Overload;
 using UnityEngine;
 using Zenject;
 
@@ -66,8 +68,35 @@ public class WarpScenario : BaseScenario
     [SerializeField]
     private Animator _listWithDraw;
 
+    [SerializeField]
+    private AudioSource _warpChargeSound;
+
+    [SerializeField]
+    private SustainedSound _warpSound;
+
+    [SerializeField]
+    private EarthExplostion _earthExplostion;
+
+    [SerializeField]
+    private AudioSource _musicLoop;
+
+    [SerializeField]
+    private AudioSource _chorusSource;
+
+    [SerializeField]
+    private float _musicLoopDelay;
+
+    [SerializeField]
+    private float _chorusDelay;
+
+    [SerializeField]
+    private float _explosionDelay;
+
     private bool _isWarpOn = default(bool);
 
+    [Inject]
+    private SceneController _sceneController;
+    
     private void Start()
     {
         _rotator.IsRotate = false;
@@ -118,13 +147,30 @@ public class WarpScenario : BaseScenario
         _questController.CompleteQuest(QuestsDescriptionContainer.SHIP_WARP_ON);
         _warpEffect.PlayAnimation();
         yield return new WaitUntil(() => _warpEffect.IsSystemVoiceStateComplete);
+        _warpChargeSound.Play();
         StartCoroutine(CameraAnimation());
         Debug.Log("IsPrewarpStateComplete start");
         yield return new WaitForSeconds(_beforeWaitForPizedecScream);
         yield return _colleguePreWarpVoice.Play();
         yield return new WaitForSeconds(_waitForPizedecScream);
         yield return _colleguePizdecWarpVoice.Play();
+        _warpChargeSound.Stop();
+        _warpSound.Play();
         yield return new WaitUntil(() => _warpEffect.IsPizdecStateComplete);
+        _warpSound.Stop();
+       
+        RunDelayed(_musicLoopDelay, () => _musicLoop.Play());
+        RunDelayed(_explosionDelay, () => _earthExplostion.Play());
+        RunDelayed(_chorusDelay, () =>
+        {
+            _chorusSource.Play();
+            _musicLoop.Stop();
+            RunDelayed(31f, () =>
+            {
+                _sceneController.LoadNewScene();
+            });
+        });
+        
         Debug.Log("IsPizdecStateComplete start");
         Debug.Log("StartGameScenario finished");
         _rotator.IsRotate = true;
@@ -134,7 +180,12 @@ public class WarpScenario : BaseScenario
         _listWithDraw.enabled = true;
         Finish();
 	}
-    
+
+    private async void RunDelayed(float delay, Action action)
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: this.GetCancellationTokenOnDestroy());
+        action();
+    }
 
     private IEnumerator CameraAnimation()
     {
