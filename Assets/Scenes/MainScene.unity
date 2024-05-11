@@ -1089,11 +1089,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2464096038130909994, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
-      propertyPath: _moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2464096038130909994, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
-        type: 3}
       propertyPath: _characterCamera
       value: 
       objectReference: {fileID: 998183190}
