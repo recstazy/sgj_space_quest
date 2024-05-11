@@ -1,20 +1,20 @@
 public static class QuestsDescriptionContainer
 {
-    public const string SCAN_FACE = "Пройдите процедуру сканирования";
-    public const string DESINFECTION = "Пройдите процесс дезинфекции";
-    public const string SUIT_UP = "Наденьте скафандр";
-    public const string HANGAR_INTER = "Зайдите в ангар";
-    public const string ELECTRICITY_CHECK = "Проверьте проводку щитовой";
-    public const string FIND_CARD = "Найдите ключ-карту на столе у Сидорова";
-    public const string FINAL_PREPORATIONS = "Последние приготовления";
-    public const string FIND_VALVE = "Найдите недостающий вентиль";
-    public const string GET_FUEL = "Подать топливо";
-    public const string CALL_BACK = "Перезвонить...";
-    public const string RADIO_CHECK = "Настройте радиоприемник";
-    public const string GO_TO_SHIP = "Поднемитесь на корабль";
-    public const string SHIP_ENGINE_ON = "Включите питание двигателя";
-    public const string SHIP_FUEL_ON = "Включите подачу топлива";
-    public const string SHIP_SPICE_ON = "Включите подпространственную связь";
-    public const string SHIP_FLY_ON = "Начать взлет";
-    public const string SHIP_WARP_ON = "Запуститe варп";
+    public const string SCAN_FACE =             "РџСЂРѕР№РґРёС‚Рµ РїСЂРѕС†РµРґСѓСЂСѓ СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ";
+    public const string DESINFECTION =          "РџСЂРѕР№РґРёС‚Рµ РїСЂРѕС†РµСЃСЃ РґРµР·РёРЅС„РµРєС†РёРё";
+    public const string SUIT_UP =               "РќР°РґРµРЅСЊС‚Рµ СЃРєР°С„Р°РЅРґСЂ";
+    public const string HANGAR_INTER =          "Р—Р°Р№РґРёС‚Рµ РІ Р°РЅРіР°СЂ";
+    public const string ELECTRICITY_CHECK =     "РџСЂРѕРІРµСЂСЊС‚Рµ РїСЂРѕРІРѕРґРєСѓ С‰РёС‚РѕРІРѕР№";
+    public const string FIND_CARD =             "РќР°Р№РґРёС‚Рµ РєР»СЋС‡-РєР°СЂС‚Сѓ РЅР° СЃС‚РѕР»Рµ Сѓ РЎРёРґРѕСЂРѕРІР°";
+    public const string FINAL_PREPORATIONS =    "РџРѕСЃР»РµРґРЅРёРµ РїСЂРёРіРѕС‚РѕРІР»РµРЅРёСЏ";
+    public const string FIND_VALVE =            "РќР°Р№РґРёС‚Рµ РЅРµРґРѕСЃС‚Р°СЋС‰РёР№ РІРµРЅС‚РёР»СЊ";
+    public const string GET_FUEL =              "РџРѕРґР°С‚СЊ С‚РѕРїР»РёРІРѕ";
+    public const string CALL_BACK =             "РџРµСЂРµР·РІРѕРЅРёС‚СЊ...";
+    public const string RADIO_CHECK =           "РќР°СЃС‚СЂРѕР№С‚Рµ СЂР°РґРёРѕРїСЂРёРµРјРЅРёРє";
+    public const string GO_TO_SHIP =            "РџРѕРґРЅРёРјР°Р№С‚РµСЃСЊ РЅР° РєРѕСЂР°Р±Р»СЊ";
+    public const string SHIP_ENGINE_ON =        "Р’РєР»СЋС‡РёС‚Рµ РїРёС‚Р°РЅРёРµ РґРІРёРіР°С‚РµР»СЏ";
+    public const string SHIP_FUEL_ON =          "Р’РєР»СЋС‡РёС‚Рµ РїРѕРґР°С‡Сѓ С‚РѕРїР»РёРІР°";
+    public const string SHIP_SPICE_ON =         "Р’РєР»СЋС‡РёС‚Рµ РїРѕРґРїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµРЅРЅСѓСЋ СЃРІСЏР·СЊ";
+    public const string SHIP_FLY_ON =           "РќР°С‡Р°С‚СЊ РІР·Р»РµС‚";
+    public const string SHIP_WARP_ON =          "Р—Р°РїСѓСЃС‚РёС‚e РІР°СЂРї";
 }

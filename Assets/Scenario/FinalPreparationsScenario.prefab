@@ -336,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTrigger: {fileID: 11400000, guid: d203e738463b88c48a51a49d780e68ec, type: 2}
   _finishTrigger: {fileID: 11400000, guid: b7cf7e1ccfa363846afa19469cf655ad, type: 2}
+  _finalPreparationsQuestViewPrefab: {fileID: 263468185404082391, guid: bda3adedfca454e4c9d851d1891599fa,
+    type: 3}
   _afterStartDelay: 2
   _finalPreparationSystemVoice: {fileID: 8892637209970435804}
   _finalPreparationCollegueVoice: {fileID: 8236357382807288415}
