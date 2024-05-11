@@ -6627,6 +6627,11 @@ PrefabInstance:
       propertyPath: _characterCamera
       value: 
       objectReference: {fileID: 320715225}
+    - target: {fileID: 2464096038876844085, guid: 78dba0bb8a3398e43b4bdce07a69fa2a,
+        type: 3}
+      propertyPath: _disableMovementOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6234226907824849385, guid: 78dba0bb8a3398e43b4bdce07a69fa2a,
         type: 3}
       propertyPath: m_RootOrder
