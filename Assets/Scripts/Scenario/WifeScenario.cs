@@ -7,6 +7,9 @@ using UnityEngine;
 public class WifeScenario : BaseScenario
 {
     [SerializeField]
+    private QuestView _callBackQuestPrefab;
+    
+    [SerializeField]
     private PlayVoice _notificationSystemVoice;
     
     [SerializeField]
@@ -33,15 +36,11 @@ public class WifeScenario : BaseScenario
 
             if (_addQuestBadge)
             {
-                _questController.AddQuest(QuestsDescriptionContainer.CALL_BACK);
+                _questController.AddQuest(QuestsDescriptionContainer.CALL_BACK, siblingIndexOverride: 0, _callBackQuestPrefab);
             }
             
             await UniTask.Delay(TimeSpan.FromSeconds(_delayAfterWife), cancellationToken: this.GetCancellationTokenOnDestroy());
         }
-        catch (OperationCanceledException e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        catch (OperationCanceledException) {}
     }
 }
