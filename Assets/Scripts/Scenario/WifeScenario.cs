@@ -40,6 +40,7 @@ public class WifeScenario : BaseScenario
             }
             
             await UniTask.Delay(TimeSpan.FromSeconds(_delayAfterWife), cancellationToken: this.GetCancellationTokenOnDestroy());
+            Finish();
         }
         catch (OperationCanceledException) {}
     }
