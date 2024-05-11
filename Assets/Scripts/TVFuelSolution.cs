@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TVFuelSolution : MonoBehaviour, IInteractable
 {
@@ -16,6 +17,9 @@ public class TVFuelSolution : MonoBehaviour, IInteractable
 
     [SerializeField]
     private PlayerTrigger _playerTrigger;
+
+    [SerializeField]
+    private UnityEvent _onInteracted;
 
     public string InteractionHint => _hint;
 
@@ -49,6 +53,7 @@ public class TVFuelSolution : MonoBehaviour, IInteractable
         {
             IsAvailableNow = false;
             _isActive = !_isActive;
+            _onInteracted.Invoke();
             var fade = _isActive ? 1 : 0;
             await _solutionImage.DOFade(fade, _animationTime).WithCancellation(cancellation);
             IsAvailableNow = true;
