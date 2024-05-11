@@ -21,6 +21,7 @@ public class TuneRadioScenario : BaseScenario
     private void Start()
     {
         Trigger.OnTriggerInvoke += OnTriggered;
+        _radioInteractableTrigger.IsAvailableNow = false;
     }
 
     private void OnDestroy()
