@@ -106,8 +106,8 @@ public class PlayerMovement : MonoBehaviour
         if (!isMoving) return;
         var direction = transform.TransformDirection(new Vector3(strafe, 0f, forward).normalized);
         var velocity = direction * _moveSpeed*Time.deltaTime;
-        _characterController.SimpleMove(velocity);
-        // _meshAgent.Move(velocity);
+        //_characterController.SimpleMove(velocity);
+        _meshAgent.Move(velocity);
     }
 
     private void HandleCamera()
