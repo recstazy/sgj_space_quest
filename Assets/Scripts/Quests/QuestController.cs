@@ -24,10 +24,17 @@ public class QuestController : MonoBehaviour
         _container = container;
     }
     
-    public async void AddQuest(string questText)
+    public async void AddQuest(string questText, int? siblingIndexOverride = default, QuestView prefabOverride = null)
     {
-        var questView = _container.InstantiatePrefabForComponent<QuestView>(_questPrefab, _questsRoot);
+        var prefab = prefabOverride != null ? prefabOverride : _questPrefab;
+        var questView = _container.InstantiatePrefabForComponent<QuestView>(prefab, _questsRoot);
         _quests.Add(questView);
+
+        if (siblingIndexOverride.HasValue)
+        {
+            questView.transform.SetSiblingIndex(siblingIndexOverride.Value);
+        }
+        
         LayoutRebuilder.ForceRebuildLayoutImmediate(_questsRoot);
         questView.Setup(questText, false);
         await questView.Show(questView.GetCancellationTokenOnDestroy());

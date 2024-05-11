@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startTrigger: {fileID: 11400000, guid: 92425e24809fe8941b53f6db2d935db7, type: 2}
-  _finishTrigger: {fileID: 11400000, guid: dca353fddafcb3942add6ceab1cc4032, type: 2}
+  _finishTrigger: {fileID: 11400000, guid: 064291842f2966646b7004236e11dbfd, type: 2}
   _afterStartDelay: 1
   _getFuelCollegueVoice: {fileID: 8236357382807288415}
   _getFuelCollegueEndVoice: {fileID: 1916779257853604534}
