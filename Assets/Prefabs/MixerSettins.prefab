@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d670dd48906f4c44ea8475c8033b64dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainAudioMixer: {fileID: 0}
-  _soundAudioMixer: {fileID: 0}
-  _musicAudioMixer: {fileID: 0}
+  _mainAudioMixer: {fileID: 24100000, guid: 3571b676c1dea284ba1e3b082ff997f6, type: 2}
+  _soundAudioMixer: {fileID: 24100000, guid: 1662cd27cd13cfc44a18235aa4d9f152, type: 2}
+  _musicAudioMixer: {fileID: 24100000, guid: d284b8b9c189c7e4ba917eceeac099d5, type: 2}
+  _worldAudioMixer: {fileID: 24100000, guid: 2dd6893f19ed5a64f8f9782721b6fcad, type: 2}
+  _uiAudioMixer: {fileID: 24100000, guid: b6566bfac99d77a40a05099c3a58ae2f, type: 2}
+  _voicesAudioMixer: {fileID: 24100000, guid: 262622a27a71ba14c825c7401e350038, type: 2}
