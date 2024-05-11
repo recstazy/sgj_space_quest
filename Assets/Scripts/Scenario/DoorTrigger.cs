@@ -18,7 +18,7 @@ public class DoorTrigger : MonoBehaviour
         }
         else if(other.TryGetComponent(out Robot robot))
         {
-            _theDoors.ForEach(door => door.Open());
+            _theDoors.ForEach(door => door.OpenSilent());
         }
     }
 
@@ -30,7 +30,7 @@ public class DoorTrigger : MonoBehaviour
         }
         else if (other.TryGetComponent(out Robot robot))
         {
-            _theDoors.ForEach(door => door.Close());
+            _theDoors.ForEach(door => door.CloseSilent());
         }
     }
 }

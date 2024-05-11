@@ -36,6 +36,26 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
+        OpenInternal(true);
+    }
+
+    public void OpenSilent()
+    {
+        OpenInternal(false);
+    }
+
+    public void Close()
+    {
+        CloseInternal(true);
+    }
+
+    public void CloseSilent()
+    {
+        CloseInternal(false);
+    }
+
+    private void OpenInternal(bool sound)
+    {
         if (IsOpened) return;
         if (IsInProgress.Value)
         {
@@ -45,11 +65,15 @@ public class Door : MonoBehaviour
         
         IsOpened = true;
         _animator.Play("OpenDoor");
-        OnOpened.Invoke();
+
+        if (sound)
+        {
+            OnOpened.Invoke();
+        }
         LockInProgress(_doorOpenCloseTime);
     }
 
-    public void Close()
+    private void CloseInternal(bool sound)
     {
         if (!IsOpened) return;
         if (IsInProgress.Value)
@@ -60,7 +84,11 @@ public class Door : MonoBehaviour
         
         IsOpened = false;
         _animator.Play("CloseDoor");
-        OnClosed.Invoke();
+
+        if (sound)
+        {
+            OnClosed.Invoke();
+        }
         LockInProgress(_doorOpenCloseTime);
     }
 
