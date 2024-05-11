@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableWithTrigger : MonoBehaviour, IInteractable
 {
@@ -23,6 +24,9 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 
 	[SerializeField]
 	private List<GameObject> _disabledObjects;
+
+	[SerializeField]
+	private UnityEvent _onInteracted;
 
 	public string InteractionHint => _hint;
 
@@ -47,6 +51,7 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 	{
 		if (_isAvailableNow)
 		{
+			_onInteracted.Invoke();
             Debug.Log($"{gameObject.name} interaction start");
             await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
             _trigger.Invoke();
