@@ -58,7 +58,7 @@ public class Tumbler : MonoBehaviour, IInteractable
 
             Debug.Log($"{gameObject.name} interaction start");
             await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
-            _trigger.Invoke();
+            _trigger?.Invoke();
             Debug.Log($"{gameObject.name} interaction end");
             if (_interactOneTime)
                 IsInteractionDisabled = true;

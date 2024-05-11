@@ -48,11 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isLockLookAngle;
 
-    /*[Inject]
-    private void Construct([Inject(Id = GameSceneInstaller.MainCameraId)] Camera mainCamera)
-    {
-        _camera = mainCamera;
-    }*/
 
     private void Awake()
     {
@@ -71,14 +66,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 _playerCollider.enabled = true;
             }
-            if (!_characterController.enabled)
-            {
-                _characterController.enabled = true;
-            }
         }
         else
         {
-            _characterController.enabled = false;
             _playerCollider.enabled = false;
             _footstepSound.IsMoving = false;
         }

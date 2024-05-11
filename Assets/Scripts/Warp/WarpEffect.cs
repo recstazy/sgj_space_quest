@@ -34,25 +34,28 @@ public class WarpEffect : MonoBehaviour
     [SerializeField]
     private PlayVoice _systemWarpVoice;
 
+    public float PreWarpTime => _prewarpTime;
+    public float WarpTime => _warpTime;
+
     public bool IsPrewarpStateComplete = default(bool);
+    public bool IsSystemVoiceStateComplete = default(bool);
     public bool IsPizdecStateComplete = default(bool);
+    public bool IsWarpOver = default(bool);
 
     public async UniTask Play(CancellationToken cancellation)
     {
+        await _systemWarpVoice.Play();
+        IsSystemVoiceStateComplete = true;
         var trailModule = _stars.trails;
         var velocityModule = _stars.velocityOverLifetime;
         var main = _stars.main;
         var color = _stars.colorOverLifetime;
         var material = _stars.GetComponent<Renderer>().material;
-        
         trailModule.enabled = true;
         velocityModule.z = _prewarpVelocity;
         velocityModule.enabled = true;
-        await UniTask.Delay(TimeSpan.FromSeconds(_prewarpTime), cancellationToken: cancellation);
-        
+        await UniTask.WaitForSeconds((_prewarpTime), cancellationToken: cancellation);
         IsPrewarpStateComplete = true;
-        await _systemWarpVoice.Play();
-
         EnableChromaticPost();
         velocityModule.z = _warpVelocity;
         var warpAcceleration = DOTween.To(
@@ -76,7 +79,7 @@ public class WarpEffect : MonoBehaviour
         color.enabled = true;
         DisableChromaticPost();
         await trailFadeOut.ToUniTask(cancellationToken: cancellation);
-        
+        IsWarpOver = true;
     }
 
     private void EnableChromaticPost()
