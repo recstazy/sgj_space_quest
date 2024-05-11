@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13137d1a72161249bf6f3d0bed8d998, type: 3}
+  m_Name: Flamethrower_Start
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: ecf04eb095a4d5e40af7da4f7a3c8980, type: 3}
+  - {fileID: 8300000, guid: 6b562ecd2b5aa91428bba9279ae15007, type: 3}
+  - {fileID: 8300000, guid: e2c0f6b0babb7ad42ab84b8d4f899cc6, type: 3}
+  - {fileID: 8300000, guid: 953d418048dedf241859d4763d919530, type: 3}

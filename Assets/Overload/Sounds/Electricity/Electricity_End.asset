@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13137d1a72161249bf6f3d0bed8d998, type: 3}
+  m_Name: Electricity_End
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 08c875c0f3698f14bbbdffd9494c40f0, type: 3}
+  - {fileID: 8300000, guid: 45d967618a59e6b4faa1a0f03fad8ec7, type: 3}
+  - {fileID: 8300000, guid: 7139a015589450141a85dcc031fc80ba, type: 3}
+  - {fileID: 8300000, guid: 098eeea31d46f1646a676841f24744e0, type: 3}
