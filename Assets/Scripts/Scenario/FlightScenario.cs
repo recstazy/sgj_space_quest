@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Overload;
 using UnityEngine;
 
 public class FlightScenario : BaseScenario
@@ -21,6 +22,9 @@ public class FlightScenario : BaseScenario
     private Animator _shipAnimator;
     [SerializeField]
     private Animator _roofAnimator;
+
+    [SerializeField]
+    private SustainedSound _roofSound;
 
     private void Start()
     {
@@ -66,8 +70,10 @@ public class FlightScenario : BaseScenario
         _shipAnimator.Play("RotateUp");
         _questController.CompleteQuest(QuestsDescriptionContainer.SHIP_FLY_ON);
         yield return new WaitForSeconds(3f);
+        _roofSound.Play();
         _roofAnimator.Play("OpenRoof");
         yield return new WaitForSeconds(3f);
+        _roofSound.Stop();
         _shipAnimator.Play("Flight");
 
         Finish();
