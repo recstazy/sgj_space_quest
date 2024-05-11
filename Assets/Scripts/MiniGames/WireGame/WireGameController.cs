@@ -19,6 +19,9 @@ public class WireGameController : GameController, IInteractable
     [SerializeField]
     private PlayerTrigger _playerTrigger;
 
+    [SerializeField]
+    private Animator _tumblerAnimator;
+
     private Vector3 _doorStartPosition;
 
     private bool _gameFinished = default(bool);
@@ -111,6 +114,7 @@ public class WireGameController : GameController, IInteractable
         GetOutOfGame();
         _door.DORotate(_doorStartPosition, 0.3f);
         _isInteractionDisabled = true;
+        _tumblerAnimator.Play("SwitchOn");
     }
 
     protected override void StartGame()
