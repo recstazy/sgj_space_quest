@@ -51,6 +51,7 @@ public class InteractableWithTrigger : MonoBehaviour, IInteractable
 	{
 		if (_isAvailableNow)
 		{
+			_onInteracted.Invoke();
             Debug.Log($"{gameObject.name} interaction start");
             await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: cancellation);
             _trigger.Invoke();
