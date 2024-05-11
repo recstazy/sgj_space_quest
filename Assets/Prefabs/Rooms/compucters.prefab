@@ -1519,6 +1519,41 @@ PrefabInstance:
       propertyPath: _playerTrigger
       value: 
       objectReference: {fileID: 7752733198588965837}
+    - target: {fileID: 9132984806706733396, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984806706733398, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984806706733398, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984806706733398, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984807680735930, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984807680735930, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984807680735932, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.09803922
+      objectReference: {fileID: 0}
     - target: {fileID: 9132984808037225025, guid: ca626bb8bb2916d40824d1340db05346,
         type: 3}
       propertyPath: m_Name
@@ -1578,6 +1613,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984808440762625, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.09803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984808440762639, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132984808440762639, guid: ca626bb8bb2916d40824d1340db05346,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca626bb8bb2916d40824d1340db05346, type: 3}

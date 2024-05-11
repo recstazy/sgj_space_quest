@@ -81,7 +81,7 @@ public class WireGameController : GameController, IInteractable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             GetOutOfGame();
         }
