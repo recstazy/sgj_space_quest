@@ -59,7 +59,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -336,7 +335,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -613,7 +611,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -890,7 +887,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1302,7 +1298,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -9168,17 +9163,17 @@ PrefabInstance:
     - target: {fileID: 347227149670587100, guid: 3ca25fed17ca88d429458e815ce7a5d4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.005
+      value: -11.27
       objectReference: {fileID: 0}
     - target: {fileID: 347227149670587100, guid: 3ca25fed17ca88d429458e815ce7a5d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.017
+      value: 0.472
       objectReference: {fileID: 0}
     - target: {fileID: 347227149670587100, guid: 3ca25fed17ca88d429458e815ce7a5d4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.04
+      value: -1.822
       objectReference: {fileID: 0}
     - target: {fileID: 347227149670587100, guid: 3ca25fed17ca88d429458e815ce7a5d4,
         type: 3}
@@ -9194,6 +9189,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325417178804238027, guid: 3ca25fed17ca88d429458e815ce7a5d4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.484
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325417178804238027, guid: 3ca25fed17ca88d429458e815ce7a5d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325417178804238027, guid: 3ca25fed17ca88d429458e815ce7a5d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 2027732223399294539, guid: 3ca25fed17ca88d429458e815ce7a5d4,
         type: 3}
