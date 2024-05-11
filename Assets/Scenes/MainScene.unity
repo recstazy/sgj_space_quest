@@ -174,6 +174,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190513099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8241148783391051984, guid: 2eaf96db86a02b1408b8f9c81a5f02c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 830164229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0b9d8c1dd9d354898be7c1cca533dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &479496558 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6028487647096057673, guid: 2eaf96db86a02b1408b8f9c81a5f02c0,
@@ -425,7 +437,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652920389
 GameObject:
@@ -857,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 7160727107693090362, guid: 2eaf96db86a02b1408b8f9c81a5f02c0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7160727107693090362, guid: 2eaf96db86a02b1408b8f9c81a5f02c0,
         type: 3}
@@ -1218,7 +1230,7 @@ Transform:
   m_Children:
   - {fileID: 728276541}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1064066933 stripped
 MonoBehaviour:
@@ -1283,7 +1295,7 @@ PrefabInstance:
     - target: {fileID: 4671144288310074659, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4671144288310074659, guid: 6d6bc1eca4693ca48aa0c161c6d4cc00,
         type: 3}
@@ -1859,7 +1871,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _cardTrigger
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190513099}
     - target: {fileID: 9090143725375944004, guid: 4df965c7574ef014dbe03cc3c6ac5736,
         type: 3}
       propertyPath: _electricalPanel
