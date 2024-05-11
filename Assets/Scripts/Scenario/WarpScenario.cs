@@ -1,6 +1,7 @@
 using Cinemachine;
 using System;
 using System.Collections;
+using Overload;
 using UnityEngine;
 using Zenject;
 
@@ -66,6 +67,12 @@ public class WarpScenario : BaseScenario
     [SerializeField]
     private Animator _listWithDraw;
 
+    [SerializeField]
+    private AudioSource _warpChargeSound;
+
+    [SerializeField]
+    private SustainedSound _warpSound;
+
     private bool _isWarpOn = default(bool);
 
     private void Start()
@@ -118,13 +125,17 @@ public class WarpScenario : BaseScenario
         _questController.CompleteQuest(QuestsDescriptionContainer.SHIP_WARP_ON);
         _warpEffect.PlayAnimation();
         yield return new WaitUntil(() => _warpEffect.IsSystemVoiceStateComplete);
+        _warpChargeSound.Play();
         StartCoroutine(CameraAnimation());
         Debug.Log("IsPrewarpStateComplete start");
         yield return new WaitForSeconds(_beforeWaitForPizedecScream);
         yield return _colleguePreWarpVoice.Play();
         yield return new WaitForSeconds(_waitForPizedecScream);
         yield return _colleguePizdecWarpVoice.Play();
+        _warpChargeSound.Stop();
+        _warpSound.Play();
         yield return new WaitUntil(() => _warpEffect.IsPizdecStateComplete);
+        _warpSound.Stop();
         Debug.Log("IsPizdecStateComplete start");
         Debug.Log("StartGameScenario finished");
         _rotator.IsRotate = true;
