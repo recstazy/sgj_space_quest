@@ -94,6 +94,9 @@ public class WarpScenario : BaseScenario
 
     private bool _isWarpOn = default(bool);
 
+    [Inject]
+    private SceneController _sceneController;
+    
     private void Start()
     {
         _rotator.IsRotate = false;
@@ -162,6 +165,10 @@ public class WarpScenario : BaseScenario
         {
             _chorusSource.Play();
             _musicLoop.Stop();
+            RunDelayed(31f, () =>
+            {
+                _sceneController.LoadNewScene();
+            });
         });
         
         Debug.Log("IsPizdecStateComplete start");
