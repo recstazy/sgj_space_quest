@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _useRunFootstepSounds;
 
     [SerializeField]
-    private bool _disableMovementOnStart;
+    private bool _disableMovement;
 
     private float _lookUpAngle;
     private float _lookSidewaysAngle;
@@ -57,18 +57,16 @@ public class PlayerMovement : MonoBehaviour
         _characterCamera.Priority = 10;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        if (_disableMovementOnStart)
-        {
-            _playerInputController.SetDeactivateInteraction();
-        }
     }
 
     private void Update()
     {
         if (_playerInputController.IsPlayerActive)
         {
-            HandleMovement();
+            if (!_disableMovement)
+            {
+                HandleMovement();
+            }
             HandleCamera();
             if (!_playerCollider.enabled)
             {
