@@ -280,8 +280,9 @@ MonoBehaviour:
   m_text: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u043A\u043B\u044E\u0447-\u043A\u0430\u0440\u0442\u0443
     \u043D\u0430 \u0441\u0442\u043E\u043B\u0435 \u0443 \u0421\u0438\u0434\u043E\u0440\u043E\u0432\u0430"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7458bc24d34e8744fa1b8c2f180cefb2, type: 2}
+  m_sharedMaterial: {fileID: 1576133088573000378, guid: 7458bc24d34e8744fa1b8c2f180cefb2,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
